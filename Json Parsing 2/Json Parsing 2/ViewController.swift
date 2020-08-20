@@ -45,6 +45,7 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        print(arrdata.count)
         return self.arrdata.count
         
     }
