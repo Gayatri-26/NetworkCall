@@ -13,6 +13,8 @@
 		0453025F24F61D1100A1A8D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0453025E24F61D1100A1A8D7 /* Assets.xcassets */; };
 		0453026224F61D1100A1A8D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0453026024F61D1100A1A8D7 /* LaunchScreen.storyboard */; };
 		0453026524F61D1100A1A8D7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0453026424F61D1100A1A8D7 /* main.m */; };
+		0453026D24F635D500A1A8D7 /* EmployeeDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0453026C24F635D500A1A8D7 /* EmployeeDetailsVC.m */; };
+		0453027024F645F500A1A8D7 /* EmployeeDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0453026F24F645F500A1A8D7 /* EmployeeDetailCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		0453026124F61D1100A1A8D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0453026324F61D1100A1A8D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0453026424F61D1100A1A8D7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0453026B24F635D500A1A8D7 /* EmployeeDetailsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EmployeeDetailsVC.h; path = "../../../FortyTwo42 Pvt.ltd/EmployeeDetailsVC.h"; sourceTree = "<group>"; };
+		0453026C24F635D500A1A8D7 /* EmployeeDetailsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = EmployeeDetailsVC.m; path = "../../../FortyTwo42 Pvt.ltd/EmployeeDetailsVC.m"; sourceTree = "<group>"; };
+		0453026E24F645F500A1A8D7 /* EmployeeDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EmployeeDetailCell.h; path = "../../../FortyTwo42 Pvt.ltd/EmployeeDetailCell.h"; sourceTree = "<group>"; };
+		0453026F24F645F500A1A8D7 /* EmployeeDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = EmployeeDetailCell.m; path = "../../../FortyTwo42 Pvt.ltd/EmployeeDetailCell.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,10 @@
 				0453025824F61D1000A1A8D7 /* ViewController.h */,
 				0453025924F61D1000A1A8D7 /* ViewController.m */,
 				0453025B24F61D1000A1A8D7 /* Main.storyboard */,
+				0453026E24F645F500A1A8D7 /* EmployeeDetailCell.h */,
+				0453026F24F645F500A1A8D7 /* EmployeeDetailCell.m */,
+				0453026B24F635D500A1A8D7 /* EmployeeDetailsVC.h */,
+				0453026C24F635D500A1A8D7 /* EmployeeDetailsVC.m */,
 				0453025E24F61D1100A1A8D7 /* Assets.xcassets */,
 				0453026024F61D1100A1A8D7 /* LaunchScreen.storyboard */,
 				0453026324F61D1100A1A8D7 /* Info.plist */,
@@ -143,6 +153,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0453025A24F61D1000A1A8D7 /* ViewController.m in Sources */,
+				0453026D24F635D500A1A8D7 /* EmployeeDetailsVC.m in Sources */,
+				0453027024F645F500A1A8D7 /* EmployeeDetailCell.m in Sources */,
 				0453026524F61D1100A1A8D7 /* main.m in Sources */,
 				0453025724F61D1000A1A8D7 /* AppDelegate.m in Sources */,
 			);
