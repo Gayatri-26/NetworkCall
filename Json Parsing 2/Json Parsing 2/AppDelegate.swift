@@ -15,12 +15,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
+     
 //        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
 //        let appDelegate = UIApplication.shared.delegate as! AppDelegate
 //        let FVC = storyboard.instantiateViewController(withIdentifier: "FirstVC")
 //        let navigationController = UINavigationController(rootViewController: FVC)
 //        appDelegate.window!.rootViewController = navigationController
+        
+//        self.window = [[UIWindow alloc]initWithFrame:UIScreen.mainScreen.bounds];
+//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:(@"ViewController")];
+//        [self.window makeKeyAndVisible];
+        
+        window=UIWindow(frame: UIScreen.main.bounds)
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        let FVC = storyboard.instantiateViewController(withIdentifier: "FirstVC")
+//        window?.rootViewController = FVC
+        let VC = storyboard.instantiateViewController(withIdentifier: "NVC")
+        window?.rootViewController = VC
+        
+        window?.makeKeyAndVisible()
+       
         
         return true
     }
