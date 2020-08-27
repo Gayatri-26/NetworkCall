@@ -23,7 +23,7 @@
     NSURL *urlrequest = [NSURL URLWithString:strurl];
     NSMutableURLRequest*mutablerequest = [NSMutableURLRequest requestWithURL:urlrequest];
     
-    NSString * parm = premeter;//Method and Body
+//    NSString * parm = premeter;//Method and Body
     [mutablerequest setHTTPMethod:@"GET"];//Adding Data is Url With Json
     //    [mutablerequest setHTTPBody:[parm dataUsingEncoding:NSUTF8StringEncoding]];//Data Encoding UTF-8
     NSURLSessionDataTask * task = [session dataTaskWithRequest:mutablerequest completionHandler:^(NSData *  data, NSURLResponse * response, NSError *  error) {
