@@ -15,6 +15,9 @@
 		04650BCE23FF8D94002C5A80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04650BCC23FF8D94002C5A80 /* LaunchScreen.storyboard */; };
 		04650BD623FF955A002C5A80 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04650BD523FF955A002C5A80 /* TableViewCell.swift */; };
 		04650BD823FF9A80002C5A80 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04650BD723FF9A80002C5A80 /* DetailViewController.swift */; };
+		04A140C024F7707900570C52 /* FirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A140BF24F7707900570C52 /* FirstVC.m */; };
+		04A140C324F770C300570C52 /* EmployeeDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A140C224F770C300570C52 /* EmployeeDetailsVC.m */; };
+		04A140C924F7713100570C52 /* EmployeeDetailsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A140C824F7713100570C52 /* EmployeeDetailsCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,13 @@
 		04650BCF23FF8D94002C5A80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04650BD523FF955A002C5A80 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		04650BD723FF9A80002C5A80 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		04A140BD24F7707900570C52 /* Json Parsing 2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Json Parsing 2-Bridging-Header.h"; sourceTree = "<group>"; };
+		04A140BE24F7707900570C52 /* FirstVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstVC.h; sourceTree = "<group>"; };
+		04A140BF24F7707900570C52 /* FirstVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstVC.m; sourceTree = "<group>"; };
+		04A140C124F770C300570C52 /* EmployeeDetailsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmployeeDetailsVC.h; sourceTree = "<group>"; };
+		04A140C224F770C300570C52 /* EmployeeDetailsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmployeeDetailsVC.m; sourceTree = "<group>"; };
+		04A140C724F7713100570C52 /* EmployeeDetailsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmployeeDetailsCell.h; sourceTree = "<group>"; };
+		04A140C824F7713100570C52 /* EmployeeDetailsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmployeeDetailsCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,17 +78,48 @@
 		04650BC223FF8D94002C5A80 /* Json Parsing 2 */ = {
 			isa = PBXGroup;
 			children = (
+				04A140CB24F7716500570C52 /* Swifts Files */,
 				04359A6923FFB4ED00670AA5 /* Model */,
 				04650BC323FF8D94002C5A80 /* AppDelegate.swift */,
-				04650BC523FF8D94002C5A80 /* ViewController.swift */,
 				04650BC723FF8D94002C5A80 /* Main.storyboard */,
-				04650BD723FF9A80002C5A80 /* DetailViewController.swift */,
-				04650BD523FF955A002C5A80 /* TableViewCell.swift */,
+				04A140BC24F7701C00570C52 /* Objective-c Files */,
+				04A140C624F7710100570C52 /* TableViewCell */,
 				04650BCA23FF8D94002C5A80 /* Assets.xcassets */,
 				04650BCC23FF8D94002C5A80 /* LaunchScreen.storyboard */,
 				04650BCF23FF8D94002C5A80 /* Info.plist */,
 			);
 			path = "Json Parsing 2";
+			sourceTree = "<group>";
+		};
+		04A140BC24F7701C00570C52 /* Objective-c Files */ = {
+			isa = PBXGroup;
+			children = (
+				04A140BE24F7707900570C52 /* FirstVC.h */,
+				04A140BF24F7707900570C52 /* FirstVC.m */,
+				04A140BD24F7707900570C52 /* Json Parsing 2-Bridging-Header.h */,
+				04A140C124F770C300570C52 /* EmployeeDetailsVC.h */,
+				04A140C224F770C300570C52 /* EmployeeDetailsVC.m */,
+			);
+			path = "Objective-c Files";
+			sourceTree = "<group>";
+		};
+		04A140C624F7710100570C52 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				04A140C724F7713100570C52 /* EmployeeDetailsCell.h */,
+				04A140C824F7713100570C52 /* EmployeeDetailsCell.m */,
+				04650BD523FF955A002C5A80 /* TableViewCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		04A140CB24F7716500570C52 /* Swifts Files */ = {
+			isa = PBXGroup;
+			children = (
+				04650BD723FF9A80002C5A80 /* DetailViewController.swift */,
+				04650BC523FF8D94002C5A80 /* ViewController.swift */,
+			);
+			path = "Swifts Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -113,6 +154,7 @@
 				TargetAttributes = {
 					04650BBF23FF8D94002C5A80 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -154,9 +196,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				04359A6B23FFB54300670AA5 /* JSONModel.swift in Sources */,
+				04A140C024F7707900570C52 /* FirstVC.m in Sources */,
+				04A140C324F770C300570C52 /* EmployeeDetailsVC.m in Sources */,
 				04650BD623FF955A002C5A80 /* TableViewCell.swift in Sources */,
 				04650BC623FF8D94002C5A80 /* ViewController.swift in Sources */,
 				04650BC423FF8D94002C5A80 /* AppDelegate.swift in Sources */,
+				04A140C924F7713100570C52 /* EmployeeDetailsCell.m in Sources */,
 				04650BD823FF9A80002C5A80 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,11 +339,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "Json Parsing 2/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Gayatri.Json-Parsing-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Json Parsing 2/Objective-c Files/Json Parsing 2-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -308,11 +357,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "Json Parsing 2/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Gayatri.Json-Parsing-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Json Parsing 2/Objective-c Files/Json Parsing 2-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
