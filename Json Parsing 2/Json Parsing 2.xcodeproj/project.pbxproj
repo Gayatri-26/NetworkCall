@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		04359A6B23FFB54300670AA5 /* JSONModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04359A6A23FFB54300670AA5 /* JSONModel.swift */; };
+		045C948324F799BD00CFC20F /* SecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 045C948224F799BD00CFC20F /* SecondVC.m */; };
+		045C948624F7A02E00CFC20F /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045C948524F7A02E00CFC20F /* PersonViewController.m */; };
 		04650BC423FF8D94002C5A80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04650BC323FF8D94002C5A80 /* AppDelegate.swift */; };
 		04650BC623FF8D94002C5A80 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04650BC523FF8D94002C5A80 /* ViewController.swift */; };
 		04650BC923FF8D94002C5A80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04650BC723FF8D94002C5A80 /* Main.storyboard */; };
@@ -18,10 +20,15 @@
 		04A140C024F7707900570C52 /* FirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A140BF24F7707900570C52 /* FirstVC.m */; };
 		04A140C324F770C300570C52 /* EmployeeDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A140C224F770C300570C52 /* EmployeeDetailsVC.m */; };
 		04A140C924F7713100570C52 /* EmployeeDetailsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A140C824F7713100570C52 /* EmployeeDetailsCell.m */; };
+		04C35A4524F792B4002D72D4 /* PersonViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C35A4424F792B4002D72D4 /* PersonViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		04359A6A23FFB54300670AA5 /* JSONModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONModel.swift; sourceTree = "<group>"; };
+		045C948124F799BD00CFC20F /* SecondVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondVC.h; sourceTree = "<group>"; };
+		045C948224F799BD00CFC20F /* SecondVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondVC.m; sourceTree = "<group>"; };
+		045C948424F7A02E00CFC20F /* PersonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonViewController.h; sourceTree = "<group>"; };
+		045C948524F7A02E00CFC20F /* PersonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonViewController.m; sourceTree = "<group>"; };
 		04650BC023FF8D94002C5A80 /* Json Parsing 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Json Parsing 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04650BC323FF8D94002C5A80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04650BC523FF8D94002C5A80 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +45,8 @@
 		04A140C224F770C300570C52 /* EmployeeDetailsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmployeeDetailsVC.m; sourceTree = "<group>"; };
 		04A140C724F7713100570C52 /* EmployeeDetailsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmployeeDetailsCell.h; sourceTree = "<group>"; };
 		04A140C824F7713100570C52 /* EmployeeDetailsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmployeeDetailsCell.m; sourceTree = "<group>"; };
+		04C35A4324F792B4002D72D4 /* PersonViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonViewCell.h; sourceTree = "<group>"; };
+		04C35A4424F792B4002D72D4 /* PersonViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +108,10 @@
 				04A140BD24F7707900570C52 /* Json Parsing 2-Bridging-Header.h */,
 				04A140C124F770C300570C52 /* EmployeeDetailsVC.h */,
 				04A140C224F770C300570C52 /* EmployeeDetailsVC.m */,
+				045C948124F799BD00CFC20F /* SecondVC.h */,
+				045C948224F799BD00CFC20F /* SecondVC.m */,
+				045C948424F7A02E00CFC20F /* PersonViewController.h */,
+				045C948524F7A02E00CFC20F /* PersonViewController.m */,
 			);
 			path = "Objective-c Files";
 			sourceTree = "<group>";
@@ -109,6 +122,8 @@
 				04A140C724F7713100570C52 /* EmployeeDetailsCell.h */,
 				04A140C824F7713100570C52 /* EmployeeDetailsCell.m */,
 				04650BD523FF955A002C5A80 /* TableViewCell.swift */,
+				04C35A4324F792B4002D72D4 /* PersonViewCell.h */,
+				04C35A4424F792B4002D72D4 /* PersonViewCell.m */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -195,13 +210,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				045C948624F7A02E00CFC20F /* PersonViewController.m in Sources */,
 				04359A6B23FFB54300670AA5 /* JSONModel.swift in Sources */,
 				04A140C024F7707900570C52 /* FirstVC.m in Sources */,
 				04A140C324F770C300570C52 /* EmployeeDetailsVC.m in Sources */,
+				04C35A4524F792B4002D72D4 /* PersonViewCell.m in Sources */,
 				04650BD623FF955A002C5A80 /* TableViewCell.swift in Sources */,
 				04650BC623FF8D94002C5A80 /* ViewController.swift in Sources */,
 				04650BC423FF8D94002C5A80 /* AppDelegate.swift in Sources */,
 				04A140C924F7713100570C52 /* EmployeeDetailsCell.m in Sources */,
+				045C948324F799BD00CFC20F /* SecondVC.m in Sources */,
 				04650BD823FF9A80002C5A80 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
