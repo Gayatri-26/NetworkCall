@@ -9,16 +9,22 @@
 #import "FirstVC.h"
 #import "EmployeeDetailsVC.h"
 #import "EmployeeDetailsCell.h"
+#import "EmployeeDetails.h"
+
 @interface FirstVC ()
 
-{
-    NSString *mainstr;
-    NSMutableArray *arrid;
-    NSMutableArray *arrname;
-    NSMutableArray *arrsalary;
-    NSMutableArray *arrage;
-    NSMutableArray *arrEmployee;
-}
+@property (strong,nonatomic) NSMutableArray<EmployeeDetails *> *arrEmployee;
+@property (nonatomic,strong) NSString *mainstr;
+//{
+//    NSString *mainstr;
+////    NSMutableArray *arrid;
+////    NSMutableArray *arrname;
+////    NSMutableArray *arrsalary;
+////    NSMutableArray *arrage;
+////    NSMutableArray *arrEmployee;
+////    EmployeeDetails *arrEmployee;
+//}
+
 @end
 
 @implementation FirstVC
@@ -26,42 +32,58 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self requestdata];
+    
+    self.arrEmployee = [[NSMutableArray alloc]init];
 }
 
 -(void)requestdata
 {
-    mainstr = [NSString stringWithFormat:@"http://dummy.restapiexample.com/api/v1/employees"];
+    _mainstr = [NSString stringWithFormat:@"http://dummy.restapiexample.com/api/v1/employees"];
     
-    [EmployeeDetailsVC executequery:mainstr strpremeter:nil withblock:^(NSData * dbdata, NSError *error) {
+    [EmployeeDetailsVC executequery:_mainstr strpremeter:nil withblock:^(NSData * dbdata, NSError *error) {
         NSLog(@"Data: %@", dbdata);
         if (dbdata!=nil)
         {
             NSDictionary *maindic = [NSJSONSerialization JSONObjectWithData:dbdata options:NSJSONReadingAllowFragments error:nil];
             NSLog(@"Response Data: %@", maindic);
             
-            arrid = [[NSMutableArray alloc]init];
-            arrname = [[NSMutableArray alloc]init];
-            arrsalary = [[NSMutableArray alloc]init];
-            arrage = [[NSMutableArray alloc]init];
+
+            _arrEmployee = [[NSMutableArray alloc]init];
             
             NSDictionary *dict1 = [maindic objectForKey:@"data"];
             for(NSDictionary *dict in dict1){
                 
+               EmployeeDetails *EmpDetails = [[EmployeeDetails alloc]init];
                 NSString *strid = [dict objectForKey:@"id"];
-                [arrid addObject:strid];
-                NSLog(@"StrID : %@",strid);
+                EmpDetails.EmpId = strid;
                 
                 NSString *strname = [dict objectForKey:@"employee_name"];
-                [arrname addObject:strname];
-                NSLog(@"StrName : %@",strname);
-                
+                EmpDetails.Name = strname;
+
                 NSString *strsalary = [dict objectForKey:@"employee_salary"];
-                [arrsalary addObject:strsalary];
-                NSLog(@"StrSalary : %@",strsalary);
+                EmpDetails.Salary = strsalary;
                 
-                NSString *strage = [dict objectForKey:@"employee_age"];
-                [arrage addObject:strage];
-                NSLog(@"StrAge : %@",strage);
+                 NSString *strage = [dict objectForKey:@"employee_age"];
+                EmpDetails.Age = strage;
+
+                
+                [self.arrEmployee addObject:EmpDetails];
+                
+//                NSString *strid = [dict objectForKey:@"id"];
+//                [self.arrEmployee addObject:strid];
+//                NSLog(@"StrID : %@",strid);
+                
+//                NSString *strname = [dict objectForKey:@"employee_name"];
+//                [self.arrEmployee addObject:strname];
+//                NSLog(@"StrName : %@",strname);
+                
+//                NSString *strsalary = [dict objectForKey:@"employee_salary"];
+//                [self.arrEmployee addObject:strsalary];
+//                NSLog(@"StrSalary : %@",strsalary);
+                
+//                NSString *strage = [dict objectForKey:@"employee_age"];
+//                [self.arrEmployee addObject:strage];
+//                NSLog(@"StrAge : %@",strage);
                 
             }
             [self.EmployeeDataTableView reloadData];
@@ -70,7 +92,9 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return arrid.count;
+    
+    return _arrEmployee.count;
+    
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -81,10 +105,15 @@
 
         cell = [[EmployeeDetailsCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
-    cell.LblId.text = arrid[indexPath.row];
-    cell.LblName.text = arrname[indexPath.row];
-    cell.LblSalary.text = arrsalary[indexPath.row];
-    cell.LblAge.text = arrage[indexPath.row];
+    cell.LblId.text = [self.arrEmployee[indexPath.row]EmpId];
+    cell.LblName.text = [self.arrEmployee[indexPath.row]Name];
+    cell.LblSalary.text = [self.arrEmployee[indexPath.row]Salary];
+    cell.LblAge.text = [self.arrEmployee[indexPath.row]Age];
+    
+//    cell.LblId.text = self.arrEmployee.Id;
+//    cell.LblName.text = self.arrEmployee.Name;
+//    cell.LblSalary.text = self.arrEmployee.Salary;
+//    cell.LblAge.text = self.arrEmployee.Age;
     
     
     return cell;

@@ -12,7 +12,13 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+
+    UILabel *LblId = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, 0, 0)];
+    LblId.textAlignment = NSTextAlignmentCenter;
+    LblId.textColor = [UIColor blackColor];
+    LblId.adjustsFontSizeToFitWidth = YES;
+    LblId.adjustsLetterSpacingToFitWidth = YES;
+    LblId.clipsToBounds = YES;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

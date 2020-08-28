@@ -15,4 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *LblSalary;
 @property (weak, nonatomic) IBOutlet UILabel *LblAge;
 
+
+
+
 @end

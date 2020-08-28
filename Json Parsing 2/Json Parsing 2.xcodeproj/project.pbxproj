@@ -20,6 +20,7 @@
 		04A140C024F7707900570C52 /* FirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A140BF24F7707900570C52 /* FirstVC.m */; };
 		04A140C324F770C300570C52 /* EmployeeDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A140C224F770C300570C52 /* EmployeeDetailsVC.m */; };
 		04A140C924F7713100570C52 /* EmployeeDetailsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A140C824F7713100570C52 /* EmployeeDetailsCell.m */; };
+		04B204FA24F8C5D9004E7482 /* EmployeeDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B204F924F8C5D9004E7482 /* EmployeeDetails.m */; };
 		04C35A4524F792B4002D72D4 /* PersonViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C35A4424F792B4002D72D4 /* PersonViewCell.m */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,8 @@
 		04A140C224F770C300570C52 /* EmployeeDetailsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmployeeDetailsVC.m; sourceTree = "<group>"; };
 		04A140C724F7713100570C52 /* EmployeeDetailsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmployeeDetailsCell.h; sourceTree = "<group>"; };
 		04A140C824F7713100570C52 /* EmployeeDetailsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmployeeDetailsCell.m; sourceTree = "<group>"; };
+		04B204F824F8C5D9004E7482 /* EmployeeDetails.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmployeeDetails.h; sourceTree = "<group>"; };
+		04B204F924F8C5D9004E7482 /* EmployeeDetails.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmployeeDetails.m; sourceTree = "<group>"; };
 		04C35A4324F792B4002D72D4 /* PersonViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonViewCell.h; sourceTree = "<group>"; };
 		04C35A4424F792B4002D72D4 /* PersonViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,6 +67,8 @@
 			isa = PBXGroup;
 			children = (
 				04359A6A23FFB54300670AA5 /* JSONModel.swift */,
+				04B204F824F8C5D9004E7482 /* EmployeeDetails.h */,
+				04B204F924F8C5D9004E7482 /* EmployeeDetails.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 				04A140C324F770C300570C52 /* EmployeeDetailsVC.m in Sources */,
 				04C35A4524F792B4002D72D4 /* PersonViewCell.m in Sources */,
 				04650BD623FF955A002C5A80 /* TableViewCell.swift in Sources */,
+				04B204FA24F8C5D9004E7482 /* EmployeeDetails.m in Sources */,
 				04650BC623FF8D94002C5A80 /* ViewController.swift in Sources */,
 				04650BC423FF8D94002C5A80 /* AppDelegate.swift in Sources */,
 				04A140C924F7713100570C52 /* EmployeeDetailsCell.m in Sources */,
