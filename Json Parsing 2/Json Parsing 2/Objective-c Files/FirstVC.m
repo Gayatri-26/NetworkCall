@@ -39,56 +39,68 @@
 -(void)requestdata
 {
     _mainstr = [NSString stringWithFormat:@"http://dummy.restapiexample.com/api/v1/employees"];
-    
-    [EmployeeDetailsVC executequery:_mainstr strpremeter:nil withblock:^(NSData * dbdata, NSError *error) {
+    //Function Pointers
+    //blocks
+    //callbacks
+    //closures
+    //returnType(^<blockName>)(parameters)
+    void(^EmployeeListCallback)(NSData *data, NSError *error) = ^(NSData *dbdata, NSError *error) {
         NSLog(@"Data: %@", dbdata);
         if (dbdata!=nil)
         {
             NSDictionary *maindic = [NSJSONSerialization JSONObjectWithData:dbdata options:NSJSONReadingAllowFragments error:nil];
             NSLog(@"Response Data: %@", maindic);
-            
+
 
             _arrEmployee = [[NSMutableArray alloc]init];
-            
+
             NSDictionary *dict1 = [maindic objectForKey:@"data"];
             for(NSDictionary *dict in dict1){
-                
                EmployeeDetails *EmpDetails = [[EmployeeDetails alloc]init];
                 NSString *strid = [dict objectForKey:@"id"];
                 EmpDetails.EmpId = strid;
-                
                 NSString *strname = [dict objectForKey:@"employee_name"];
                 EmpDetails.Name = strname;
-
                 NSString *strsalary = [dict objectForKey:@"employee_salary"];
                 EmpDetails.Salary = strsalary;
-                
                  NSString *strage = [dict objectForKey:@"employee_age"];
                 EmpDetails.Age = strage;
-
-                
                 [self.arrEmployee addObject:EmpDetails];
-                
-//                NSString *strid = [dict objectForKey:@"id"];
-//                [self.arrEmployee addObject:strid];
-//                NSLog(@"StrID : %@",strid);
-                
-//                NSString *strname = [dict objectForKey:@"employee_name"];
-//                [self.arrEmployee addObject:strname];
-//                NSLog(@"StrName : %@",strname);
-                
-//                NSString *strsalary = [dict objectForKey:@"employee_salary"];
-//                [self.arrEmployee addObject:strsalary];
-//                NSLog(@"StrSalary : %@",strsalary);
-                
-//                NSString *strage = [dict objectForKey:@"employee_age"];
-//                [self.arrEmployee addObject:strage];
-//                NSLog(@"StrAge : %@",strage);
-                
             }
             [self.EmployeeDataTableView reloadData];
         }
-    }];
+    };
+    [EmployeeDetailsVC executequery:_mainstr strpremeter:nil withblock:EmployeeListCallback];
+//    [EmployeeDetailsVC executequery:_mainstr strpremeter:nil withblock:^(NSData * dbdata, NSError *error) {
+//        NSLog(@"Data: %@", dbdata);
+//        if (dbdata!=nil)
+//        {
+//            NSDictionary *maindic = [NSJSONSerialization JSONObjectWithData:dbdata options:NSJSONReadingAllowFragments error:nil];
+//            NSLog(@"Response Data: %@", maindic);
+//
+//
+//            _arrEmployee = [[NSMutableArray alloc]init];
+//
+//            NSDictionary *dict1 = [maindic objectForKey:@"data"];
+//            for(NSDictionary *dict in dict1){
+//
+//               EmployeeDetails *EmpDetails = [[EmployeeDetails alloc]init];
+//                NSString *strid = [dict objectForKey:@"id"];
+//                EmpDetails.EmpId = strid;
+//
+//                NSString *strname = [dict objectForKey:@"employee_name"];
+//                EmpDetails.Name = strname;
+//
+//                NSString *strsalary = [dict objectForKey:@"employee_salary"];
+//                EmpDetails.Salary = strsalary;
+//
+//                 NSString *strage = [dict objectForKey:@"employee_age"];
+//                EmpDetails.Age = strage;
+//                [self.arrEmployee addObject:EmpDetails];
+//            }
+//            [self.EmployeeDataTableView reloadData];
+//        }
+//    }];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
