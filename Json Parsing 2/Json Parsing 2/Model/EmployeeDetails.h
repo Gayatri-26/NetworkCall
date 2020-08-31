@@ -9,7 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface EmployeeDetails : NSObject
-
+//{
+//    NSString *EmpId;
+//    NSString *Name;
+//    NSString *Salary;
+//    NSString *Age;
+//}
 @property (nonatomic,strong) NSString *EmpId;
 @property (nonatomic,strong) NSString *Name;
 @property (nonatomic,strong) NSString *Salary;
