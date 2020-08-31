@@ -11,13 +11,14 @@
 @implementation EmployeeDetailsCell
 
 @synthesize LblId,LblName,LblAge,LblSalary;
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     
     //First way
-        UILabel *LblSalary = [[UILabel alloc]initWithFrame:CGRectMake(10, 50, 200, 20)];
+        UILabel *LblSalary = [[UILabel alloc]initWithFrame:CGRectMake(10, 130, 200, 20)];
         LblSalary.textAlignment = NSTextAlignmentCenter;
-//        LblSalary.text = @"Description";
+        LblSalary.text = @"Description";
         LblSalary.backgroundColor = [UIColor cyanColor];
         LblSalary.textColor = [UIColor blackColor];
         LblSalary.adjustsFontSizeToFitWidth = YES;
