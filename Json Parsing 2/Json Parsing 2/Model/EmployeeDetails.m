@@ -9,5 +9,7 @@
 #import "EmployeeDetails.h"
 
 @implementation EmployeeDetails
-@synthesize EmpId,Name,Salary,Age;
+
+@synthesize EmpId, Name, Salary, Age;
+
 @end

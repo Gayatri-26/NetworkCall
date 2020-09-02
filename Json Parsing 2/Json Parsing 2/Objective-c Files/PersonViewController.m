@@ -1,9 +1,5 @@
 
 
-
-
-
-
 #import "PersonViewController.h"
 
 @interface PersonViewController ()

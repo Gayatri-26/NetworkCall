@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 struct jsonstruct :Decodable{
+    
     let name:String
     let capital:String
     let alpha3Code:String
