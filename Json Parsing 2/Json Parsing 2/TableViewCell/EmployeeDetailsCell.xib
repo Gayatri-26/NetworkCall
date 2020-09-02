@@ -78,7 +78,6 @@
                 <outlet property="LblAge" destination="4EG-q1-oMA" id="Ld0-14-wgN"/>
                 <outlet property="LblId" destination="2cQ-pU-fKU" id="9mN-xX-wHo"/>
                 <outlet property="LblName" destination="YGs-hZ-Isz" id="ClP-ns-lMz"/>
-                <outlet property="LblSalary" destination="Edd-ka-0Q6" id="RaO-kM-yFq"/>
             </connections>
             <point key="canvasLocation" x="-5.5" y="116.5"/>
         </tableViewCell>

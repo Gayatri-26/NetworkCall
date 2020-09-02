@@ -12,10 +12,10 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *LblId;
 @property (weak, nonatomic) IBOutlet UILabel *LblName;
-@property (weak, nonatomic) IBOutlet UILabel *LblSalary;
+@property (weak, nonatomic)  UILabel *LblSalary;
 @property (weak, nonatomic) IBOutlet UILabel *LblAge;
 
-
+@property (weak, nonatomic) UILabel *Lbl1;
 
 
 @end

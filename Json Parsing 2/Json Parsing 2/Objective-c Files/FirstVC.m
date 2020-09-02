@@ -119,8 +119,10 @@
     
     cell.LblId.text = [self.arrEmployee[indexPath.row]EmpId];
     cell.LblName.text = [self.arrEmployee[indexPath.row]Name];
+//    cell.LblSalary.text = [self.arrEmployee[indexPath.row]Salary];
+//    cell.LblAge.text = [self.arrEmployee[indexPath.row]Age];
     cell.LblSalary.text = [self.arrEmployee[indexPath.row]Salary];
-    cell.LblAge.text = [self.arrEmployee[indexPath.row]Age];
+    cell.Lbl1.text = [self.arrEmployee[indexPath.row]Age];
     
     return cell;
     
