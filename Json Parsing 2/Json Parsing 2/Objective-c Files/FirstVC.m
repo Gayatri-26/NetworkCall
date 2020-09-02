@@ -113,8 +113,6 @@
 //        cell.reuseIdentifier = @"EmployeeDetailsCell";
 //        [tableView registerNib:[UINib nibWithData:@"EmployeeDetailsCell" bundle:nil] forCellReuseIdentifier:@"cell"];
 //        cell = [[EmployeeDetailsCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"EmployeeDetailsCell"];
-        
-        
     }
     
     cell.LblId.text = [self.arrEmployee[indexPath.row]EmpId];

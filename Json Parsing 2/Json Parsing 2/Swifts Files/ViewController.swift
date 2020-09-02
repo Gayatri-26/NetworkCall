@@ -16,6 +16,14 @@ class ViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        TableView.translatesAutoresizingMaskIntoConstraints = false
+        TableView.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor).isActive = true
+        TableView.leadingAnchor.constraint(equalTo:view.leadingAnchor).isActive = true
+        TableView.trailingAnchor.constraint(equalTo:view.trailingAnchor).isActive = true
+    TableView.bottomAnchor.constraint(equalTo:view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        
+        TableView.register(UINib.init(nibName: "CountryDetailCell", bundle: Bundle.main), forCellReuseIdentifier: "cell")
+        TableView.dataSource = self
         getdata()
     }
     
@@ -41,7 +49,7 @@ class ViewController: UIViewController{
    
 }
 
-extension ViewController : UITableViewDelegate,UITableViewDataSource {
+extension ViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -52,11 +60,12 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell:TableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell")as! TableViewCell
-        cell.lblname.text = "Name:\(arrdata[indexPath.row].name)"
-        cell.lblcapital.text = "Capital:\(arrdata[indexPath.row].capital)"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")as! CountryDetailCell
+        cell.contryName.text = "Name: \(arrdata[indexPath.row].name)"
+        cell.countryCapital.text = "Capital: \(arrdata[indexPath.row].capital)"
         
         return cell
+        
         
     }
     
@@ -72,4 +81,8 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource {
         self.navigationController?.pushViewController(detail, animated: true)
         
     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
 }
