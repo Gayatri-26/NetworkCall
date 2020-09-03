@@ -18,7 +18,6 @@
 		04650BC923FF8D94002C5A80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04650BC723FF8D94002C5A80 /* Main.storyboard */; };
 		04650BCB23FF8D94002C5A80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04650BCA23FF8D94002C5A80 /* Assets.xcassets */; };
 		04650BCE23FF8D94002C5A80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04650BCC23FF8D94002C5A80 /* LaunchScreen.storyboard */; };
-		04650BD623FF955A002C5A80 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04650BD523FF955A002C5A80 /* TableViewCell.swift */; };
 		04650BD823FF9A80002C5A80 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04650BD723FF9A80002C5A80 /* DetailViewController.swift */; };
 		04A140C024F7707900570C52 /* FirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A140BF24F7707900570C52 /* FirstVC.m */; };
 		04A140C324F770C300570C52 /* EmployeeDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A140C224F770C300570C52 /* EmployeeDetailsVC.m */; };
@@ -44,7 +43,6 @@
 		04650BCA23FF8D94002C5A80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04650BCD23FF8D94002C5A80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04650BCF23FF8D94002C5A80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04650BD523FF955A002C5A80 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		04650BD723FF9A80002C5A80 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		04A140BD24F7707900570C52 /* Json Parsing 2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Json Parsing 2-Bridging-Header.h"; sourceTree = "<group>"; };
 		04A140BE24F7707900570C52 /* FirstVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstVC.h; sourceTree = "<group>"; };
@@ -149,7 +147,6 @@
 				04650BC523FF8D94002C5A80 /* ViewController.swift */,
 				042619A024FEC10A00AC1C6E /* CountryDetailCell.swift */,
 				042619A124FEC10A00AC1C6E /* CountryDetailCell.xib */,
-				04650BD523FF955A002C5A80 /* TableViewCell.swift */,
 			);
 			path = "Swifts Files";
 			sourceTree = "<group>";
@@ -234,7 +231,6 @@
 				04A140C024F7707900570C52 /* FirstVC.m in Sources */,
 				04A140C324F770C300570C52 /* EmployeeDetailsVC.m in Sources */,
 				04C35A4524F792B4002D72D4 /* PersonViewCell.m in Sources */,
-				04650BD623FF955A002C5A80 /* TableViewCell.swift in Sources */,
 				04B204FA24F8C5D9004E7482 /* EmployeeDetails.m in Sources */,
 				042619A224FEC10A00AC1C6E /* CountryDetailCell.swift in Sources */,
 				04650BC623FF8D94002C5A80 /* ViewController.swift in Sources */,

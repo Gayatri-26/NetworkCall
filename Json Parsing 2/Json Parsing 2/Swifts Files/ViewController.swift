@@ -8,22 +8,29 @@
 
 import UIKit
 
-
 class ViewController: UIViewController{
-    
-    @IBOutlet weak var TableView: UITableView!
+
+  let TableView = UITableView()
+
     var arrdata = [jsonstruct]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        TableView.translatesAutoresizingMaskIntoConstraints = false
-        TableView.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor).isActive = true
-        TableView.leadingAnchor.constraint(equalTo:view.leadingAnchor).isActive = true
-        TableView.trailingAnchor.constraint(equalTo:view.trailingAnchor).isActive = true
-    TableView.bottomAnchor.constraint(equalTo:view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
-        TableView.register(UINib.init(nibName: "CountryDetailCell", bundle: Bundle.main), forCellReuseIdentifier: "cell")
+      
+        TableView.frame = CGRect(x: 20, y: 30, width: 250, height: 300)
         TableView.dataSource = self
+        TableView.delegate = self
+        self.view.addSubview(TableView)
+        
+//      TableView.translatesAutoresizingMaskIntoConstraints = false
+//      TableView.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor).isActive = true
+//      TableView.leadingAnchor.constraint(equalTo:view.leadingAnchor).isActive = true
+//      TableView.trailingAnchor.constraint(equalTo:view.trailingAnchor).isActive = true
+//      TableView.bottomAnchor.constraint(equalTo:view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        self.TableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+//           TableView.register(UINib.init(nibName: "CountryDetailCell", bundle: Bundle.main), forCellReuseIdentifier: "Countrycell")
+
         getdata()
     }
     
@@ -45,8 +52,6 @@ class ViewController: UIViewController{
             }
             }.resume()
     }
-    
-   
 }
 
 extension ViewController : UITableViewDelegate, UITableViewDataSource {
@@ -60,13 +65,11 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")as! CountryDetailCell
+    let cell:CountryDetailCell = TableView.dequeueReusableCell(withIdentifier: "Cell") as! CountryDetailCell
         cell.contryName.text = "Name: \(arrdata[indexPath.row].name)"
         cell.countryCapital.text = "Capital: \(arrdata[indexPath.row].capital)"
         
         return cell
-        
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -76,7 +79,6 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
         detail.stralpha3 = "Alpha3Code:\(arrdata[indexPath.row].alpha3Code)"
         detail.strregion = "Region:\(arrdata[indexPath.row].region)"
         detail.strsubregion = "SubRegion:\(arrdata[indexPath.row].subregion)"
-        
         
         self.navigationController?.pushViewController(detail, animated: true)
         
