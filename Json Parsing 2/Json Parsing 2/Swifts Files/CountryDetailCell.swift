@@ -1,10 +1,3 @@
-//
-//  CountryDetailCell.swift
-//  Json Parsing 2
-//
-//  Created by Mac on 01/09/20.
-//  Copyright © 2020 Mac. All rights reserved.
-//
 
 import UIKit
 
@@ -21,27 +14,27 @@ class CountryDetailCell: UITableViewCell {
             contryName.textAlignment = .center
             contryName.textColor = .blue
             self.contentView.addSubview(contryName)
-            NSLayoutConstraint.activate([
-                
-                contryName.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
-                contryName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-           //     contryName.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20),
-                contryName.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-                contryName.heightAnchor.constraint(equalToConstant: 50)
-            ])
         
-                 countryCapital.translatesAutoresizingMaskIntoConstraints = false
-                 countryCapital.font = UIFont.systemFont(ofSize: 20)
-                 countryCapital.textColor = .red
-                 countryCapital.textAlignment = .center
-                 self.contentView.addSubview(countryCapital)
             NSLayoutConstraint.activate([
                 
-                countryCapital.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 40),
-                countryCapital.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
-                countryCapital.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 20),
-                countryCapital.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-                countryCapital.heightAnchor.constraint(equalToConstant: 50)
+        contryName.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+        contryName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+           //     contryName.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20),
+        contryName.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+        contryName.heightAnchor.constraint(equalToConstant: 50)
+            ])
+            countryCapital.translatesAutoresizingMaskIntoConstraints = false
+            countryCapital.font = UIFont.systemFont(ofSize: 20)
+            countryCapital.textColor = .red
+            countryCapital.textAlignment = .center
+           self.contentView.addSubview(countryCapital)
+            NSLayoutConstraint.activate([
+                
+        countryCapital.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 40),
+        countryCapital.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
+        countryCapital.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 20),
+        countryCapital.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+        countryCapital.heightAnchor.constraint(equalToConstant: 50)
                  ])
         }
         
