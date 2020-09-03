@@ -17,19 +17,19 @@ class ViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      
         TableView.frame = CGRect(x: 20, y: 30, width: 250, height: 300)
         TableView.dataSource = self
         TableView.delegate = self
         self.view.addSubview(TableView)
         
-//      TableView.translatesAutoresizingMaskIntoConstraints = false
-//      TableView.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor).isActive = true
-//      TableView.leadingAnchor.constraint(equalTo:view.leadingAnchor).isActive = true
-//      TableView.trailingAnchor.constraint(equalTo:view.trailingAnchor).isActive = true
-//      TableView.bottomAnchor.constraint(equalTo:view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        self.TableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-//           TableView.register(UINib.init(nibName: "CountryDetailCell", bundle: Bundle.main), forCellReuseIdentifier: "Countrycell")
+        self.TableView.register(CountryDetailCell.self, forCellReuseIdentifier: "Countrycell")
+
+      TableView.translatesAutoresizingMaskIntoConstraints = false
+      TableView.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor).isActive = true
+      TableView.leadingAnchor.constraint(equalTo:view.leadingAnchor).isActive = true
+      TableView.trailingAnchor.constraint(equalTo:view.trailingAnchor).isActive = true
+      TableView.bottomAnchor.constraint(equalTo:view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        //  self.TableView.register(UINib.init(nibName: "CountryDetailCell", bundle: Bundle.main), forCellReuseIdentifier: "Countrycell")
 
         getdata()
     }
@@ -65,10 +65,10 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-    let cell:CountryDetailCell = TableView.dequeueReusableCell(withIdentifier: "Cell") as! CountryDetailCell
+    let cell = TableView.dequeueReusableCell(withIdentifier: "Countrycell") as! CountryDetailCell
         cell.contryName.text = "Name: \(arrdata[indexPath.row].name)"
         cell.countryCapital.text = "Capital: \(arrdata[indexPath.row].capital)"
-        
+
         return cell
     }
     
