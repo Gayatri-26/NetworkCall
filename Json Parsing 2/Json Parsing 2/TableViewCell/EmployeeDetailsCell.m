@@ -10,7 +10,7 @@
 
 @implementation EmployeeDetailsCell
 
-@synthesize LblId,LblName,LblAge,LblSalary,view;
+@synthesize LblId, LblName, LblAge, LblSalary, view;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

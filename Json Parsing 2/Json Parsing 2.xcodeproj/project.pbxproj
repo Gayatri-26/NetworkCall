@@ -18,6 +18,7 @@
 		04650BCB23FF8D94002C5A80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04650BCA23FF8D94002C5A80 /* Assets.xcassets */; };
 		04650BCE23FF8D94002C5A80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04650BCC23FF8D94002C5A80 /* LaunchScreen.storyboard */; };
 		04650BD823FF9A80002C5A80 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04650BD723FF9A80002C5A80 /* DetailViewController.swift */; };
+		048ADB732501803200FAA28D /* PersonDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 048ADB722501803200FAA28D /* PersonDetail.m */; };
 		04A140C024F7707900570C52 /* FirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A140BF24F7707900570C52 /* FirstVC.m */; };
 		04A140C324F770C300570C52 /* EmployeeDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A140C224F770C300570C52 /* EmployeeDetailsVC.m */; };
 		04A140C924F7713100570C52 /* EmployeeDetailsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A140C824F7713100570C52 /* EmployeeDetailsCell.m */; };
@@ -42,6 +43,8 @@
 		04650BCD23FF8D94002C5A80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04650BCF23FF8D94002C5A80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04650BD723FF9A80002C5A80 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		048ADB712501803200FAA28D /* PersonDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonDetail.h; sourceTree = "<group>"; };
+		048ADB722501803200FAA28D /* PersonDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonDetail.m; sourceTree = "<group>"; };
 		04A140BD24F7707900570C52 /* Json Parsing 2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Json Parsing 2-Bridging-Header.h"; sourceTree = "<group>"; };
 		04A140BE24F7707900570C52 /* FirstVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstVC.h; sourceTree = "<group>"; };
 		04A140BF24F7707900570C52 /* FirstVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstVC.m; sourceTree = "<group>"; };
@@ -72,6 +75,8 @@
 			children = (
 				04B204F824F8C5D9004E7482 /* EmployeeDetails.h */,
 				04B204F924F8C5D9004E7482 /* EmployeeDetails.m */,
+				048ADB712501803200FAA28D /* PersonDetail.h */,
+				048ADB722501803200FAA28D /* PersonDetail.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -233,6 +238,7 @@
 				04650BC423FF8D94002C5A80 /* AppDelegate.swift in Sources */,
 				04A140C924F7713100570C52 /* EmployeeDetailsCell.m in Sources */,
 				045C948324F799BD00CFC20F /* SecondVC.m in Sources */,
+				048ADB732501803200FAA28D /* PersonDetail.m in Sources */,
 				0433F70D24FF7C9600BE29D7 /* CoredataModel.xcdatamodeld in Sources */,
 				04650BD823FF9A80002C5A80 /* DetailViewController.swift in Sources */,
 			);

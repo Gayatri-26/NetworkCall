@@ -8,86 +8,102 @@
 #import "SecondVC.h"
 #import "PersonViewController.h"
 #import "PersonViewCell.h"
+#import "PersonDetail.h"
 
 @interface SecondVC ()
-{
-    NSString *mainstr;
-    NSMutableArray *arrid;
-    NSMutableArray * arraddress;
-    NSMutableArray * arrname;
-    NSMutableArray * arrgender    ;
-    NSMutableArray * arremail;
-}
+
+    @property (strong,nonatomic) NSMutableArray<PersonDetail *> *arrPerson;
+    @property (nonatomic,strong) NSString *mainstr;
+    
+
 @end
 
 @implementation SecondVC
+{
+    UITableView *PersonDataTableView;
+}
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    [self requestdata];
+[super viewDidLoad];
+[self requestdata];
+    
+self.arrPerson = [[NSMutableArray alloc]init];
+
+PersonDataTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+
+[self.view addSubview:PersonDataTableView];
+
+[PersonDataTableView registerClass:[PersonViewCell class] forCellReuseIdentifier:@"pcell"];
+
+PersonDataTableView.dataSource = self;
+PersonDataTableView.delegate = self;
+
 }
 
 -(void)requestdata
 {
-    mainstr = [NSString stringWithFormat:@"https://api.androidhive.info/contacts/"];
-     [PersonViewController executequery:mainstr strpremeter:nil withblock:^(NSData * dbdata, NSError *error) {
+    _mainstr = [NSString stringWithFormat:@"https://api.androidhive.info/contacts/"];
+
+   //  [PersonViewController executequery:mainstr strpremeter:nil withblock:^(NSData * dbdata, NSError *error) {
+      void(^PersonListCallback)(NSData *data, NSError *error) = ^(NSData *dbdata, NSError *error) {
     NSLog(@"Data: %@", dbdata);
         if (dbdata!=nil)
         {
             NSDictionary *maindic = [NSJSONSerialization JSONObjectWithData:dbdata options:NSJSONReadingAllowFragments error:nil];
             NSLog(@"Response Data: %@", maindic);
             
-             arrid = [[NSMutableArray alloc] init];
-             arrname = [[NSMutableArray alloc] init];
-             arraddress = [[NSMutableArray alloc] init];
-             arrgender = [[NSMutableArray alloc] init];
-             arremail = [[NSMutableArray alloc] init];
+   _arrPerson = [[NSMutableArray alloc]init];
             
             NSDictionary *dic1 = [maindic objectForKey:@"contacts"];
             for (NSDictionary *dict in dic1)
             {
+                PersonDetail *PersonDet = [[PersonDetail alloc]init];
                 NSString *strid = [dict objectForKey:@"id"];
-                [arrid addObject:strid];
-                NSLog(@"Strid: %@", strid);
+                PersonDet.Pid = strid;
                 
                 NSString *strname = [dict objectForKey:@"name"];
-                [arrname addObject:strname];
-                NSLog(@"Strname: %@", strname);
+                PersonDet.Pname = strname;
+                              
+                NSString *stremail = [dict objectForKey:@"email"];
+                PersonDet.Pemail= stremail;
                 
                 NSString *straddress = [dict objectForKey:@"address"];
-                [arraddress addObject:straddress];
-                NSLog(@"Straddress: %@", straddress);
+                PersonDet.Paddress = straddress;
                 
                 NSString *strgender = [dict objectForKey:@"gender"];
-                [arrgender addObject:strgender];
-                NSLog(@"Strgender: %@", strgender);
+                PersonDet.Pgender = strgender;
                 
-                NSString *stremail = [dict objectForKey:@"email"];
-                [arremail addObject:stremail];
-                NSLog(@"Stremail: %@", stremail);
-                
+                [self.arrPerson addObject:PersonDet];
             }
-            [self.PersonTableView reloadData];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self->PersonDataTableView reloadData];
+            });
         }
-    }];
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return arremail.count;
+    };
+    //    dispatch_queue_t gayatri = dispatch_queue_create("download.data", NULL);
+    dispatch_queue_t sonali = dispatch_get_main_queue();
     
+    dispatch_async(sonali, ^{
+        NSData *Ddata = [NSData dataWithContentsOfURL:[NSURL URLWithString:_mainstr]];
+        PersonListCallback(Ddata, nil);
+    });
 }
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return _arrPerson.count;
+}
+    
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PersonViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    PersonViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pcell"];
     if (cell == nil) {
-        cell = [[PersonViewCell  alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        cell = [[PersonViewCell  alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"pcell"];
     }
-        cell.Pid.text = arrid[indexPath.row];
-        cell.Pname.text = arrname[indexPath.row];
-        cell.Pemail.text = arremail[indexPath.row];
-        cell.Paddress.text = arraddress[indexPath.row];
-        cell.Pgender.text = arrgender[indexPath.row];
+        cell.Pid.text = [self.arrPerson[indexPath.row]Pid];
+        cell.Pname.text = [self.arrPerson[indexPath.row]Pname];
+        cell.Pemail.text = [self.arrPerson[indexPath.row]Pid];
+        cell.Paddress.text = [self.arrPerson[indexPath.row]Pid];
+        cell.Pgender.text = [self.arrPerson[indexPath.row]Pid];
     
         return cell;
     }
@@ -97,12 +113,12 @@
     return 250;
 }
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 
 }
 
-
 @end
-
+    
+    
+    

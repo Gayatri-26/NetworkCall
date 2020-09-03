@@ -28,9 +28,8 @@ class ViewController: UIViewController{
       TableView.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor).isActive = true
       TableView.leadingAnchor.constraint(equalTo:view.leadingAnchor).isActive = true
       TableView.trailingAnchor.constraint(equalTo:view.trailingAnchor).isActive = true
-      TableView.bottomAnchor.constraint(equalTo:view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+    TableView.bottomAnchor.constraint(equalTo:view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         //  self.TableView.register(UINib.init(nibName: "CountryDetailCell", bundle: Bundle.main), forCellReuseIdentifier: "Countrycell")
-
         getdata()
     }
     
@@ -60,7 +59,6 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
         
         print(arrdata.count)
         return self.arrdata.count
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *Paddress;
 @property (weak, nonatomic) IBOutlet UILabel *Pemail;
 @property (weak, nonatomic) IBOutlet UILabel *Pgender;
+@property (strong, nonatomic)  UIView *view;
 
 @end
