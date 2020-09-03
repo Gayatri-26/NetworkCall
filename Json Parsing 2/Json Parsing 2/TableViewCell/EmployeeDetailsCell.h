@@ -10,12 +10,12 @@
 
 @interface EmployeeDetailsCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *LblId;
-@property (weak, nonatomic) IBOutlet UILabel *LblName;
-@property (weak, nonatomic)  UILabel *LblSalary;
-@property (weak, nonatomic) IBOutlet UILabel *LblAge;
+@property (strong, nonatomic)  UILabel *LblId;
+@property (strong, nonatomic)  UILabel *LblName;
+@property (strong, nonatomic)  UILabel *LblSalary;
+@property (strong, nonatomic)  UILabel *LblAge;
 
-@property (weak, nonatomic) UILabel *Lbl1;
+@property (strong, nonatomic) UILabel *Lbl1;
 
 
 @end

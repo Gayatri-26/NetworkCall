@@ -19,19 +19,31 @@
 @end
 
 @implementation FirstVC
+{
+    UITableView *EmployeeDataTableView;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self requestdata];
-    _EmployeeDataTableView.dataSource = self;
-    _EmployeeDataTableView.delegate = self;
+    EmployeeDataTableView.dataSource = self;
+    EmployeeDataTableView.delegate = self;
     self.arrEmployee = [[NSMutableArray alloc]init];
+    
+    EmployeeDataTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+//    EmployeeDataTableView.backgroundColor = [UIColor cyanColor];
+    [self.view addSubview:EmployeeDataTableView];
+    
+//    [EmployeeDataTableView registerClass:[EmployeeDetailsCell class] forCellReuseIdentifier:@"EmployeeDetailsCell"];
+
+
 }
 
 -(void)requestdata
 {
     _mainstr = [NSString stringWithFormat:@"http://dummy.restapiexample.com/api/v1/employees"];
     //Function Pointers
+    
     //blocks
     //callbacks
     //closures
@@ -59,40 +71,58 @@
                 EmpDetails.Age = strage;
                 [self.arrEmployee addObject:EmpDetails];
             }
-            [self.EmployeeDataTableView reloadData];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self->EmployeeDataTableView reloadData];
+            });
+           
         }
     };
+    dispatch_queue_t gayatri = dispatch_queue_create("download.data", NULL);
+//    dispatch_queue_t gayatri = dispatch_get_main_queue();
+
+    dispatch_async(gayatri, ^{
+        NSData *Ddata = [NSData dataWithContentsOfURL:[NSURL URLWithString:_mainstr]];
+        EmployeeListCallback(Ddata,nil);
+    });
+//    NSData *Ddata = [NSData dataWithContentsOfURL:[NSURL URLWithString:_mainstr]];
+//    EmployeeListCallback(Ddata,nil);
+
     [EmployeeDetailsVC executequery:_mainstr strpremeter:nil withblock:EmployeeListCallback];
-    [EmployeeDetailsVC executequery:_mainstr strpremeter:nil withblock:^(NSData * dbdata, NSError *error) {
-        NSLog(@"Data: %@", dbdata);
-        if (dbdata!=nil)
-        {
-            NSDictionary *maindic = [NSJSONSerialization JSONObjectWithData:dbdata options:NSJSONReadingAllowFragments error:nil];
-            NSLog(@"Response Data: %@", maindic);
+//    [EmployeeDetailsVC executequery:_mainstr strpremeter:nil withblock:^(NSData * dbdata, NSError *error) {
+//        NSLog(@"Data: %@", dbdata);
+//        if (dbdata!=nil)
+//        {
+//            NSDictionary *maindic = [NSJSONSerialization JSONObjectWithData:dbdata options:NSJSONReadingAllowFragments error:nil];
+//            NSLog(@"Response Data: %@", maindic);
+//
+//
+//            _arrEmployee = [[NSMutableArray alloc]init];
+//
+//            NSDictionary *dict1 = [maindic objectForKey:@"data"];
+//            for(NSDictionary *dict in dict1){
+//
+//               EmployeeDetails *EmpDetails = [[EmployeeDetails alloc]init];
+//                NSString *strid = [dict objectForKey:@"id"];
+//                EmpDetails.EmpId = strid;
+//
+//                NSString *strname = [dict objectForKey:@"employee_name"];
+//                EmpDetails.Name = strname;
+//
+//                NSString *strsalary = [dict objectForKey:@"employee_salary"];
+//                EmpDetails.Salary = strsalary;
+//
+//                 NSString *strage = [dict objectForKey:@"employee_age"];
+//                EmpDetails.Age = strage;
+//                [self.arrEmployee addObject:EmpDetails];
+//            }
+//            [self.EmployeeDataTableView reloadData];
+//        }
+//    }];
+}
 
-
-            _arrEmployee = [[NSMutableArray alloc]init];
-
-            NSDictionary *dict1 = [maindic objectForKey:@"data"];
-            for(NSDictionary *dict in dict1){
-
-               EmployeeDetails *EmpDetails = [[EmployeeDetails alloc]init];
-                NSString *strid = [dict objectForKey:@"id"];
-                EmpDetails.EmpId = strid;
-
-                NSString *strname = [dict objectForKey:@"employee_name"];
-                EmpDetails.Name = strname;
-
-                NSString *strsalary = [dict objectForKey:@"employee_salary"];
-                EmpDetails.Salary = strsalary;
-
-                 NSString *strage = [dict objectForKey:@"employee_age"];
-                EmpDetails.Age = strage;
-                [self.arrEmployee addObject:EmpDetails];
-            }
-            [self.EmployeeDataTableView reloadData];
-        }
-    }];
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)theTableView
+{
+    return 1;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -107,27 +137,26 @@
 
     if (cell == nil){
 
-        NSLog(@"New Cell");
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"EmployeeDetailsCell" owner:self options:nil];
-        cell = [nib objectAtIndex:0];
-//        cell.reuseIdentifier = @"EmployeeDetailsCell";
+//        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"EmployeeDetailsCell" owner:self options:nil];
+//        cell = [nib objectAtIndex:0];
+
 //        [tableView registerNib:[UINib nibWithData:@"EmployeeDetailsCell" bundle:nil] forCellReuseIdentifier:@"cell"];
-//        cell = [[EmployeeDetailsCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"EmployeeDetailsCell"];
+        cell = [[EmployeeDetailsCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"EmployeeDetailsCell"];
     }
-    
     cell.LblId.text = [self.arrEmployee[indexPath.row]EmpId];
-    cell.LblName.text = [self.arrEmployee[indexPath.row]Name];
+//    cell.LblId.text = [self.arrEmployee[indexPath.row]EmpId];
+//    cell.LblName.text = [self.arrEmployee[indexPath.row]Name];
 //    cell.LblSalary.text = [self.arrEmployee[indexPath.row]Salary];
 //    cell.LblAge.text = [self.arrEmployee[indexPath.row]Age];
-    cell.LblSalary.text = [self.arrEmployee[indexPath.row]Salary];
-    cell.Lbl1.text = [self.arrEmployee[indexPath.row]Age];
+//    cell.LblSalary.text = [self.arrEmployee[indexPath.row]Salary];
+//    cell.Lbl1.text = [self.arrEmployee[indexPath.row]Age];
     
     return cell;
     
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return  160;
+    return 200;
 }
 
 - (void)didReceiveMemoryWarning {

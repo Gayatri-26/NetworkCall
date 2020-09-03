@@ -11,7 +11,7 @@
 
 @interface FirstVC : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
-@property (weak, nonatomic) IBOutlet UITableView *EmployeeDataTableView;
+//@property (weak, nonatomic) IBOutlet UITableView *EmployeeDataTableView;
 //@property (nonatomic,strong) NSMutableArray<EmployeeDetails*> *arrEmployee;
 
 @end
