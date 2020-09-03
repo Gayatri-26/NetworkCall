@@ -38,9 +38,9 @@
 
 
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    
+//- (void)awakeFromNib {
+//    [super awakeFromNib];
+//
     //    //First way
     //        UILabel *LblSalary = [[UILabel alloc]initWithFrame:CGRectMake(10, 130, 200, 20)];
     //        LblSalary.textAlignment = NSTextAlignmentCenter;
@@ -73,7 +73,7 @@
     //        [self addConstraints:@[left, top]];
     //        [Lbl1 addConstraints:@[height, width]];
     
-}
+//}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
