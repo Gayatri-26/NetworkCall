@@ -26,12 +26,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self requestdata];
-    
+     self.view.backgroundColor = UIColor.blueColor;
     self.arrEmployee = [[NSMutableArray alloc]init];
     
-    EmployeeDataTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    
+    EmployeeDataTableView = [[UITableView alloc]init];
+    [EmployeeDataTableView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.view addSubview:EmployeeDataTableView];
+    
+    
+    NSLayoutConstraint *left = [NSLayoutConstraint constraintWithItem:EmployeeDataTableView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1 constant:0];
+    NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:EmployeeDataTableView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:0];
+    
+    NSLayoutConstraint *bottom = [NSLayoutConstraint constraintWithItem:EmployeeDataTableView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1 constant:-0];
+    NSLayoutConstraint *right = [NSLayoutConstraint constraintWithItem:EmployeeDataTableView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1 constant:-0];
+    
+    [self.view addConstraints:@[left, top, bottom, right]];
     
     [EmployeeDataTableView registerClass:[EmployeeDetailsCell class] forCellReuseIdentifier:@"ECell"];
     EmployeeDataTableView.separatorStyle = UITableViewCellSeparatorStyleNone;

@@ -14,6 +14,6 @@
 @property (strong, nonatomic)  UILabel *LblName;
 @property (strong, nonatomic)  UILabel *LblSalary;
 @property (strong, nonatomic)  UILabel *LblAge;
-@property (strong, nonatomic)  UIView *view;
+
 
 @end
