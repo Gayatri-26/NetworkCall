@@ -10,11 +10,11 @@
 
 @interface PersonViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *Pname;
-@property (weak, nonatomic) IBOutlet UILabel *Pid;
-@property (weak, nonatomic) IBOutlet UILabel *Paddress;
-@property (weak, nonatomic) IBOutlet UILabel *Pemail;
-@property (weak, nonatomic) IBOutlet UILabel *Pgender;
+@property (strong, nonatomic)  UILabel *Pid;
+@property (strong, nonatomic)  UILabel *Pname;
+@property (strong, nonatomic)  UILabel *Paddress;
+@property (strong, nonatomic)  UILabel *Pemail;
+@property (strong, nonatomic)  UILabel *Pgender;
 @property (strong, nonatomic)  UIView *view;
 
 @end

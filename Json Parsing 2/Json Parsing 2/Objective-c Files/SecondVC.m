@@ -101,9 +101,9 @@ PersonDataTableView.delegate = self;
     }
         cell.Pid.text = [self.arrPerson[indexPath.row]Pid];
         cell.Pname.text = [self.arrPerson[indexPath.row]Pname];
-        cell.Pemail.text = [self.arrPerson[indexPath.row]Pid];
-        cell.Paddress.text = [self.arrPerson[indexPath.row]Pid];
-        cell.Pgender.text = [self.arrPerson[indexPath.row]Pid];
+        cell.Pemail.text = [self.arrPerson[indexPath.row]Pemail];
+        cell.Paddress.text = [self.arrPerson[indexPath.row]Paddress];
+        cell.Pgender.text = [self.arrPerson[indexPath.row]Pgender];
     
         return cell;
     }
