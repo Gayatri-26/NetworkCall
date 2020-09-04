@@ -34,6 +34,7 @@
     [self.view addSubview:EmployeeDataTableView];
     
     [EmployeeDataTableView registerClass:[EmployeeDetailsCell class] forCellReuseIdentifier:@"EmployeeDetailsCell"];
+    EmployeeDataTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     EmployeeDataTableView.dataSource = self;
     EmployeeDataTableView.delegate = self;
@@ -145,7 +146,6 @@
     cell.LblName.text = [self.arrEmployee[indexPath.row]Name];
     cell.LblSalary.text = [self.arrEmployee[indexPath.row]Salary];
     cell.LblAge.text = [self.arrEmployee[indexPath.row]Age];
-    
     
     return cell;
     
