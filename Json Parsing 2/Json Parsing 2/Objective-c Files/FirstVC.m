@@ -33,7 +33,7 @@
     
     [self.view addSubview:EmployeeDataTableView];
     
-    [EmployeeDataTableView registerClass:[EmployeeDetailsCell class] forCellReuseIdentifier:@"EmployeeDetailsCell"];
+    [EmployeeDataTableView registerClass:[EmployeeDetailsCell class] forCellReuseIdentifier:@"ECell"];
     EmployeeDataTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     EmployeeDataTableView.dataSource = self;
@@ -141,11 +141,11 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    EmployeeDetailsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EmployeeDetailsCell"];
+    EmployeeDetailsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ECell"];
     
     if (cell == nil){
         
-        cell = [[EmployeeDetailsCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"EmployeeDetailsCell"];
+        cell = [[EmployeeDetailsCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ECell"];
     }
     cell.LblId.text = [self.arrEmployee[indexPath.row]EmpId];
     cell.LblName.text = [self.arrEmployee[indexPath.row]Name];

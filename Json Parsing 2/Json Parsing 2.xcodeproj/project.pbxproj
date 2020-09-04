@@ -24,7 +24,6 @@
 		04A140C924F7713100570C52 /* EmployeeDetailsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A140C824F7713100570C52 /* EmployeeDetailsCell.m */; };
 		04B204FA24F8C5D9004E7482 /* EmployeeDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B204F924F8C5D9004E7482 /* EmployeeDetails.m */; };
 		04C35A4524F792B4002D72D4 /* PersonViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C35A4424F792B4002D72D4 /* PersonViewCell.m */; };
-		04D69A1724FBE3B200755E94 /* EmployeeDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D69A1624FBE3B200755E94 /* EmployeeDetailsCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,7 +55,6 @@
 		04B204F924F8C5D9004E7482 /* EmployeeDetails.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmployeeDetails.m; sourceTree = "<group>"; };
 		04C35A4324F792B4002D72D4 /* PersonViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonViewCell.h; sourceTree = "<group>"; };
 		04C35A4424F792B4002D72D4 /* PersonViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonViewCell.m; sourceTree = "<group>"; };
-		04D69A1624FBE3B200755E94 /* EmployeeDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeeDetailsCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +133,6 @@
 			children = (
 				04A140C724F7713100570C52 /* EmployeeDetailsCell.h */,
 				04A140C824F7713100570C52 /* EmployeeDetailsCell.m */,
-				04D69A1624FBE3B200755E94 /* EmployeeDetailsCell.xib */,
 				04C35A4324F792B4002D72D4 /* PersonViewCell.h */,
 				04C35A4424F792B4002D72D4 /* PersonViewCell.m */,
 			);
@@ -215,7 +212,6 @@
 			files = (
 				04650BCE23FF8D94002C5A80 /* LaunchScreen.storyboard in Resources */,
 				04650BCB23FF8D94002C5A80 /* Assets.xcassets in Resources */,
-				04D69A1724FBE3B200755E94 /* EmployeeDetailsCell.xib in Resources */,
 				04650BC923FF8D94002C5A80 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
