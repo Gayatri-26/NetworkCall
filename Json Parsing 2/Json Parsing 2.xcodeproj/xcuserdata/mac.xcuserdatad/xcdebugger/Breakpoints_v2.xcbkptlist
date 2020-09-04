@@ -12,6 +12,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Json Parsing 2/Objective-c Files/SecondVC.h"
+            timestampString = "0"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "12"
@@ -28,12 +29,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Json Parsing 2/Objective-c Files/SecondVC.m"
+            timestampString = "0"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "18"
             endingLineNumber = "18"
             landmarkName = "SecondVC()"
             landmarkType = "2">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Json Parsing 2/Objective-c Files/PersonViewController.m"
+            timestampString = "620885275.876864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "+executequery:strpremeter:withblock:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
