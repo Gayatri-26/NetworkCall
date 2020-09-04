@@ -34,6 +34,7 @@
     [self.view addSubview:EmployeeDataTableView];
     
     [EmployeeDataTableView registerClass:[EmployeeDetailsCell class] forCellReuseIdentifier:@"EmployeeDetailsCell"];
+    EmployeeDataTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     EmployeeDataTableView.dataSource = self;
     EmployeeDataTableView.delegate = self;
