@@ -14,13 +14,11 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var alpha3: UILabel!
     @IBOutlet weak var region: UILabel!
     @IBOutlet weak var subregion: UILabel!
-  
     
     var strregion = ""
     var strsubregion = ""
     var stralpha2 = ""
     var stralpha3 = ""
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

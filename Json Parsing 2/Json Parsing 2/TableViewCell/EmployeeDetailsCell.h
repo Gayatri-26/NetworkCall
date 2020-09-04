@@ -16,6 +16,4 @@
 @property (strong, nonatomic)  UILabel *LblAge;
 @property (strong, nonatomic)  UIView *view;
 
-
-
 @end

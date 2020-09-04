@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-//NS_ASSUME_NONNULL_BEGIN
-
 @interface PersonViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *Pname;
@@ -17,7 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *Paddress;
 @property (weak, nonatomic) IBOutlet UILabel *Pemail;
 @property (weak, nonatomic) IBOutlet UILabel *Pgender;
+@property (strong, nonatomic)  UIView *view;
 
 @end
-
-//NS_ASSUME_NONNULL_END

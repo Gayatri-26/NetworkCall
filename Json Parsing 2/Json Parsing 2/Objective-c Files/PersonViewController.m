@@ -8,9 +8,11 @@
 
 @implementation PersonViewController
 
+//returnType ^ (parameters) <blockname>
+//(void (^)(NSData *, NSError *))block
+
 +(void)executequery:(NSString *)strurl strpremeter:(NSString *)premeter withblock:(void (^)(NSData *, NSError *))block
 {
-    //Step:-1 Session Create
     NSURLSessionConfiguration *defaultconfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
     
     NSURLSession *session = [NSURLSession sessionWithConfiguration:defaultconfiguration delegate:nil delegateQueue:[NSOperationQueue mainQueue]];

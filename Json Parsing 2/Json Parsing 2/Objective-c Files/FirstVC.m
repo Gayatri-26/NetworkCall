@@ -64,20 +64,25 @@
             NSDictionary *dict1 = [maindic objectForKey:@"data"];
             for(NSDictionary *dict in dict1){
                 EmployeeDetails *EmpDetails = [[EmployeeDetails alloc]init];
+                
                 NSString *strid = [dict objectForKey:@"id"];
                 EmpDetails.EmpId = strid;
+                
                 NSString *strname = [dict objectForKey:@"employee_name"];
                 EmpDetails.Name = strname;
+                
                 NSString *strsalary = [dict objectForKey:@"employee_salary"];
                 EmpDetails.Salary = strsalary;
+                
                 NSString *strage = [dict objectForKey:@"employee_age"];
                 EmpDetails.Age = strage;
+                
                 [self.arrEmployee addObject:EmpDetails];
             }
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self->EmployeeDataTableView reloadData];
             });
-            
+    
         }
     };
     //    dispatch_queue_t gayatri = dispatch_queue_create("download.data", NULL);
@@ -148,7 +153,6 @@
     cell.LblAge.text = [self.arrEmployee[indexPath.row]Age];
     
     return cell;
-    
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -157,8 +161,7 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
+}
 
 @end
