@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self requestdata];
-     self.view.backgroundColor = UIColor.blueColor;
+//     self.view.backgroundColor = UIColor.blueColor;
     self.arrEmployee = [[NSMutableArray alloc]init];
     
     EmployeeDataTableView = [[UITableView alloc]init];

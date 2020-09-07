@@ -12,6 +12,9 @@
 		04359A6B23FFB54300670AA5 /* JSONModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04359A6A23FFB54300670AA5 /* JSONModel.swift */; };
 		045C948324F799BD00CFC20F /* SecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 045C948224F799BD00CFC20F /* SecondVC.m */; };
 		045C948624F7A02E00CFC20F /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045C948524F7A02E00CFC20F /* PersonViewController.m */; };
+		0462D3222505F81400B4A5E3 /* NsurlUsingDispatchQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0462D3212505F81400B4A5E3 /* NsurlUsingDispatchQueue.m */; };
+		0462D325250600B100B4A5E3 /* DogBreedsDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 0462D324250600B100B4A5E3 /* DogBreedsDetails.m */; };
+		0462D32825060C6900B4A5E3 /* DogDetailsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0462D32725060C6900B4A5E3 /* DogDetailsCell.m */; };
 		04650BC423FF8D94002C5A80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04650BC323FF8D94002C5A80 /* AppDelegate.swift */; };
 		04650BC623FF8D94002C5A80 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04650BC523FF8D94002C5A80 /* ViewController.swift */; };
 		04650BC923FF8D94002C5A80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04650BC723FF8D94002C5A80 /* Main.storyboard */; };
@@ -34,6 +37,12 @@
 		045C948224F799BD00CFC20F /* SecondVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondVC.m; sourceTree = "<group>"; };
 		045C948424F7A02E00CFC20F /* PersonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonViewController.h; sourceTree = "<group>"; };
 		045C948524F7A02E00CFC20F /* PersonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonViewController.m; sourceTree = "<group>"; };
+		0462D3202505F81400B4A5E3 /* NsurlUsingDispatchQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NsurlUsingDispatchQueue.h; sourceTree = "<group>"; };
+		0462D3212505F81400B4A5E3 /* NsurlUsingDispatchQueue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NsurlUsingDispatchQueue.m; sourceTree = "<group>"; };
+		0462D323250600B100B4A5E3 /* DogBreedsDetails.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DogBreedsDetails.h; sourceTree = "<group>"; };
+		0462D324250600B100B4A5E3 /* DogBreedsDetails.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DogBreedsDetails.m; sourceTree = "<group>"; };
+		0462D32625060C6900B4A5E3 /* DogDetailsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DogDetailsCell.h; sourceTree = "<group>"; };
+		0462D32725060C6900B4A5E3 /* DogDetailsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DogDetailsCell.m; sourceTree = "<group>"; };
 		04650BC023FF8D94002C5A80 /* Json Parsing 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Json Parsing 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04650BC323FF8D94002C5A80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04650BC523FF8D94002C5A80 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +84,8 @@
 				04B204F924F8C5D9004E7482 /* EmployeeDetails.m */,
 				048ADB712501803200FAA28D /* PersonDetail.h */,
 				048ADB722501803200FAA28D /* PersonDetail.m */,
+				0462D323250600B100B4A5E3 /* DogBreedsDetails.h */,
+				0462D324250600B100B4A5E3 /* DogBreedsDetails.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -124,6 +135,8 @@
 				045C948224F799BD00CFC20F /* SecondVC.m */,
 				045C948424F7A02E00CFC20F /* PersonViewController.h */,
 				045C948524F7A02E00CFC20F /* PersonViewController.m */,
+				0462D3202505F81400B4A5E3 /* NsurlUsingDispatchQueue.h */,
+				0462D3212505F81400B4A5E3 /* NsurlUsingDispatchQueue.m */,
 			);
 			path = "Objective-c Files";
 			sourceTree = "<group>";
@@ -135,6 +148,8 @@
 				04A140C824F7713100570C52 /* EmployeeDetailsCell.m */,
 				04C35A4324F792B4002D72D4 /* PersonViewCell.h */,
 				04C35A4424F792B4002D72D4 /* PersonViewCell.m */,
+				0462D32625060C6900B4A5E3 /* DogDetailsCell.h */,
+				0462D32725060C6900B4A5E3 /* DogDetailsCell.m */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -225,16 +240,19 @@
 			files = (
 				045C948624F7A02E00CFC20F /* PersonViewController.m in Sources */,
 				04359A6B23FFB54300670AA5 /* JSONModel.swift in Sources */,
+				0462D325250600B100B4A5E3 /* DogBreedsDetails.m in Sources */,
 				04A140C024F7707900570C52 /* FirstVC.m in Sources */,
 				04A140C324F770C300570C52 /* EmployeeDetailsVC.m in Sources */,
 				04C35A4524F792B4002D72D4 /* PersonViewCell.m in Sources */,
 				04B204FA24F8C5D9004E7482 /* EmployeeDetails.m in Sources */,
 				042619A224FEC10A00AC1C6E /* CountryDetailCell.swift in Sources */,
 				04650BC623FF8D94002C5A80 /* ViewController.swift in Sources */,
+				0462D32825060C6900B4A5E3 /* DogDetailsCell.m in Sources */,
 				04650BC423FF8D94002C5A80 /* AppDelegate.swift in Sources */,
 				04A140C924F7713100570C52 /* EmployeeDetailsCell.m in Sources */,
 				045C948324F799BD00CFC20F /* SecondVC.m in Sources */,
 				048ADB732501803200FAA28D /* PersonDetail.m in Sources */,
+				0462D3222505F81400B4A5E3 /* NsurlUsingDispatchQueue.m in Sources */,
 				0433F70D24FF7C9600BE29D7 /* CoredataModel.xcdatamodeld in Sources */,
 				04650BD823FF9A80002C5A80 /* DetailViewController.swift in Sources */,
 			);

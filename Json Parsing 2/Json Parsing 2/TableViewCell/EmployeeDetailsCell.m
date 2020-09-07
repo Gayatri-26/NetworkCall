@@ -17,7 +17,6 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
-        
         //LblId
         self.LblId = [[UILabel alloc] init];
         self.LblId.textColor = [UIColor blackColor];
@@ -60,7 +59,7 @@
         self.LblAge.textColor = [UIColor blackColor];
         self.LblAge.textAlignment = NSTextAlignmentCenter;
         self.LblAge.backgroundColor = [UIColor colorWithRed:241.0/255.0 green:255.0/255.0 blue:228.0/255.0 alpha:1];
-        self.LblName.font = [UIFont fontWithName:@"Arial" size:20.0f];
+        self.LblAge.font = [UIFont fontWithName:@"Arial" size:20.0f];
         [_LblAge setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self addSubview:self.LblAge];
         
