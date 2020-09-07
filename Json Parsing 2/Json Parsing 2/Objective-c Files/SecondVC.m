@@ -9,6 +9,9 @@
 #import "PersonViewController.h"
 #import "PersonViewCell.h"
 #import "PersonDetail.h"
+#import "PersonView.h"
+
+
 
 @interface SecondVC ()
 
