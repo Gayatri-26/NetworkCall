@@ -20,8 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
         
-        //    let FVC = storyboard.instantiateViewController(withIdentifier:"FirstVC")
-        //    window?.rootViewController = FVC
+            let FVC = storyboard.instantiateViewController(withIdentifier:"FirstVC")
+            window?.rootViewController = FVC
         
         //     let VC = storyboard.instantiateViewController(withIdentifier:"NVC")
         //      window?.rootViewController = VC
@@ -29,8 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //  let SVC = storyboard.instantiateViewController(withIdentifier:"SecondVC")
         //  window?.rootViewController = SVC
         
-        let NSDispatchQueue = storyboard.instantiateViewController(withIdentifier: "NsurlUsingDispatchQueue")
-        window?.rootViewController = NSDispatchQueue
         
         window?.makeKeyAndVisible()
         
