@@ -10,7 +10,7 @@
 
 @implementation PersonViewCell
 
-@synthesize Pid, Pname, Pemail, Pgender, Paddress, view;
+@synthesize Pid, Pname, Pemail, Pgender, Paddress;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -97,13 +97,14 @@
         [Pgender setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self addSubview:self.Pgender];
         
-        NSLayoutConstraint *leftgender = [NSLayoutConstraint constraintWithItem:Pemail attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:20];
-        NSLayoutConstraint *topgender = [NSLayoutConstraint constraintWithItem:Pemail attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:180];
+        NSLayoutConstraint *leftgender = [NSLayoutConstraint constraintWithItem:Pgender attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:20];
+        NSLayoutConstraint *topgender = [NSLayoutConstraint constraintWithItem:Pgender attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:180];
         
-        NSLayoutConstraint *heightgender = [NSLayoutConstraint constraintWithItem:Pemail attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:25];
-        NSLayoutConstraint *rightgender = [NSLayoutConstraint constraintWithItem:Pemail attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight multiplier:1 constant:-20];
+        NSLayoutConstraint *heightgender = [NSLayoutConstraint constraintWithItem:Pgender attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:25];
+        NSLayoutConstraint *rightgender = [NSLayoutConstraint constraintWithItem:Pgender attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight multiplier:1 constant:-20];
         
         [self addConstraints:@[leftgender, topgender, heightgender, rightgender]];
+        
     }
     return self;
 }

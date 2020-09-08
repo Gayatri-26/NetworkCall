@@ -15,6 +15,6 @@
 @property (strong, nonatomic)  UILabel *Paddress;
 @property (strong, nonatomic)  UILabel *Pemail;
 @property (strong, nonatomic)  UILabel *Pgender;
-@property (strong, nonatomic)  UIView *view;
+//@property (strong, nonatomic)  UIView *view;
 
 @end
