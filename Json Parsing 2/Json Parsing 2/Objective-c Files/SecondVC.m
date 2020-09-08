@@ -149,29 +149,31 @@
        
         self.PersonData = (NSDictionary *)responseObject;
         NSLog(@"Response: %@",responseObject);
+        _arrPerson = [[NSMutableArray alloc]initWithArray:responseObject];
         [self->PersonDataTableView reloadData];
         
 //        NSDictionary *maindic = [[NSMutableArray alloc]init];
+//         NSDictionary *maindic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
 //        NSLog(@"Response Data: %@", maindic);
 //        _arrPerson = [[NSMutableArray alloc]init];
-//        NSDictionary *dic1 = [maindic objectForKey:@"contacts"];
+//        NSDictionary *dic1 = [maindic valueForKey:@"contacts"];
 //
 //        for (NSDictionary *dict in dic1)
 //        {
 //            PersonDetail *PersonDet = [[PersonDetail alloc]init];
-//            NSString *strid = [dict objectForKey:@"id"];
+//            NSString *strid = [dic1 valueForKey:@"id"];
 //            PersonDet.Pid = strid;
 //
-//            NSString *strname = [dict objectForKey:@"name"];
+//            NSString *strname = [dict valueForKey:@"name"];
 //            PersonDet.Pname = strname;
 //
-//            NSString *stremail = [dict objectForKey:@"email"];
+//            NSString *stremail = [dict valueForKey:@"email"];
 //            PersonDet.Pemail= stremail;
 //
-//            NSString *straddress = [dict objectForKey:@"address"];
+//            NSString *straddress = [dict valueForKey:@"address"];
 //            PersonDet.Paddress = straddress;
 //
-//            NSString *strgender = [dict objectForKey:@"gender"];
+//            NSString *strgender = [dict valueForKey:@"gender"];
 //            PersonDet.Pgender = strgender;
 //
 //            [self.arrPerson addObject:PersonDet];
