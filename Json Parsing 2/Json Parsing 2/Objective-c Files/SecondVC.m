@@ -124,7 +124,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 250;
+    return 230;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -147,40 +147,41 @@
     operation.responseSerializer = [AFJSONResponseSerializer serializer];
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
        
-        self.PersonData = (NSDictionary *)responseObject;
+//        self.PersonData = (NSDictionary *)responseObject;
         NSLog(@"Response: %@",responseObject);
-        _arrPerson = [[NSMutableArray alloc]initWithArray:responseObject];
+//        _arrPerson = [[NSMutableArray alloc]initWithArray:responseObject];
         [self->PersonDataTableView reloadData];
         
 //        NSDictionary *maindic = [[NSMutableArray alloc]init];
 //         NSDictionary *maindic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
 //        NSLog(@"Response Data: %@", maindic);
 //        _arrPerson = [[NSMutableArray alloc]init];
-//        NSDictionary *dic1 = [maindic valueForKey:@"contacts"];
-//
-//        for (NSDictionary *dict in dic1)
-//        {
-//            PersonDetail *PersonDet = [[PersonDetail alloc]init];
-//            NSString *strid = [dic1 valueForKey:@"id"];
-//            PersonDet.Pid = strid;
-//
-//            NSString *strname = [dict valueForKey:@"name"];
-//            PersonDet.Pname = strname;
-//
-//            NSString *stremail = [dict valueForKey:@"email"];
-//            PersonDet.Pemail= stremail;
-//
-//            NSString *straddress = [dict valueForKey:@"address"];
-//            PersonDet.Paddress = straddress;
-//
-//            NSString *strgender = [dict valueForKey:@"gender"];
-//            PersonDet.Pgender = strgender;
-//
-//            [self.arrPerson addObject:PersonDet];
-//        }
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            [self->PersonDataTableView reloadData];
-//        });
+        self.PersonData = [responseObject valueForKey:@"contacts"];
+
+        for (NSDictionary *dict in _PersonData)
+        {
+            PersonDetail *PersonDet = [[PersonDetail alloc]init];
+            
+            NSString *strid = [dict valueForKey:@"id"];
+            PersonDet.Pid = strid;
+
+            NSString *strname = [dict valueForKey:@"name"];
+            PersonDet.Pname = strname;
+
+            NSString *stremail = [dict valueForKey:@"email"];
+            PersonDet.Pemail= stremail;
+
+            NSString *straddress = [dict valueForKey:@"address"];
+            PersonDet.Paddress = straddress;
+
+            NSString *strgender = [dict valueForKey:@"gender"];
+            PersonDet.Pgender = strgender;
+
+            [self.arrPerson addObject:PersonDet];
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self->PersonDataTableView reloadData];
+        });
 
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
