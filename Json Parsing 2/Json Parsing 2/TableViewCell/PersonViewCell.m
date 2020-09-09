@@ -21,7 +21,7 @@
         self.Pid = [[UILabel alloc] init];
         self.Pid.textColor = [UIColor blackColor];
         self.Pid.textAlignment = NSTextAlignmentCenter;
-        self.Pid.backgroundColor = [UIColor colorWithRed:241.0/255.0 green:255.0/255.0 blue:228.0/255.0 alpha:1];
+        self.Pid.backgroundColor = [UIColor colorWithRed:255.0/255.0 green:228.0/255.0 blue:238.0/255.0 alpha:1];
         self.Pid.font = [UIFont fontWithName:@"Arial" size:20.0f];
         [Pid setTranslatesAutoresizingMaskIntoConstraints:NO];
         
@@ -40,7 +40,7 @@
         self.Pname = [[UILabel alloc] init];
         self.Pname.textColor = [UIColor blackColor];
         self.Pname.textAlignment = NSTextAlignmentCenter;
-        self.Pname.backgroundColor = [UIColor colorWithRed:241.0/255.0 green:255.0/255.0 blue:228.0/255.0 alpha:1];
+        self.Pname.backgroundColor = [UIColor colorWithRed:255.0/255.0 green:228.0/255.0 blue:238.0/255.0 alpha:1];
         self.Pname.font = [UIFont fontWithName:@"Arial" size:20.0f];
         [Pname setTranslatesAutoresizingMaskIntoConstraints:NO];
         
@@ -58,7 +58,7 @@
         self.Paddress = [[UILabel alloc] init];
         self.Paddress.textColor = [UIColor blackColor];
         self.Paddress.textAlignment = NSTextAlignmentCenter;
-        self.Paddress.backgroundColor = [UIColor colorWithRed:241.0/255.0 green:255.0/255.0 blue:228.0/255.0 alpha:1];
+        self.Paddress.backgroundColor = [UIColor colorWithRed:255.0/255.0 green:228.0/255.0 blue:238.0/255.0 alpha:1];
         self.Paddress.font = [UIFont fontWithName:@"Arial" size:20.0f];
         [Paddress setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self addSubview:self.Paddress];
@@ -75,7 +75,7 @@
         self.Pemail = [[UILabel alloc] init];
         self.Pemail.textColor = [UIColor blackColor];
         self.Pemail.textAlignment = NSTextAlignmentCenter;
-        self.Pemail.backgroundColor = [UIColor colorWithRed:241.0/255.0 green:255.0/255.0 blue:228.0/255.0 alpha:1];
+        self.Pemail.backgroundColor = [UIColor colorWithRed:255.0/255.0 green:228.0/255.0 blue:238.0/255.0 alpha:1];
         self.Pemail.font = [UIFont fontWithName:@"Arial" size:20.0f];
         [Pemail setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self addSubview:self.Pemail];
@@ -92,7 +92,7 @@
         self.Pgender = [[UILabel alloc] init];
         self.Pgender.textColor = [UIColor blackColor];
         self.Pgender.textAlignment = NSTextAlignmentCenter;
-        self.Pgender.backgroundColor = [UIColor colorWithRed:241.0/255.0 green:255.0/255.0 blue:228.0/255.0 alpha:1];
+        self.Pgender.backgroundColor = [UIColor colorWithRed:255.0/255.0 green:228.0/255.0 blue:238.0/255.0 alpha:1];
         self.Pgender.font = [UIFont fontWithName:@"Arial" size:20.0f];
         [Pgender setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self addSubview:self.Pgender];
