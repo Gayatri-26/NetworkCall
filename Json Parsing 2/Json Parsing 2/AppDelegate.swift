@@ -9,21 +9,24 @@
 import UIKit
 import CoreData
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        print("Document Directory: ", FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last ?? "Not found!")
+        
+        var emp : EmployeeDetails = EmployeeDetails()
+        
       window = UIWindow(frame: UIScreen.main.bounds)
       let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        
 
-    let FVC = storyboard.instantiateViewController(withIdentifier:"FirstVC")
-    window?.rootViewController = FVC
-//     let VC = storyboard.instantiateViewController(withIdentifier:"NVC")
-//      window?.rootViewController = VC
+   // let FVC = storyboard.instantiateViewController(withIdentifier:"FirstVC")
+   // window?.rootViewController = FVC
+      let VC = storyboard.instantiateViewController(withIdentifier:"NVC")
+      window?.rootViewController = VC
   //  let SVC = storyboard.instantiateViewController(withIdentifier:"SecondVC")
   //  window?.rootViewController = SVC
 

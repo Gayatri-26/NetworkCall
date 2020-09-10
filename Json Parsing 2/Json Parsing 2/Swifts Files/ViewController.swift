@@ -10,9 +10,10 @@ import UIKit
 
 class ViewController: UIViewController{
 
+    
   let TableView = UITableView()
-
-    var arrdata = [jsonstruct]()
+  var arrdata = [jsonstruct]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,8 +42,13 @@ class ViewController: UIViewController{
             do{
                 if error == nil {
                     self.arrdata = try JSONDecoder().decode([jsonstruct].self, from: data!)
-    
-                        DispatchQueue.main.async {
+                   
+                    
+                         DispatchQueue.main.async {
+                            for a in self.arrdata{
+                    DataBaseHelper.shareInstance.save(object: a)
+                                                   
+                }
                             self.TableView.reloadData()
                         }
                 }
@@ -52,6 +58,7 @@ class ViewController: UIViewController{
             }.resume()
     }
 }
+
 
 extension ViewController : UITableViewDelegate, UITableViewDataSource {
     
@@ -64,8 +71,8 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
     let cell = TableView.dequeueReusableCell(withIdentifier: "Countrycell") as! CountryDetailCell
-        cell.contryName.text = "Name: \(arrdata[indexPath.row].name)"
-        cell.countryCapital.text = "Capital: \(arrdata[indexPath.row].capital)"
+        cell.contryName.text = "Name: \(String(describing: arrdata[indexPath.row].name))"
+        cell.countryCapital.text = "Capital: \(String(describing: arrdata[indexPath.row].capital))"
 
         return cell
     }
@@ -73,10 +80,10 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let detail:DetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "detail")as! DetailViewController
-        detail.stralpha2 = "Alpha2Code:\(arrdata[indexPath.row].alpha2Code)"
-        detail.stralpha3 = "Alpha3Code:\(arrdata[indexPath.row].alpha3Code)"
-        detail.strregion = "Region:\(arrdata[indexPath.row].region)"
-        detail.strsubregion = "SubRegion:\(arrdata[indexPath.row].subregion)"
+        detail.stralpha2 = "Alpha2Code:\(String(describing: arrdata[indexPath.row].alpha2Code))"
+        detail.stralpha3 = "Alpha3Code:\(String(describing: arrdata[indexPath.row].alpha3Code))"
+        detail.strregion = "Region:\(String(describing: arrdata[indexPath.row].region))"
+        detail.strsubregion = "SubRegion:\(String(describing: arrdata[indexPath.row].subregion))"
         
         self.navigationController?.pushViewController(detail, animated: true)
         

@@ -19,6 +19,10 @@
 		04650BCE23FF8D94002C5A80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04650BCC23FF8D94002C5A80 /* LaunchScreen.storyboard */; };
 		04650BD823FF9A80002C5A80 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04650BD723FF9A80002C5A80 /* DetailViewController.swift */; };
 		048ADB732501803200FAA28D /* PersonDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 048ADB722501803200FAA28D /* PersonDetail.m */; };
+		04A0BC732508BBBD002ED3E5 /* Countries+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A0BC712508BBBD002ED3E5 /* Countries+CoreDataClass.swift */; };
+		04A0BC742508BBBD002ED3E5 /* Countries+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A0BC722508BBBD002ED3E5 /* Countries+CoreDataProperties.swift */; };
+		04A0BC772508BCA3002ED3E5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A0BC762508BCA3002ED3E5 /* CoreData.framework */; };
+		04A0BC792508BEBA002ED3E5 /* DataBaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A0BC782508BEBA002ED3E5 /* DataBaseHelper.swift */; };
 		04A140C024F7707900570C52 /* FirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A140BF24F7707900570C52 /* FirstVC.m */; };
 		04A140C324F770C300570C52 /* EmployeeDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A140C224F770C300570C52 /* EmployeeDetailsVC.m */; };
 		04A140C924F7713100570C52 /* EmployeeDetailsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A140C824F7713100570C52 /* EmployeeDetailsCell.m */; };
@@ -44,6 +48,10 @@
 		04650BD723FF9A80002C5A80 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		048ADB712501803200FAA28D /* PersonDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonDetail.h; sourceTree = "<group>"; };
 		048ADB722501803200FAA28D /* PersonDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonDetail.m; sourceTree = "<group>"; };
+		04A0BC712508BBBD002ED3E5 /* Countries+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Countries+CoreDataClass.swift"; sourceTree = "<group>"; };
+		04A0BC722508BBBD002ED3E5 /* Countries+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Countries+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		04A0BC762508BCA3002ED3E5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		04A0BC782508BEBA002ED3E5 /* DataBaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseHelper.swift; sourceTree = "<group>"; };
 		04A140BD24F7707900570C52 /* Json Parsing 2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Json Parsing 2-Bridging-Header.h"; sourceTree = "<group>"; };
 		04A140BE24F7707900570C52 /* FirstVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstVC.h; sourceTree = "<group>"; };
 		04A140BF24F7707900570C52 /* FirstVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstVC.m; sourceTree = "<group>"; };
@@ -62,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04A0BC772508BCA3002ED3E5 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +93,7 @@
 			children = (
 				04650BC223FF8D94002C5A80 /* Json Parsing 2 */,
 				04650BC123FF8D94002C5A80 /* Products */,
+				04A0BC752508BCA3002ED3E5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,6 +120,14 @@
 				0433F70B24FF7C9600BE29D7 /* CoredataModel.xcdatamodeld */,
 			);
 			path = "Json Parsing 2";
+			sourceTree = "<group>";
+		};
+		04A0BC752508BCA3002ED3E5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04A0BC762508BCA3002ED3E5 /* CoreData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		04A140BC24F7701C00570C52 /* Objective-c Files */ = {
@@ -142,10 +160,13 @@
 		04A140CB24F7716500570C52 /* Swifts Files */ = {
 			isa = PBXGroup;
 			children = (
+				04A0BC712508BBBD002ED3E5 /* Countries+CoreDataClass.swift */,
+				04A0BC722508BBBD002ED3E5 /* Countries+CoreDataProperties.swift */,
 				04650BD723FF9A80002C5A80 /* DetailViewController.swift */,
 				04650BC523FF8D94002C5A80 /* ViewController.swift */,
 				042619A024FEC10A00AC1C6E /* CountryDetailCell.swift */,
 				04359A6A23FFB54300670AA5 /* JSONModel.swift */,
+				04A0BC782508BEBA002ED3E5 /* DataBaseHelper.swift */,
 			);
 			path = "Swifts Files";
 			sourceTree = "<group>";
@@ -223,12 +244,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04A0BC792508BEBA002ED3E5 /* DataBaseHelper.swift in Sources */,
 				045C948624F7A02E00CFC20F /* PersonViewController.m in Sources */,
 				04359A6B23FFB54300670AA5 /* JSONModel.swift in Sources */,
 				04A140C024F7707900570C52 /* FirstVC.m in Sources */,
 				04A140C324F770C300570C52 /* EmployeeDetailsVC.m in Sources */,
+				04A0BC742508BBBD002ED3E5 /* Countries+CoreDataProperties.swift in Sources */,
 				04C35A4524F792B4002D72D4 /* PersonViewCell.m in Sources */,
 				04B204FA24F8C5D9004E7482 /* EmployeeDetails.m in Sources */,
+				04A0BC732508BBBD002ED3E5 /* Countries+CoreDataClass.swift in Sources */,
 				042619A224FEC10A00AC1C6E /* CountryDetailCell.swift in Sources */,
 				04650BC623FF8D94002C5A80 /* ViewController.swift in Sources */,
 				04650BC423FF8D94002C5A80 /* AppDelegate.swift in Sources */,
