@@ -61,8 +61,9 @@
             NSLog(@"Response Data: %@", maindic);
             
             _arrEmployee = [EmployeeDetails modelArrayFromDict:maindic];
-
+            
                 [self->EmployeeDataTableView reloadData];
+
         }
     };
      [EmployeeDetailsVC executequery:_mainstr strpremeter:nil withblock:EmployeeListCallback];

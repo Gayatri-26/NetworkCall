@@ -14,9 +14,9 @@
 @synthesize EmpId, Name, Salary, Age;
 
 +(NSMutableArray < EmployeeDetails *> *)modelArrayFromDict:(NSDictionary *) d {
-    
+
    NSMutableArray *emparr = [[NSMutableArray alloc]init];
-    
+
     if (d != nil){
         NSDictionary *dict1 = [d objectForKey:@"data"];
         for(NSDictionary *dict in dict1){
@@ -31,6 +31,7 @@
             EmpDetails.Age = strage;
             
 //            NSLog(@"employee: %@ %@", strid,strage);
+
             [emparr addObject:EmpDetails];
         }
     }
