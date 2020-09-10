@@ -10,8 +10,6 @@
 
 @implementation EmployeeDetailsCell
 
-//@synthesize _LblId, LblName, LblAge, LblSalary;
-
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -34,7 +32,6 @@
         NSLayoutConstraint *rightId = [NSLayoutConstraint constraintWithItem:_LblId attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight multiplier:1 constant:-20];
 
         [self addConstraints:@[leftId, topId, heightId, rightId]];
-
 
         //LblName
         self.LblName = [[UILabel alloc] init];

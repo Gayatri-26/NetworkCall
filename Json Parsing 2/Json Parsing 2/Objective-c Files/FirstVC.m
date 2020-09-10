@@ -25,8 +25,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self requestdata];
-//     self.view.backgroundColor = UIColor.blueColor;
+    
+    NSOperationQueue *queue = [[NSOperationQueue alloc]init];
+    [queue addOperationWithBlock:^{
+         [self requestdata];
+    }];
+
     self.arrEmployee = [[NSMutableArray alloc]init];
     
     EmployeeDataTableView = [[UITableView alloc]init];
@@ -47,27 +51,19 @@
     
     EmployeeDataTableView.dataSource = self;
     EmployeeDataTableView.delegate = self;
-    
 }
 
 -(void)requestdata
 {
     _mainstr = [NSString stringWithFormat:@"http://dummy.restapiexample.com/api/v1/employees"];
-    
-    //Function Pointers
-    //blocks
-    //callbacks
-    //closures
-    //returnType(^<blockName>)(parameters)
-    
+  
     void(^EmployeeListCallback)(NSData *data, NSError *error) = ^(NSData *dbdata, NSError *error) {
         NSLog(@"Data: %@", dbdata);
         if (dbdata!=nil)
         {
             NSDictionary *maindic = [NSJSONSerialization JSONObjectWithData:dbdata options:NSJSONReadingAllowFragments error:nil];
             NSLog(@"Response Data: %@", maindic);
-            
-            
+    
             _arrEmployee = [[NSMutableArray alloc]init];
             
             NSDictionary *dict1 = [maindic objectForKey:@"data"];
@@ -88,58 +84,19 @@
                 
                 [self.arrEmployee addObject:EmpDetails];
             }
+           
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self->EmployeeDataTableView reloadData];
             });
-    
         }
     };
-    //    dispatch_queue_t gayatri = dispatch_queue_create("download.data", NULL);
-    dispatch_queue_t gayatri = dispatch_get_main_queue();
-    
-    dispatch_async(gayatri, ^{
+    dispatch_queue_t downloadData = dispatch_get_main_queue();
+  
+    dispatch_async(downloadData, ^{
         NSData *Ddata = [NSData dataWithContentsOfURL:[NSURL URLWithString:_mainstr]];
         EmployeeListCallback(Ddata,nil);
     });
-    //    NSData *Ddata = [NSData dataWithContentsOfURL:[NSURL URLWithString:_mainstr]];
-    //    EmployeeListCallback(Ddata,nil);
     
-    //    [EmployeeDetailsVC executequery:_mainstr strpremeter:nil withblock:EmployeeListCallback];
-    //    [EmployeeDetailsVC executequery:_mainstr strpremeter:nil withblock:^(NSData * dbdata, NSError *error) {
-    //        NSLog(@"Data: %@", dbdata);
-    //        if (dbdata!=nil)
-    //        {
-    //            NSDictionary *maindic = [NSJSONSerialization JSONObjectWithData:dbdata options:NSJSONReadingAllowFragments error:nil];
-    //            NSLog(@"Response Data: %@", maindic);
-    //
-    //
-    //            _arrEmployee = [[NSMutableArray alloc]init];
-    //
-    //            NSDictionary *dict1 = [maindic objectForKey:@"data"];
-    //            for(NSDictionary *dict in dict1){
-    //
-    //               EmployeeDetails *EmpDetails = [[EmployeeDetails alloc]init];
-    //                NSString *strid = [dict objectForKey:@"id"];
-    //                EmpDetails.EmpId = strid;
-    //
-    //                NSString *strname = [dict objectForKey:@"employee_name"];
-    //                EmpDetails.Name = strname;
-    //
-    //                NSString *strsalary = [dict objectForKey:@"employee_salary"];
-    //                EmpDetails.Salary = strsalary;
-    //
-    //                 NSString *strage = [dict objectForKey:@"employee_age"];
-    //                EmpDetails.Age = strage;
-    //                [self.arrEmployee addObject:EmpDetails];
-    //            }
-    //            [self->EmployeeDataTableView reloadData];
-    //        }
-    //    }];
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)theTableView
-{
-    return 1;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -156,10 +113,11 @@
         
         cell = [[EmployeeDetailsCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ECell"];
     }
-    cell.LblId.text = [self.arrEmployee[indexPath.row]EmpId];
-    cell.LblName.text = [self.arrEmployee[indexPath.row]Name];
-    cell.LblSalary.text = [self.arrEmployee[indexPath.row]Salary];
-    cell.LblAge.text = [self.arrEmployee[indexPath.row]Age];
+    EmployeeDetails *empDetails = _arrEmployee[indexPath.row];
+    cell.LblId.text = [empDetails EmpId];
+    cell.LblName.text = [empDetails Name];
+    cell.LblSalary.text = [empDetails Salary];
+    cell.LblAge.text = [empDetails Age];
     
     return cell;
 }
@@ -170,7 +128,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-
 }
 
 @end
