@@ -17,7 +17,6 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
-        
         //LblId
         self.LblId = [[UILabel alloc] init];
         self.LblId.textColor = [UIColor blackColor];
@@ -35,7 +34,6 @@
         NSLayoutConstraint *rightId = [NSLayoutConstraint constraintWithItem:_LblId attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight multiplier:1 constant:-20];
 
         [self addConstraints:@[leftId, topId, heightId, rightId]];
-
 
         //LblName
         self.LblName = [[UILabel alloc] init];
@@ -92,11 +90,9 @@
     return self;
 }
 
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
     
-    // Configure the view for the selected state
 }
 
 @end

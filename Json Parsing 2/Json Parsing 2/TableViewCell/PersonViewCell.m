@@ -10,7 +10,7 @@
 
     @implementation PersonViewCell
 
-    @synthesize Pid, Pname, Pemail, Pgender, Paddress, view;
+    @synthesize Pid, Pname, Pemail, Pgender, Paddress;
 
     - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
     {
@@ -45,21 +45,15 @@
             self.Paddress.font = [UIFont fontWithName:@"Arial" size:20.0f];
             [self addSubview:self.Paddress];
             
-            self.Pgender = [[UILabel alloc] initWithFrame:CGRectMake(10, 115, 395, 25)];
+            self.Pgender = [[UILabel alloc] initWithFrame:CGRectMake(10, 145, 395, 25)];
             self.Pgender.textColor = [UIColor blackColor];
             self.Pgender.textAlignment = NSTextAlignmentCenter;
             self.Pgender.backgroundColor = [UIColor lightGrayColor];
             self.Pgender.font = [UIFont fontWithName:@"Arial" size:20.0f];
             [self addSubview:self.Pgender];
-            
-            
-            self.view = [[UIView alloc] initWithFrame:CGRectMake(10, 155, 395, 1)];
-            self.view.backgroundColor = [UIColor blackColor];
-            [self addSubview:self.view];
         }
        
         return self;
-
     }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

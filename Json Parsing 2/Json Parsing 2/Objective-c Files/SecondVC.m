@@ -12,9 +12,8 @@
 
 @interface SecondVC ()
 
-    @property (strong,nonatomic) NSMutableArray<PersonDetail *> *arrPerson;
-    @property (nonatomic,strong) NSString *mainstr;
-    
+@property (strong,nonatomic) NSMutableArray<PersonDetail *> *arrPerson;
+@property (nonatomic,strong) NSString *mainstr;
 
 @end
 
@@ -24,35 +23,34 @@
 }
 
 - (void)viewDidLoad {
-[super viewDidLoad];
-[self requestdata];
+    [super viewDidLoad];
+    [self requestdata];
     
-self.arrPerson = [[NSMutableArray alloc]init];
-
-PersonDataTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-
-[self.view addSubview:PersonDataTableView];
-
-[PersonDataTableView registerClass:[PersonViewCell class] forCellReuseIdentifier:@"pcell"];
-
-PersonDataTableView.dataSource = self;
-PersonDataTableView.delegate = self;
-
+    self.arrPerson = [[NSMutableArray alloc]init];
+    
+    PersonDataTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    
+    [self.view addSubview:PersonDataTableView];
+    
+    [PersonDataTableView registerClass:[PersonViewCell class] forCellReuseIdentifier:@"pcell"];
+    
+    PersonDataTableView.dataSource = self;
+    PersonDataTableView.delegate = self;
+    
 }
 
 -(void)requestdata
 {
     _mainstr = [NSString stringWithFormat:@"https://api.androidhive.info/contacts/"];
-
-   //  [PersonViewController executequery:mainstr strpremeter:nil withblock:^(NSData * dbdata, NSError *error) {
-      void(^PersonListCallback)(NSData *data, NSError *error) = ^(NSData *dbdata, NSError *error) {
-    NSLog(@"Data: %@", dbdata);
+    
+    void(^PersonListCallback)(NSData *data, NSError *error) = ^(NSData *dbdata, NSError *error) {
+        NSLog(@"Data: %@", dbdata);
         if (dbdata!=nil)
         {
             NSDictionary *maindic = [NSJSONSerialization JSONObjectWithData:dbdata options:NSJSONReadingAllowFragments error:nil];
             NSLog(@"Response Data: %@", maindic);
             
-   _arrPerson = [[NSMutableArray alloc]init];
+            _arrPerson = [[NSMutableArray alloc]init];
             
             NSDictionary *dic1 = [maindic objectForKey:@"contacts"];
             for (NSDictionary *dict in dic1)
@@ -63,7 +61,7 @@ PersonDataTableView.delegate = self;
                 
                 NSString *strname = [dict objectForKey:@"name"];
                 PersonDet.Pname = strname;
-                              
+                
                 NSString *stremail = [dict objectForKey:@"email"];
                 PersonDet.Pemail= stremail;
                 
@@ -80,10 +78,9 @@ PersonDataTableView.delegate = self;
             });
         }
     };
-    //    dispatch_queue_t gayatri = dispatch_queue_create("download.data", NULL);
-    dispatch_queue_t sonali = dispatch_get_main_queue();
+    dispatch_queue_t dispdata = dispatch_get_main_queue();
     
-    dispatch_async(sonali, ^{
+    dispatch_async(dispdata, ^{
         NSData *Ddata = [NSData dataWithContentsOfURL:[NSURL URLWithString:_mainstr]];
         PersonListCallback(Ddata, nil);
     });
@@ -92,33 +89,34 @@ PersonDataTableView.delegate = self;
 {
     return _arrPerson.count;
 }
-    
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     PersonViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pcell"];
     if (cell == nil) {
         cell = [[PersonViewCell  alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"pcell"];
     }
-        cell.Pid.text = [self.arrPerson[indexPath.row]Pid];
-        cell.Pname.text = [self.arrPerson[indexPath.row]Pname];
-        cell.Pemail.text = [self.arrPerson[indexPath.row]Pemail];
-        cell.Paddress.text = [self.arrPerson[indexPath.row]Paddress];
-        cell.Pgender.text = [self.arrPerson[indexPath.row]Pgender];
+    PersonDetail *pdetails = _arrPerson[indexPath.row];
+    cell.Pid.text = [pdetails Pid];
+    cell.Pname.text = [pdetails Pname];
+    cell.Pemail.text = [pdetails Pemail];
+    cell.Paddress.text = [pdetails Paddress];
+    cell.Pgender.text = [pdetails Pgender];
     
-        return cell;
-    }
+    return cell;
+}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 250;
+    return 180;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-
+    
 }
 
 @end
-    
-    
-    
+
+
+

@@ -15,5 +15,4 @@
 @property (strong, nonatomic)  UILabel *LblSalary;
 @property (strong, nonatomic)  UILabel *LblAge;
 
-
 @end

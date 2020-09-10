@@ -14,5 +14,6 @@
 @property (nonatomic,strong) NSString *Name;
 @property (nonatomic,strong) NSString *Salary;
 @property (nonatomic,strong) NSString *Age;
++(EmployeeDetails *)modelArrayFromDict:(NSDictionary *) d;
 
 @end

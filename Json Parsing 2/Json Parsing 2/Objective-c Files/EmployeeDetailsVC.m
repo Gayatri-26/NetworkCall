@@ -8,8 +8,6 @@
 
 @implementation EmployeeDetailsVC
 
-//returnType ^ (parameters) <blockname>
-//(void (^)(NSData *, NSError *))block
 
 +(void)executequery:(NSString *)strurl strpremeter:(NSString *)premeter withblock:(void (^)(NSData *, NSError *))block
 {
