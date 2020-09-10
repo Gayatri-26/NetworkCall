@@ -62,7 +62,11 @@
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     operation.responseSerializer = [AFJSONResponseSerializer serializer];
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+<<<<<<< Updated upstream
         
+=======
+       
+>>>>>>> Stashed changes
         NSLog(@"Response: %@",responseObject);
         [self->PersonDataTableView reloadData];
         
