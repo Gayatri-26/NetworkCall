@@ -29,8 +29,8 @@ class ViewController: UIViewController{
       TableView.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor).isActive = true
       TableView.leadingAnchor.constraint(equalTo:view.leadingAnchor).isActive = true
       TableView.trailingAnchor.constraint(equalTo:view.trailingAnchor).isActive = true
-    TableView.bottomAnchor.constraint(equalTo:view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        //  self.TableView.register(UINib.init(nibName: "CountryDetailCell", bundle: Bundle.main), forCellReuseIdentifier: "Countrycell")
+  TableView.bottomAnchor.constraint(equalTo:view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+      
         getdata()
     }
     
@@ -42,15 +42,15 @@ class ViewController: UIViewController{
             do{
                 if error == nil {
                     self.arrdata = try JSONDecoder().decode([jsonstruct].self, from: data!)
-                   
                     
-                         DispatchQueue.main.async {
-                            for a in self.arrdata{
-                    DataBaseHelper.shareInstance.save(object: a)
-                                                   
-                }
-                            self.TableView.reloadData()
-                        }
+                    DispatchQueue.main.async {
+                   
+                      for arr in self.arrdata
+                      {
+                          DataBaseHelper.shareInstance.save(object: arr)
+                      }
+                        self.TableView.reloadData()
+                    }
                 }
             }catch{
                 print("Error in Json data")
@@ -58,8 +58,6 @@ class ViewController: UIViewController{
             }.resume()
     }
 }
-
-
 extension ViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

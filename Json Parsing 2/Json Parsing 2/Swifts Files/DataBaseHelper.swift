@@ -24,17 +24,8 @@ class DataBaseHelper{
         do{
             try context?.save()
         }catch{
-            print("Error in saviung data")
-            
-//            func save(object: MatchesDataModel){
-//            let entityName = NSEntityDescription.insertNewObject(forEntityName: "Match", into: context) as! Match
-//            entityName.matchID = object.id
-//            entityName.location = object.location
-//            do{
-//                try context.save()
-//            }catch{
-//                self.delegate?.didFailWithError(self, error: "Can not save data")
-//            }
-        }
+            print("Error in saving data")
+  
     }
+  }
 }

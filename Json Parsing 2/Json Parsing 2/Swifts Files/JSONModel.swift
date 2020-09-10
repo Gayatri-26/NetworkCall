@@ -9,37 +9,47 @@
 import Foundation
 import UIKit
 
-struct jsonstruct :Codable{
+ struct jsonstruct :Codable{
     
-    let name:String?
-    let capital:String?
-    let alpha3Code:String?
-    let alpha2Code:String?
-    let region:String?
-    let subregion:String?
-    
-    enum CodingKeys: String, CodingKey {
+    let name: String
+    let capital: String
+    let alpha3Code: String
+    let alpha2Code: String
+    let region: String
+    let subregion: String
 
-        case name = "name"
-        case alpha2Code = "alpha2Code"
-        case alpha3Code = "alpha3Code"
-        case capital = "capital"
-        case region = "region"
-        case subregion = "subregion"
-
-}
-init(from decoder: Decoder) throws {
-
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-
-        name = try values.decodeIfPresent(String.self, forKey: .name)
-        alpha2Code = try values.decodeIfPresent(String.self, forKey: .alpha2Code)
-        alpha3Code = try values.decodeIfPresent(String.self, forKey: .alpha3Code)
-        capital = try values.decodeIfPresent(String.self, forKey: .capital)
-        region = try values.decodeIfPresent(String.self, forKey: .region)
-        subregion = try values.decodeIfPresent(String.self, forKey: .subregion)
-
+    init(name: String, capital: String ,alpha3Code:String, alpha2Code:String, region:String, subregion:String) {
+        self.name = name
+        self.capital = capital
+        self.alpha2Code = alpha2Code
+        self.alpha3Code = alpha3Code
+        self.region = region
+        self.subregion = subregion
+        }
     }
 
+//    enum CodingKeys: String, CodingKey {
+//
+//        case name = "name"
+//        case alpha2Code = "alpha2Code"
+//        case alpha3Code = "alpha3Code"
+//        case capital = "capital"
+//        case region = "region"
+//        case subregion = "subregion"
+//
+//}
+//init(from decoder: Decoder) throws {
+//
+//        let values = try decoder.container(keyedBy: CodingKeys.self)
+//
+//        name = try values.decodeIfPresent(String.self, forKey: .name)
+//        alpha2Code = try values.decodeIfPresent(String.self, forKey: .alpha2Code)
+//        alpha3Code = try values.decodeIfPresent(String.self, forKey: .alpha3Code)
+//        capital = try values.decodeIfPresent(String.self, forKey: .capital)
+//        region = try values.decodeIfPresent(String.self, forKey: .region)
+//        subregion = try values.decodeIfPresent(String.self, forKey: .subregion)
+//
+//    }
 
-}
+
+

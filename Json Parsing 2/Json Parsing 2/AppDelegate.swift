@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         print("Document Directory: ", FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last ?? "Not found!")
         
-        var emp : EmployeeDetails = EmployeeDetails()
+      //  var emp : EmployeeDetails = EmployeeDetails()
+      //  var per : PersonDetail = PersonDetail()
         
       window = UIWindow(frame: UIScreen.main.bounds)
       let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
