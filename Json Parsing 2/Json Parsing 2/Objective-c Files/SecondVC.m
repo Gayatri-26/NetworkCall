@@ -57,18 +57,11 @@
     NSString *string = [NSString stringWithFormat:@"https://api.androidhive.info/contacts/", BaseURLString];
     NSURL *url = [NSURL URLWithString:string];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    
-    
+
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     operation.responseSerializer = [AFJSONResponseSerializer serializer];
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-<<<<<<< Updated upstream
-        
-=======
-       
->>>>>>> Stashed changes
         NSLog(@"Response: %@",responseObject);
-        [self->PersonDataTableView reloadData];
         
         self.PersonData = [responseObject valueForKey:@"contacts"];
         
@@ -96,7 +89,7 @@
         [self->PersonDataTableView reloadData];
         
     }
-                                     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                          NSLog(@"Error: %@",error);
                                      }];
     

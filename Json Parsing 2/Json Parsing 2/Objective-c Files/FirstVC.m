@@ -7,14 +7,16 @@
 //
 
 #import "FirstVC.h"
-#import "EmployeeDetailsVC.h"
 #import "EmployeeDetailsCell.h"
 #import "EmployeeDetails.h"
+#import "AFNetworking.h"
+#import "AFHTTPRequestOperation.h"
 
 @interface FirstVC ()
 
 @property (strong,nonatomic) NSMutableArray<EmployeeDetails *> *arrEmployee;
 @property (nonatomic,strong) NSString *mainstr;
+@property (nonatomic,strong) NSDictionary *EmployeeData;
 
 @end
 
@@ -25,14 +27,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self requestdata];
-     self.view.backgroundColor = UIColor.blueColor;
+    [self afnetworkingcode];
     self.arrEmployee = [[NSMutableArray alloc]init];
     
     EmployeeDataTableView = [[UITableView alloc]init];
     [EmployeeDataTableView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.view addSubview:EmployeeDataTableView];
-    
     
     NSLayoutConstraint *left = [NSLayoutConstraint constraintWithItem:EmployeeDataTableView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1 constant:0];
     NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:EmployeeDataTableView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:0];
@@ -50,96 +50,48 @@
     
 }
 
--(void)requestdata
-{
-    _mainstr = [NSString stringWithFormat:@"http://dummy.restapiexample.com/api/v1/employees"];
+-(void)afnetworkingcode{
     
-    //Function Pointers
-    //blocks
-    //callbacks
-    //closures
-    //returnType(^<blockName>)(parameters)
+    //AFNetworking
+    static NSString * const BaseURLString = @"http://dummy.restapiexample.com/api/v1/employees";
     
-    void(^EmployeeListCallback)(NSData *data, NSError *error) = ^(NSData *dbdata, NSError *error) {
-        NSLog(@"Data: %@", dbdata);
-        if (dbdata!=nil)
+    NSString *string = [NSString stringWithFormat:@"http://dummy.restapiexample.com/api/v1/employees", BaseURLString];
+    NSURL *url = [NSURL URLWithString:string];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    operation.responseSerializer = [AFJSONResponseSerializer serializer];
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Response: %@",responseObject);
+      
+        self.EmployeeData = [responseObject valueForKey:@"data"];
+        
+        for (NSDictionary *dict in _EmployeeData)
         {
-            NSDictionary *maindic = [NSJSONSerialization JSONObjectWithData:dbdata options:NSJSONReadingAllowFragments error:nil];
-            NSLog(@"Response Data: %@", maindic);
+            EmployeeDetails *EmpDetails = [[EmployeeDetails alloc]init];
             
+            NSString *strid = [dict valueForKey:@"id"];
+            EmpDetails.EmpId = strid;
             
-            _arrEmployee = [[NSMutableArray alloc]init];
+            NSString *strname = [dict valueForKey:@"employee_name"];
+            EmpDetails.Name = strname;
             
-            NSDictionary *dict1 = [maindic objectForKey:@"data"];
-            for(NSDictionary *dict in dict1){
-                EmployeeDetails *EmpDetails = [[EmployeeDetails alloc]init];
-                
-                NSString *strid = [dict objectForKey:@"id"];
-                EmpDetails.EmpId = strid;
-                
-                NSString *strname = [dict objectForKey:@"employee_name"];
-                EmpDetails.Name = strname;
-                
-                NSString *strsalary = [dict objectForKey:@"employee_salary"];
-                EmpDetails.Salary = strsalary;
-                
-                NSString *strage = [dict objectForKey:@"employee_age"];
-                EmpDetails.Age = strage;
-                
-                [self.arrEmployee addObject:EmpDetails];
-            }
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self->EmployeeDataTableView reloadData];
-            });
-    
+            NSString *strsalary = [dict valueForKey:@"employee_salary"];
+            EmpDetails.Salary = strsalary;
+            
+            NSString *strage = [dict valueForKey:@"employee_age"];
+            EmpDetails.Age = strage;
+            
+            [self.arrEmployee addObject:EmpDetails];
         }
-    };
-    //    dispatch_queue_t gayatri = dispatch_queue_create("download.data", NULL);
-    dispatch_queue_t gayatri = dispatch_get_main_queue();
+        [self->EmployeeDataTableView reloadData];
+        
+    }
+    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                         NSLog(@"Error: %@",error);
+                                     }];
     
-    dispatch_async(gayatri, ^{
-        NSData *Ddata = [NSData dataWithContentsOfURL:[NSURL URLWithString:_mainstr]];
-        EmployeeListCallback(Ddata,nil);
-    });
-    //    NSData *Ddata = [NSData dataWithContentsOfURL:[NSURL URLWithString:_mainstr]];
-    //    EmployeeListCallback(Ddata,nil);
-    
-    //    [EmployeeDetailsVC executequery:_mainstr strpremeter:nil withblock:EmployeeListCallback];
-    //    [EmployeeDetailsVC executequery:_mainstr strpremeter:nil withblock:^(NSData * dbdata, NSError *error) {
-    //        NSLog(@"Data: %@", dbdata);
-    //        if (dbdata!=nil)
-    //        {
-    //            NSDictionary *maindic = [NSJSONSerialization JSONObjectWithData:dbdata options:NSJSONReadingAllowFragments error:nil];
-    //            NSLog(@"Response Data: %@", maindic);
-    //
-    //
-    //            _arrEmployee = [[NSMutableArray alloc]init];
-    //
-    //            NSDictionary *dict1 = [maindic objectForKey:@"data"];
-    //            for(NSDictionary *dict in dict1){
-    //
-    //               EmployeeDetails *EmpDetails = [[EmployeeDetails alloc]init];
-    //                NSString *strid = [dict objectForKey:@"id"];
-    //                EmpDetails.EmpId = strid;
-    //
-    //                NSString *strname = [dict objectForKey:@"employee_name"];
-    //                EmpDetails.Name = strname;
-    //
-    //                NSString *strsalary = [dict objectForKey:@"employee_salary"];
-    //                EmpDetails.Salary = strsalary;
-    //
-    //                 NSString *strage = [dict objectForKey:@"employee_age"];
-    //                EmpDetails.Age = strage;
-    //                [self.arrEmployee addObject:EmpDetails];
-    //            }
-    //            [self->EmployeeDataTableView reloadData];
-    //        }
-    //    }];
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)theTableView
-{
-    return 1;
+    [operation start];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -156,10 +108,11 @@
         
         cell = [[EmployeeDetailsCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ECell"];
     }
-    cell.LblId.text = [self.arrEmployee[indexPath.row]EmpId];
-    cell.LblName.text = [self.arrEmployee[indexPath.row]Name];
-    cell.LblSalary.text = [self.arrEmployee[indexPath.row]Salary];
-    cell.LblAge.text = [self.arrEmployee[indexPath.row]Age];
+    EmployeeDetails *empDetails = _arrEmployee[indexPath.row];
+    cell.LblId.text = [empDetails EmpId];
+    cell.LblName.text = [empDetails Name];
+    cell.LblSalary.text = [empDetails Salary];
+    cell.LblAge.text = [empDetails Age];
     
     return cell;
 }

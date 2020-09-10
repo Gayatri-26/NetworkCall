@@ -28,7 +28,6 @@
 		0497DBE025062C38002F8BE8 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0497DBCF25062C38002F8BE8 /* AFNetworkReachabilityManager.m */; };
 		0497DBE125062C38002F8BE8 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0497DBD025062C38002F8BE8 /* AFSecurityPolicy.m */; };
 		04A140C024F7707900570C52 /* FirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A140BF24F7707900570C52 /* FirstVC.m */; };
-		04A140C324F770C300570C52 /* EmployeeDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A140C224F770C300570C52 /* EmployeeDetailsVC.m */; };
 		04A140C924F7713100570C52 /* EmployeeDetailsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A140C824F7713100570C52 /* EmployeeDetailsCell.m */; };
 		04B204FA24F8C5D9004E7482 /* EmployeeDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B204F924F8C5D9004E7482 /* EmployeeDetails.m */; };
 		04C35A4524F792B4002D72D4 /* PersonViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C35A4424F792B4002D72D4 /* PersonViewCell.m */; };
@@ -87,8 +86,6 @@
 		0497DBD125062C38002F8BE8 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		04A140BD24F7707900570C52 /* Json Parsing 2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Json Parsing 2-Bridging-Header.h"; sourceTree = "<group>"; };
 		04A140BF24F7707900570C52 /* FirstVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstVC.m; sourceTree = "<group>"; };
-		04A140C124F770C300570C52 /* EmployeeDetailsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmployeeDetailsVC.h; sourceTree = "<group>"; };
-		04A140C224F770C300570C52 /* EmployeeDetailsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmployeeDetailsVC.m; sourceTree = "<group>"; };
 		04A140C724F7713100570C52 /* EmployeeDetailsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmployeeDetailsCell.h; sourceTree = "<group>"; };
 		04A140C824F7713100570C52 /* EmployeeDetailsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmployeeDetailsCell.m; sourceTree = "<group>"; };
 		04B204F824F8C5D9004E7482 /* EmployeeDetails.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmployeeDetails.h; sourceTree = "<group>"; };
@@ -205,11 +202,9 @@
 		04A140BC24F7701C00570C52 /* Objective-c Files */ = {
 			isa = PBXGroup;
 			children = (
-				04A140BF24F7707900570C52 /* FirstVC.m */,
 				045E407D250741FD008EE34E /* FirstVC.h */,
+				04A140BF24F7707900570C52 /* FirstVC.m */,
 				04A140BD24F7707900570C52 /* Json Parsing 2-Bridging-Header.h */,
-				04A140C124F770C300570C52 /* EmployeeDetailsVC.h */,
-				04A140C224F770C300570C52 /* EmployeeDetailsVC.m */,
 				045C948124F799BD00CFC20F /* SecondVC.h */,
 				045C948224F799BD00CFC20F /* SecondVC.m */,
 			);
@@ -314,7 +309,6 @@
 				04359A6B23FFB54300670AA5 /* JSONModel.swift in Sources */,
 				04A140C024F7707900570C52 /* FirstVC.m in Sources */,
 				0497DBDB25062C38002F8BE8 /* AFURLConnectionOperation.m in Sources */,
-				04A140C324F770C300570C52 /* EmployeeDetailsVC.m in Sources */,
 				04C35A4524F792B4002D72D4 /* PersonViewCell.m in Sources */,
 				0497DBDF25062C38002F8BE8 /* AFHTTPRequestOperation.m in Sources */,
 				0497DBDD25062C38002F8BE8 /* AFHTTPRequestOperationManager.m in Sources */,
