@@ -13,8 +13,10 @@
 
 @synthesize EmpId, Name, Salary, Age;
 
-+(EmployeeDetails *)modelArrayFromDict:(NSDictionary *) d {
-    d = [[NSDictionary alloc]initWithObjectsAndKeys:@"id",@"employee_name",@"employee_salary",@"employee_age", nil];
++(NSMutableArray < EmployeeDetails *> *)modelArrayFromDict:(NSDictionary *) d {
+    
+   NSMutableArray *emparr = [[NSMutableArray alloc]init];
+    
     if (d != nil){
         NSDictionary *dict1 = [d objectForKey:@"data"];
         for(NSDictionary *dict in dict1){
@@ -28,10 +30,11 @@
             NSString *strage = [dict objectForKey:@"employee_age"];
             EmpDetails.Age = strage;
             
-            NSLog(@"employee: %@ %@", strid,strage);
+//            NSLog(@"employee: %@ %@", strid,strage);
+            [emparr addObject:EmpDetails];
         }
     }
-    return d;
+    return emparr;
 }
 @end
 

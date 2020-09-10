@@ -18,6 +18,8 @@
 @property (nonatomic,strong) NSString *Paddress;
 @property (nonatomic,strong) NSString *Pgender;
 
++(NSMutableArray < PersonDetail * > *)modelArrayFromDict:(NSDictionary *) d;
+
 @end
 
 //NS_ASSUME_NONNULL_END

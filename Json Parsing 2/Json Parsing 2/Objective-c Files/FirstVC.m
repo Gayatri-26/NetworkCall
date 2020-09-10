@@ -60,33 +60,12 @@
             NSDictionary *maindic = [NSJSONSerialization JSONObjectWithData:dbdata options:NSJSONReadingAllowFragments error:nil];
             NSLog(@"Response Data: %@", maindic);
             
-            _arrEmployee = [[NSMutableArray alloc]init];
-            NSDictionary *dict1 = [maindic objectForKey:@"data"];
-            for(NSDictionary *dict in dict1){
-                EmployeeDetails *EmpDetails = [[EmployeeDetails alloc]init];
+            _arrEmployee = [EmployeeDetails modelArrayFromDict:maindic];
 
-                NSString *strid = [dict objectForKey:@"id"];
-                EmpDetails.EmpId = strid;
-
-                NSString *strname = [dict objectForKey:@"employee_name"];
-                EmpDetails.Name = strname;
-
-                NSString *strsalary = [dict objectForKey:@"employee_salary"];
-                EmpDetails.Salary = strsalary;
-
-                NSString *strage = [dict objectForKey:@"employee_age"];
-                EmpDetails.Age = strage;
-
-                [self.arrEmployee addObject:EmpDetails];
-            }
                 [self->EmployeeDataTableView reloadData];
         }
     };
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        NSData *Ddata = [NSData dataWithContentsOfURL:[NSURL URLWithString:_mainstr]];
-        EmployeeListCallback(Ddata,nil);
-    });
+     [EmployeeDetailsVC executequery:_mainstr strpremeter:nil withblock:EmployeeListCallback];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

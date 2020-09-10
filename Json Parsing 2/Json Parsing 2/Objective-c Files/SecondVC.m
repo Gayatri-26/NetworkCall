@@ -50,40 +50,14 @@
             NSDictionary *maindic = [NSJSONSerialization JSONObjectWithData:dbdata options:NSJSONReadingAllowFragments error:nil];
             NSLog(@"Response Data: %@", maindic);
             
-            _arrPerson = [[NSMutableArray alloc]init];
+            _arrPerson = [PersonDetail modelArrayFromDict:maindic];
             
-            NSDictionary *dic1 = [maindic objectForKey:@"contacts"];
-            for (NSDictionary *dict in dic1)
-            {
-                PersonDetail *PersonDet = [[PersonDetail alloc]init];
-                NSString *strid = [dict objectForKey:@"id"];
-                PersonDet.Pid = strid;
-                
-                NSString *strname = [dict objectForKey:@"name"];
-                PersonDet.Pname = strname;
-                
-                NSString *stremail = [dict objectForKey:@"email"];
-                PersonDet.Pemail= stremail;
-                
-                NSString *straddress = [dict objectForKey:@"address"];
-                PersonDet.Paddress = straddress;
-                
-                NSString *strgender = [dict objectForKey:@"gender"];
-                PersonDet.Pgender = strgender;
-                
-                [self.arrPerson addObject:PersonDet];
-            }
-            dispatch_async(dispatch_get_main_queue(), ^{
                 [self->PersonDataTableView reloadData];
-            });
+           
         }
     };
-    dispatch_queue_t dispdata = dispatch_get_main_queue();
-    
-    dispatch_async(dispdata, ^{
-        NSData *Ddata = [NSData dataWithContentsOfURL:[NSURL URLWithString:_mainstr]];
-        PersonListCallback(Ddata, nil);
-    });
+
+    [PersonViewController executequery:_mainstr strpremeter:nil withblock:PersonListCallback];
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
