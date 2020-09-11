@@ -12,7 +12,7 @@ import UIKit
 
 class DataBaseHelper{
     
-   static var shareInstance = DataBaseHelper()
+    static var shareInstance = DataBaseHelper()
     let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
     
     func save(object: jsonstruct) {
@@ -25,7 +25,7 @@ class DataBaseHelper{
             try context?.save()
         }catch{
             print("Error in saving data")
-  
+            
+        }
     }
-  }
 }

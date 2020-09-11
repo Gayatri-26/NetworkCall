@@ -12,5 +12,5 @@ import CoreData
 
 @objc(Countries)
 public class Countries: NSManagedObject {
-
+    
 }

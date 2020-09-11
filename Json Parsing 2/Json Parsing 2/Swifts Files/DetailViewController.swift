@@ -9,7 +9,7 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    
     @IBOutlet weak var alpha2: UILabel!
     @IBOutlet weak var alpha3: UILabel!
     @IBOutlet weak var region: UILabel!
@@ -27,7 +27,7 @@ class DetailViewController: UIViewController {
         alpha3.text = stralpha3
         region.text = strregion
         subregion.text = strsubregion
-    
+        
         
     }
 }

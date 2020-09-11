@@ -18,7 +18,6 @@ class CountryDetailCell: UITableViewCell {
             
             contryName.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
             contryName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            //     contryName.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20),
             contryName.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             contryName.heightAnchor.constraint(equalToConstant: 50)
             ])

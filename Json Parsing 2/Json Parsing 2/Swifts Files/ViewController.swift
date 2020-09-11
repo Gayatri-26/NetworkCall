@@ -9,10 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController{
-
     
-  let TableView = UITableView()
-  var arrdata = [jsonstruct]()
+    
+    let TableView = UITableView()
+    var arrdata = [jsonstruct]()
     
     
     override func viewDidLoad() {
@@ -24,13 +24,13 @@ class ViewController: UIViewController{
         self.view.addSubview(TableView)
         
         self.TableView.register(CountryDetailCell.self, forCellReuseIdentifier: "Countrycell")
-
-      TableView.translatesAutoresizingMaskIntoConstraints = false
-      TableView.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor).isActive = true
-      TableView.leadingAnchor.constraint(equalTo:view.leadingAnchor).isActive = true
-      TableView.trailingAnchor.constraint(equalTo:view.trailingAnchor).isActive = true
-  TableView.bottomAnchor.constraint(equalTo:view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-      
+        
+        TableView.translatesAutoresizingMaskIntoConstraints = false
+        TableView.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor).isActive = true
+        TableView.leadingAnchor.constraint(equalTo:view.leadingAnchor).isActive = true
+        TableView.trailingAnchor.constraint(equalTo:view.trailingAnchor).isActive = true
+        TableView.bottomAnchor.constraint(equalTo:view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        
         getdata()
     }
     
@@ -44,11 +44,11 @@ class ViewController: UIViewController{
                     self.arrdata = try JSONDecoder().decode([jsonstruct].self, from: data!)
                     
                     DispatchQueue.main.async {
-                   
-                      for arr in self.arrdata
-                      {
-                          DataBaseHelper.shareInstance.save(object: arr)
-                      }
+                        
+                        for arr in self.arrdata
+                        {
+                            DataBaseHelper.shareInstance.save(object: arr)
+                        }
                         self.TableView.reloadData()
                     }
                 }
@@ -68,10 +68,10 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-    let cell = TableView.dequeueReusableCell(withIdentifier: "Countrycell") as! CountryDetailCell
+        let cell = TableView.dequeueReusableCell(withIdentifier: "Countrycell") as! CountryDetailCell
         cell.contryName.text = "Name: \(String(describing: arrdata[indexPath.row].name))"
         cell.countryCapital.text = "Capital: \(String(describing: arrdata[indexPath.row].capital))"
-
+        
         return cell
     }
     
