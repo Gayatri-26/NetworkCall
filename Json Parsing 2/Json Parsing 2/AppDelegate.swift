@@ -26,8 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //     let VC = storyboard.instantiateViewController(withIdentifier:"NVC")
         //      window?.rootViewController = VC
         
-//          let SVC = storyboard.instantiateViewController(withIdentifier:"SecondVC")
-//          window?.rootViewController = SVC
+    //      let SVC = storyboard.instantiateViewController(withIdentifier:"SecondVC")
+    //      window?.rootViewController = SVC
         
         
         window?.makeKeyAndVisible()
