@@ -13,6 +13,10 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+ //   var managedoObjectModel = NSManagedObjectModel()
+ //   var managedObjectContect = NSManagedObjectContext()
+ //   var persistentStoreCordinator = NSPersistentStoreCoordinator()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
@@ -30,6 +34,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       window?.makeKeyAndVisible()
        
         return true
+    }
+    
+    var managedObjectContect: NSManagedObjectContext{
+        
+        if (self.managedObjectContect != nil) {
+           
+            return self.managedObjectContect
+            
+        }
+   //     var coordinator:NSPersistentStoreCoordinator = self.persistentContainer
+            
+            if(coordinator != nil){
+                
+            }
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -79,6 +98,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
         return container
     }()
+    
+    
     
     // MARK: - Core Data Saving support
     
