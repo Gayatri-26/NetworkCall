@@ -28,9 +28,13 @@
     
     NSOperationQueue *queue = [[NSOperationQueue alloc]init];
     [queue addOperationWithBlock:^{
-         [self requestdata];
+        
+        [self requestdata];
+        
     }];
-
+    
+//    [self requestdata];
+     self.view.backgroundColor = UIColor.blueColor;
     self.arrEmployee = [[NSMutableArray alloc]init];
     
     EmployeeDataTableView = [[UITableView alloc]init];
@@ -51,6 +55,7 @@
     
     EmployeeDataTableView.dataSource = self;
     EmployeeDataTableView.delegate = self;
+    
 }
 
 -(void)requestdata
@@ -63,7 +68,8 @@
         {
             NSDictionary *maindic = [NSJSONSerialization JSONObjectWithData:dbdata options:NSJSONReadingAllowFragments error:nil];
             NSLog(@"Response Data: %@", maindic);
-    
+            
+            
             _arrEmployee = [[NSMutableArray alloc]init];
             
             NSDictionary *dict1 = [maindic objectForKey:@"data"];
@@ -84,19 +90,25 @@
                 
                 [self.arrEmployee addObject:EmpDetails];
             }
-           
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self->EmployeeDataTableView reloadData];
             });
+    
         }
     };
-    dispatch_queue_t downloadData = dispatch_get_main_queue();
-  
-    dispatch_async(downloadData, ^{
+
+    dispatch_queue_t gayatri = dispatch_get_main_queue();
+    
+    dispatch_async(gayatri, ^{
         NSData *Ddata = [NSData dataWithContentsOfURL:[NSURL URLWithString:_mainstr]];
         EmployeeListCallback(Ddata,nil);
     });
     
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)theTableView
+{
+    return 1;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -128,6 +140,7 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+
 }
 
 @end
