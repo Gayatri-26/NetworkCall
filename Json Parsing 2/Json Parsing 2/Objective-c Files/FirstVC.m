@@ -91,15 +91,15 @@
                 [self.arrEmployee addObject:EmpDetails];
             }
             dispatch_async(dispatch_get_main_queue(), ^{
+                
                 [self->EmployeeDataTableView reloadData];
             });
-    
         }
     };
 
-    dispatch_queue_t gayatri = dispatch_get_main_queue();
+    dispatch_queue_t downLoad = dispatch_queue_create("download.data", NULL);
     
-    dispatch_async(gayatri, ^{
+    dispatch_async(downLoad, ^{
         NSData *Ddata = [NSData dataWithContentsOfURL:[NSURL URLWithString:_mainstr]];
         EmployeeListCallback(Ddata,nil);
     });

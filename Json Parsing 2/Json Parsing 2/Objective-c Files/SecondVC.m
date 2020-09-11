@@ -75,6 +75,7 @@
                 [self.arrPerson addObject:PersonDet];
             }
             dispatch_async(dispatch_get_main_queue(), ^{
+                
                 [self->PersonDataTableView reloadData];
             });
         }
