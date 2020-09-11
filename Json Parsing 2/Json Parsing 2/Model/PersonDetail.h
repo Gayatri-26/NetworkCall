@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-//NS_ASSUME_NONNULL_BEGIN
-
 @interface PersonDetail : NSObject
 
 @property (nonatomic,strong) NSString *Pid;
@@ -18,6 +16,7 @@
 @property (nonatomic,strong) NSString *Paddress;
 @property (nonatomic,strong) NSString *Pgender;
 
++(NSMutableArray < PersonDetail *> *)modelArrayFromDict:(NSDictionary *) d;
+
 @end
 
-//NS_ASSUME_NONNULL_END
