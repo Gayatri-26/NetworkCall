@@ -10,7 +10,7 @@
 
     @implementation PersonViewCell
 
-    @synthesize Pid, Pname, Pemail, Pgender, Paddress;
+   // @synthesize Pid, Pname, Pemail, Pgender, Paddress;
 
     - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
     {
