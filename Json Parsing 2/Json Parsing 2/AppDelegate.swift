@@ -14,9 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
- //   var managedoObjectModel = NSManagedObjectModel()
- //   var managedObjectContect = NSManagedObjectContext()
- //   var persistentStoreCordinator = NSPersistentStoreCoordinator()
+    var managedoObjectModel = NSManagedObjectModel()
+    var managedObjectContect = NSManagedObjectContext()
+    var persistentStoreCordinator = NSPersistentStoreCoordinator()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
@@ -36,20 +36,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    var managedObjectContect: NSManagedObjectContext{
-        
-        if (self.managedObjectContect != nil) {
-           
-            return self.managedObjectContect
-            
-        }
-   //     var coordinator:NSPersistentStoreCoordinator = self.persistentContainer
-            
-            if(coordinator != nil){
-                
-            }
-        }
+    
+var managedobjectcontext:NSManagedObjectContext {
+    if self.managedobjectcontext != nil{
+        return self.managedobjectcontext
     }
+    let coordinator:NSPersistentStoreCoordinator = self.persistentStoreCordinator
+    if coordinator != nil{
+        self.managedobjectcontext.persistentStoreCoordinator = coordinator
+    }
+    return self.managedobjectcontext
+}
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
