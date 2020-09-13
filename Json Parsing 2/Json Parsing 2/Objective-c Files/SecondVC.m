@@ -10,6 +10,8 @@
 #import "PersonDetail.h"
 #import "AFNetworking.h"
 #import "AFHTTPRequestOperation.h"
+#import <CoreData/CoreData.h>
+// #import "AppDelegate.swift"
 
 @interface SecondVC ()
 
@@ -22,7 +24,9 @@
 @implementation SecondVC
 {
     UITableView *PersonDataTableView;
+    
 }
+@synthesize contactdb;
 
 - (void)viewDidLoad {
     [super viewDidLoad];

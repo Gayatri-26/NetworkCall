@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "PersonDetail.h"
+#import <CoreData/CoreData.h>
 
 @interface SecondVC : UIViewController<UITableViewDelegate, UITableViewDataSource>
+
+// @property (nonatomic,strong) AppDelegate *delegate;
+@property( strong) NSManagedObject *contactdb;
 
 @end
 
