@@ -25,15 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    NSOperationQueue *queue = [[NSOperationQueue alloc]init];
-    [queue addOperationWithBlock:^{
-        
-        [self requestdata];
-        
-    }];
-    
-//    [self requestdata];
+  
+    [self requestdata];
      self.view.backgroundColor = UIColor.blueColor;
     self.arrEmployee = [[NSMutableArray alloc]init];
     
