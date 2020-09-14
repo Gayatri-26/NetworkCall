@@ -25,8 +25,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self requestdata];
-     self.view.backgroundColor = UIColor.blueColor;
+    
+    [NSThread detachNewThreadSelector:@selector(requestdata) toTarget:self withObject:nil];
+    
     self.arrEmployee = [[NSMutableArray alloc]init];
     
     EmployeeDataTableView = [[UITableView alloc]init];
@@ -52,7 +53,7 @@
 -(void)requestdata
 {
     _mainstr = [NSString stringWithFormat:@"http://dummy.restapiexample.com/api/v1/employees"];
-
+    
     void(^EmployeeListCallback)(NSData *data, NSError *error) = ^(NSData *dbdata, NSError *error) {
         NSLog(@"Data: %@", dbdata);
         if (dbdata!=nil)
@@ -61,12 +62,12 @@
             NSLog(@"Response Data: %@", maindic);
             
             _arrEmployee = [EmployeeDetails modelArrayFromDict:maindic];
-
-                [self->EmployeeDataTableView reloadData];
-
+            
+            [self->EmployeeDataTableView reloadData];
+            
         }
     };
-     [EmployeeDetailsVC executequery:_mainstr strpremeter:nil withblock:EmployeeListCallback];
+    [EmployeeDetailsVC executequery:_mainstr strpremeter:nil withblock:EmployeeListCallback];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
