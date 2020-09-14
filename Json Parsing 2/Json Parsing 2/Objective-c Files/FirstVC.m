@@ -11,6 +11,7 @@
 #import "EmployeeDetails.h"
 #import "AFNetworking.h"
 #import "AFHTTPRequestOperation.h"
+#import <CoreData/CoreData.h>
 
 @interface FirstVC ()
 
@@ -27,6 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self afnetworkingcode];
     self.arrEmployee = [[NSMutableArray alloc]init];
     
@@ -125,5 +127,8 @@
     [super didReceiveMemoryWarning];
 
 }
+
+
+
 
 @end

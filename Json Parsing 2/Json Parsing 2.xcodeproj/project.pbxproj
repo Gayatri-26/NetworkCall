@@ -31,6 +31,7 @@
 		04A140C924F7713100570C52 /* EmployeeDetailsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A140C824F7713100570C52 /* EmployeeDetailsCell.m */; };
 		04B204FA24F8C5D9004E7482 /* EmployeeDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B204F924F8C5D9004E7482 /* EmployeeDetails.m */; };
 		04B2FBA9250BA165003E4B6D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B2FBA8250BA165003E4B6D /* CoreData.framework */; };
+		04B6C395250F536100AB6AE5 /* DatabaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B6C394250F536100AB6AE5 /* DatabaseHelper.m */; };
 		04C35A4524F792B4002D72D4 /* PersonViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C35A4424F792B4002D72D4 /* PersonViewCell.m */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +93,8 @@
 		04B204F824F8C5D9004E7482 /* EmployeeDetails.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmployeeDetails.h; sourceTree = "<group>"; };
 		04B204F924F8C5D9004E7482 /* EmployeeDetails.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmployeeDetails.m; sourceTree = "<group>"; };
 		04B2FBA8250BA165003E4B6D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		04B6C393250F536100AB6AE5 /* DatabaseHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DatabaseHelper.h; sourceTree = "<group>"; };
+		04B6C394250F536100AB6AE5 /* DatabaseHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DatabaseHelper.m; sourceTree = "<group>"; };
 		04C35A4324F792B4002D72D4 /* PersonViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonViewCell.h; sourceTree = "<group>"; };
 		04C35A4424F792B4002D72D4 /* PersonViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -211,6 +214,8 @@
 				04A140BD24F7707900570C52 /* Json Parsing 2-Bridging-Header.h */,
 				045C948124F799BD00CFC20F /* SecondVC.h */,
 				045C948224F799BD00CFC20F /* SecondVC.m */,
+				04B6C393250F536100AB6AE5 /* DatabaseHelper.h */,
+				04B6C394250F536100AB6AE5 /* DatabaseHelper.m */,
 			);
 			path = "Objective-c Files";
 			sourceTree = "<group>";
@@ -338,6 +343,7 @@
 				048ADB732501803200FAA28D /* PersonDetail.m in Sources */,
 				0433F70D24FF7C9600BE29D7 /* CoredataModel.xcdatamodeld in Sources */,
 				04650BD823FF9A80002C5A80 /* DetailViewController.swift in Sources */,
+				04B6C395250F536100AB6AE5 /* DatabaseHelper.m in Sources */,
 				0497DBD925062C38002F8BE8 /* AFURLResponseSerialization.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
