@@ -135,6 +135,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
+    NSLog(@"Print Count");
     return _arrEmployee.count;
     
 }
