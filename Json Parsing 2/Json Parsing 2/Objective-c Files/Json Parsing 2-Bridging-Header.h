@@ -6,6 +6,8 @@
 #import "EmployeeDetails.h"
 #import "FirstVC.h"
 #import "SecondVC.h"
+#import "EmployeeDetailsCell.h"
+#import "PersonViewCell.h"
 // #import "AppDelegate.swift"
 
 

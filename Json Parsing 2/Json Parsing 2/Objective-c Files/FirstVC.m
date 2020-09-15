@@ -57,7 +57,7 @@
     //AFNetworking
     static NSString * const BaseURLString = @"http://dummy.restapiexample.com/api/v1/employees";
     
-    NSString *string = [NSString stringWithFormat:@"http://dummy.restapiexample.com/api/v1/employees", BaseURLString];
+    NSString *string = [NSString stringWithFormat:@"http://dummy.restapiexample.com/api/v1/employees",BaseURLString];
     NSURL *url = [NSURL URLWithString:string];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     

@@ -4,10 +4,11 @@
 //
 //  Created by Mac on 21/02/20.
 //  Copyright © 2020 Mac. All rights reserved.
-//
+//https://gist.github.com/keicoder/9479571
 
 import UIKit
 import CoreData
+
 
 
 @UIApplicationMain
@@ -23,15 +24,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
       window = UIWindow(frame: UIScreen.main.bounds)
       let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+    
+        let FVC = storyboard.instantiateViewController(withIdentifier:"FirstVC")
+      window?.rootViewController = FVC
+//    let VC = storyboard.instantiateViewController(withIdentifier:"NVC")
+//    window?.rootViewController = VC
+//    let SVC = storyboard.instantiateViewController(withIdentifier:"SecondVC")
+//    window?.rootViewController = SVC
         
-//
-//    let FVC = storyboard.instantiateViewController(withIdentifier:"FirstVC")
-//    window?.rootViewController = FVC
-//     let VC = storyboard.instantiateViewController(withIdentifier:"NVC")
-//      window?.rootViewController = VC
-    let SVC = storyboard.instantiateViewController(withIdentifier:"SecondVC")
-    window?.rootViewController = SVC
-
         
       window?.makeKeyAndVisible()
        
@@ -40,7 +40,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
 var managedobjectcontext:NSManagedObjectContext {
-    if self.managedobjectcontext != nil{
+    
+    if (self.managedobjectcontext != nil){
         return self.managedobjectcontext
     }
     let coordinator:NSPersistentStoreCoordinator = self.persistentStoreCordinator
@@ -50,18 +51,35 @@ var managedobjectcontext:NSManagedObjectContext {
     return self.managedobjectcontext
 }
     
-//    - (NSManagedObjectContext *)managedObjectContext
+//    var managedObjectModel: NSManagedObjectModel {
+//        if  (self.managedObjectModel != nil) {
+//            return self.managedObjectModel
+//        }
+//        NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"CDCourses" withExtension:@"momd"];
+//        _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+//        return self.managedObjectModel;
+//
+//    }
+    
+//    - (NSPersistentStoreCoordinator *)persistentStoreCoordinator
 //    {
-//        if (_managedObjectContext != nil) {
-//            return _managedObjectContext;
+//        if (_persistentStoreCoordinator != nil) {
+//            return _persistentStoreCoordinator;
 //        }
 //
-//        NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
-//        if (coordinator != nil) {
-//            _managedObjectContext = [[NSManagedObjectContext alloc] init];
-//            [_managedObjectContext setPersistentStoreCoordinator:coordinator];
+//        NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"CDCourses.sqlite"];
+//
+//        NSError *error = nil;
+//        _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
+//        if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+//            /*
+//             Replace this implementation with code to handle the error appropriately.
+//             */
+//            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+//            abort();
 //        }
-//        return _managedObjectContext;
+//
+//        return _persistentStoreCoordinator;
 //    }
 
     func applicationWillResignActive(_ application: UIApplication) {
