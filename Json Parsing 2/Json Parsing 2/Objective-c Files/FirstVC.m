@@ -95,9 +95,9 @@
         }
     };
     //    dispatch_queue_t gayatri = dispatch_queue_create("download.data", NULL);
-    dispatch_queue_t gayatri = dispatch_get_main_queue();
+    dispatch_queue_t LoadData = dispatch_get_main_queue();
     
-    dispatch_async(gayatri, ^{
+    dispatch_async(LoadData, ^{
         NSData *Ddata = [NSData dataWithContentsOfURL:[NSURL URLWithString:_mainstr]];
         EmployeeListCallback(Ddata,nil);
     });
