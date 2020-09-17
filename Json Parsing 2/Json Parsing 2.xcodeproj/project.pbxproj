@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041F37DC2512056F00F7AC1A /* 7EE509HU_330x370.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 041F37DB2512056F00F7AC1A /* 7EE509HU_330x370.jpg */; };
 		042619A224FEC10A00AC1C6E /* CountryDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042619A024FEC10A00AC1C6E /* CountryDetailCell.swift */; };
 		0433F70D24FF7C9600BE29D7 /* CoredataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0433F70B24FF7C9600BE29D7 /* CoredataModel.xcdatamodeld */; };
 		04359A6B23FFB54300670AA5 /* JSONModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04359A6A23FFB54300670AA5 /* JSONModel.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		041F37DB2512056F00F7AC1A /* 7EE509HU_330x370.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 7EE509HU_330x370.jpg; sourceTree = "<group>"; };
 		042619A024FEC10A00AC1C6E /* CountryDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailCell.swift; sourceTree = "<group>"; };
 		0433F70C24FF7C9600BE29D7 /* CoredataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoredataModel.xcdatamodel; sourceTree = "<group>"; };
 		04359A6A23FFB54300670AA5 /* JSONModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONModel.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 		04A140C624F7710100570C52 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				041F37DB2512056F00F7AC1A /* 7EE509HU_330x370.jpg */,
 				04A140C724F7713100570C52 /* EmployeeDetailsCell.h */,
 				04A140C824F7713100570C52 /* EmployeeDetailsCell.m */,
 				04C35A4324F792B4002D72D4 /* PersonViewCell.h */,
@@ -212,6 +215,7 @@
 			files = (
 				04650BCE23FF8D94002C5A80 /* LaunchScreen.storyboard in Resources */,
 				04650BCB23FF8D94002C5A80 /* Assets.xcassets in Resources */,
+				041F37DC2512056F00F7AC1A /* 7EE509HU_330x370.jpg in Resources */,
 				04650BC923FF8D94002C5A80 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

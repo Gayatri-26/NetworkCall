@@ -15,6 +15,7 @@
 
 @property (strong,nonatomic) NSMutableArray<EmployeeDetails *> *arrEmployee;
 @property (nonatomic,strong) NSString *mainstr;
+@property (nonatomic,strong) NSThread *thread;
 
 @end
 
@@ -23,8 +24,20 @@
     UITableView *EmployeeDataTableView;
 }
 
+- (NSThread*)thread {
+
+    if (!_thread) {
+        _thread = [[NSThread alloc] initWithTarget:self selector:@selector(requestdata) object:nil];
+    }
+    return _thread;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+//    if (!_thread) {
+//        _thread = [[NSThread alloc] initWithTarget:self selector:@selector(requestdata) object:nil];
+//    }
     
     [NSThread detachNewThreadSelector:@selector(requestdata) toTarget:self withObject:nil];
     
@@ -52,6 +65,7 @@
 
 -(void)requestdata
 {
+//    while (![self.thread isCancelled]) {
     _mainstr = [NSString stringWithFormat:@"http://dummy.restapiexample.com/api/v1/employees"];
     
     void(^EmployeeListCallback)(NSData *data, NSError *error) = ^(NSData *dbdata, NSError *error) {
@@ -67,7 +81,11 @@
             
         }
     };
+        
     [EmployeeDetailsVC executequery:_mainstr strpremeter:nil withblock:EmployeeListCallback];
+//        sleep(1);
+//    }
+//     self.thread = nil;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

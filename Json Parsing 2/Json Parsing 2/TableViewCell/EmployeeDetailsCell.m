@@ -17,6 +17,12 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
+        //Image
+         self.imageview = [[UIImageView alloc]initWithFrame:CGRectMake(20, 30, 100, 100)];
+        [_imageview setImage:[UIImage imageNamed:@"7EE509HU_330x370.jpg"]];
+        [_imageview setContentMode:UIViewContentModeScaleAspectFit];
+        [self addSubview:self.imageview];
+        
         //LblId
         self.LblId = [[UILabel alloc] init];
         self.LblId.textColor = [UIColor blackColor];
@@ -27,7 +33,7 @@
 
         [self addSubview:self.LblId];
         
-        NSLayoutConstraint *leftId = [NSLayoutConstraint constraintWithItem:_LblId attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:20];
+        NSLayoutConstraint *leftId = [NSLayoutConstraint constraintWithItem:_LblId attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:120];
         NSLayoutConstraint *topId = [NSLayoutConstraint constraintWithItem:_LblId attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:20];
 
         NSLayoutConstraint *heightId = [NSLayoutConstraint constraintWithItem:_LblId attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:25];
@@ -45,7 +51,7 @@
 
         [self addSubview:self.LblName];
         
-        NSLayoutConstraint *leftName = [NSLayoutConstraint constraintWithItem:_LblName attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:20];
+        NSLayoutConstraint *leftName = [NSLayoutConstraint constraintWithItem:_LblName attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:120];
         NSLayoutConstraint *topName = [NSLayoutConstraint constraintWithItem:_LblName attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:60];
         
         NSLayoutConstraint *heightName = [NSLayoutConstraint constraintWithItem:_LblName attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:25];
@@ -62,7 +68,7 @@
         [_LblAge setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self addSubview:self.LblAge];
         
-        NSLayoutConstraint *leftAge = [NSLayoutConstraint constraintWithItem:_LblAge attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:20];
+        NSLayoutConstraint *leftAge = [NSLayoutConstraint constraintWithItem:_LblAge attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:120];
         NSLayoutConstraint *topAge = [NSLayoutConstraint constraintWithItem:_LblAge attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:100];
         
         NSLayoutConstraint *heightAge = [NSLayoutConstraint constraintWithItem:_LblAge attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:25];
@@ -79,7 +85,7 @@
         [_LblSalary setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self addSubview:self.LblSalary];
    
-        NSLayoutConstraint *leftSalary = [NSLayoutConstraint constraintWithItem:_LblSalary attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:20];
+        NSLayoutConstraint *leftSalary = [NSLayoutConstraint constraintWithItem:_LblSalary attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:120];
         NSLayoutConstraint *topSalary = [NSLayoutConstraint constraintWithItem:_LblSalary attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:140];
         
         NSLayoutConstraint *heightSalary = [NSLayoutConstraint constraintWithItem:_LblSalary attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:25];

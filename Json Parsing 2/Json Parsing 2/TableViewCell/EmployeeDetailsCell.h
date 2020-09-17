@@ -10,9 +10,10 @@
 
 @interface EmployeeDetailsCell : UITableViewCell
 
-@property (strong, nonatomic)  UILabel *LblId;
-@property (strong, nonatomic)  UILabel *LblName;
-@property (strong, nonatomic)  UILabel *LblSalary;
-@property (strong, nonatomic)  UILabel *LblAge;
+@property (strong, nonatomic) UILabel *LblId;
+@property (strong, nonatomic) UILabel *LblName;
+@property (strong, nonatomic) UILabel *LblSalary;
+@property (strong, nonatomic) UILabel *LblAge;
+@property (strong, nonatomic) UIImageView *imageview;
 
 @end
