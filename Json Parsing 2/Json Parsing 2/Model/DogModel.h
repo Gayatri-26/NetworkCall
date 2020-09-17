@@ -7,13 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 
 @interface DogModel : NSObject
 
 @property (nonatomic,strong) NSString *Dbreed;
 @property (nonatomic,strong) NSString *DTemperament;
-@property (nonatomic,strong) NSString *DImage;
+@property (nonatomic,strong) UIImage *DImage;
 +(NSMutableArray < DogModel * > *)modelArrayFromDict:(NSDictionary *) d1;
 
 @end

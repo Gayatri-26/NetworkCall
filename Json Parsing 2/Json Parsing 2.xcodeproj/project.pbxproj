@@ -22,10 +22,6 @@
 		04650BCE23FF8D94002C5A80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04650BCC23FF8D94002C5A80 /* LaunchScreen.storyboard */; };
 		04650BD823FF9A80002C5A80 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04650BD723FF9A80002C5A80 /* DetailViewController.swift */; };
 		048ADB732501803200FAA28D /* PersonDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 048ADB722501803200FAA28D /* PersonDetail.m */; };
-		04A140C024F7707900570C52 /* FirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A140BF24F7707900570C52 /* FirstVC.m */; };
-		04A140C324F770C300570C52 /* EmployeeDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A140C224F770C300570C52 /* EmployeeDetailsVC.m */; };
-		04A140C924F7713100570C52 /* EmployeeDetailsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A140C824F7713100570C52 /* EmployeeDetailsCell.m */; };
-		04B204FA24F8C5D9004E7482 /* EmployeeDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B204F924F8C5D9004E7482 /* EmployeeDetails.m */; };
 		04C35A4524F792B4002D72D4 /* PersonViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C35A4424F792B4002D72D4 /* PersonViewCell.m */; };
 /* End PBXBuildFile section */
 
@@ -54,14 +50,6 @@
 		048ADB712501803200FAA28D /* PersonDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonDetail.h; sourceTree = "<group>"; };
 		048ADB722501803200FAA28D /* PersonDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonDetail.m; sourceTree = "<group>"; };
 		04A140BD24F7707900570C52 /* Json Parsing 2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Json Parsing 2-Bridging-Header.h"; sourceTree = "<group>"; };
-		04A140BE24F7707900570C52 /* FirstVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstVC.h; sourceTree = "<group>"; };
-		04A140BF24F7707900570C52 /* FirstVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstVC.m; sourceTree = "<group>"; };
-		04A140C124F770C300570C52 /* EmployeeDetailsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmployeeDetailsVC.h; sourceTree = "<group>"; };
-		04A140C224F770C300570C52 /* EmployeeDetailsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmployeeDetailsVC.m; sourceTree = "<group>"; };
-		04A140C724F7713100570C52 /* EmployeeDetailsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmployeeDetailsCell.h; sourceTree = "<group>"; };
-		04A140C824F7713100570C52 /* EmployeeDetailsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmployeeDetailsCell.m; sourceTree = "<group>"; };
-		04B204F824F8C5D9004E7482 /* EmployeeDetails.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmployeeDetails.h; sourceTree = "<group>"; };
-		04B204F924F8C5D9004E7482 /* EmployeeDetails.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmployeeDetails.m; sourceTree = "<group>"; };
 		04C35A4324F792B4002D72D4 /* PersonViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonViewCell.h; sourceTree = "<group>"; };
 		04C35A4424F792B4002D72D4 /* PersonViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,8 +68,6 @@
 		04359A6923FFB4ED00670AA5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				04B204F824F8C5D9004E7482 /* EmployeeDetails.h */,
-				04B204F924F8C5D9004E7482 /* EmployeeDetails.m */,
 				048ADB712501803200FAA28D /* PersonDetail.h */,
 				048ADB722501803200FAA28D /* PersonDetail.m */,
 				044F6014251354D000DAADF3 /* DogModel.h */,
@@ -126,11 +112,7 @@
 		04A140BC24F7701C00570C52 /* Objective-c Files */ = {
 			isa = PBXGroup;
 			children = (
-				04A140BE24F7707900570C52 /* FirstVC.h */,
-				04A140BF24F7707900570C52 /* FirstVC.m */,
 				04A140BD24F7707900570C52 /* Json Parsing 2-Bridging-Header.h */,
-				04A140C124F770C300570C52 /* EmployeeDetailsVC.h */,
-				04A140C224F770C300570C52 /* EmployeeDetailsVC.m */,
 				045C948124F799BD00CFC20F /* SecondVC.h */,
 				045C948224F799BD00CFC20F /* SecondVC.m */,
 				045C948424F7A02E00CFC20F /* PersonViewController.h */,
@@ -144,8 +126,6 @@
 		04A140C624F7710100570C52 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				04A140C724F7713100570C52 /* EmployeeDetailsCell.h */,
-				04A140C824F7713100570C52 /* EmployeeDetailsCell.m */,
 				04C35A4324F792B4002D72D4 /* PersonViewCell.h */,
 				04C35A4424F792B4002D72D4 /* PersonViewCell.m */,
 				044F601725135C9500DAADF3 /* DogTableViewCell.h */,
@@ -241,15 +221,11 @@
 				045C948624F7A02E00CFC20F /* PersonViewController.m in Sources */,
 				04359A6B23FFB54300670AA5 /* JSONModel.swift in Sources */,
 				044F6016251354D000DAADF3 /* DogModel.m in Sources */,
-				04A140C024F7707900570C52 /* FirstVC.m in Sources */,
 				044F601325133A8700DAADF3 /* OperationViewController.m in Sources */,
-				04A140C324F770C300570C52 /* EmployeeDetailsVC.m in Sources */,
 				04C35A4524F792B4002D72D4 /* PersonViewCell.m in Sources */,
-				04B204FA24F8C5D9004E7482 /* EmployeeDetails.m in Sources */,
 				042619A224FEC10A00AC1C6E /* CountryDetailCell.swift in Sources */,
 				04650BC623FF8D94002C5A80 /* ViewController.swift in Sources */,
 				04650BC423FF8D94002C5A80 /* AppDelegate.swift in Sources */,
-				04A140C924F7713100570C52 /* EmployeeDetailsCell.m in Sources */,
 				045C948324F799BD00CFC20F /* SecondVC.m in Sources */,
 				048ADB732501803200FAA28D /* PersonDetail.m in Sources */,
 				044F601925135C9500DAADF3 /* DogTableViewCell.m in Sources */,
