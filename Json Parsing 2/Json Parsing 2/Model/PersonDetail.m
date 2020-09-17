@@ -7,6 +7,7 @@
 //
 
 #import "PersonDetail.h"
+#import "SecondVC.h"
 
 @implementation PersonDetail
 

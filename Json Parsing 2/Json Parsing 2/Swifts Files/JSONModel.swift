@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct jsonstruct :Decodable{
+struct jsonStruct : Decodable{
     
     let name:String
     let capital:String

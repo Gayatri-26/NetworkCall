@@ -12,7 +12,7 @@ class ViewController: UIViewController{
 
   let TableView = UITableView()
 
-    var arrdata = [jsonstruct]()
+    var arrdata = [jsonStruct]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +40,7 @@ class ViewController: UIViewController{
             
             do{
                 if error == nil {
-                    self.arrdata = try JSONDecoder().decode([jsonstruct].self, from: data!)
+                    self.arrdata = try JSONDecoder().decode([jsonStruct].self, from: data!)
     
                         DispatchQueue.main.async {
                             self.TableView.reloadData()

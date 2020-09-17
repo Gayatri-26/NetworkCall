@@ -17,7 +17,7 @@
         self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
         if (self) {
             // configure control(s)
-            self.Pid = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 395, 25)];
+                        self.Pid = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 395, 25)];
             self.Pid.textColor = [UIColor blackColor];
             self.Pid.textAlignment = NSTextAlignmentCenter;
             self.Pid.backgroundColor = [UIColor lightGrayColor];
@@ -37,14 +37,14 @@
             self.Pemail.backgroundColor = [UIColor lightGrayColor];
             self.Pemail.font = [UIFont fontWithName:@"Arial" size:20.0f];
             [self addSubview:self.Pemail];
-            
+
             self.Paddress = [[UILabel alloc] initWithFrame:CGRectMake(10, 115, 395, 25)];
             self.Paddress.textColor = [UIColor blackColor];
             self.Paddress.textAlignment = NSTextAlignmentCenter;
             self.Paddress.backgroundColor = [UIColor lightGrayColor];
             self.Paddress.font = [UIFont fontWithName:@"Arial" size:20.0f];
             [self addSubview:self.Paddress];
-            
+
             self.Pgender = [[UILabel alloc] initWithFrame:CGRectMake(10, 145, 395, 25)];
             self.Pgender.textColor = [UIColor blackColor];
             self.Pgender.textAlignment = NSTextAlignmentCenter;

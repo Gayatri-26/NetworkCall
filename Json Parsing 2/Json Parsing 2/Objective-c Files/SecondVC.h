@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PersonDetail.h"
 
-@interface SecondVC : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@interface SecondVC : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 
 @end
