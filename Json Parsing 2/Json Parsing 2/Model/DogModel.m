@@ -11,13 +11,13 @@
 
 @implementation DogModel
 
-@synthesize Dbreed, DTemperament, DImage;
+@synthesize Dbreed, Dtemperament, Dimage,Dcolors, Dheight, Dweight;
 
 
-+(NSMutableArray < DogModel * > *)modelArrayFromDict:(NSDictionary *) d1{
++(NSMutableArray <DogModel * > *)modelArrayFromDict:(NSDictionary *) d1{
     
 NSMutableArray *dogModelarr = [[NSMutableArray alloc]init];
-NSDictionary *dic1 = [d1 objectForKey:@""];
+NSDictionary *dic1 = [d1 objectForKey:@"contacts"];
    
 for (NSDictionary *dict in dic1)
 {
@@ -26,10 +26,22 @@ for (NSDictionary *dict in dic1)
     Dog.Dbreed = strbreed;
     
     NSString *strtemperament = [dict objectForKey:@"Temperament"];
-    Dog.DTemperament = strtemperament;
+    Dog.Dtemperament = strtemperament;
     
-    NSString *strimage = [dict objectForKey:@"image"];
-    Dog.DImage= strimage;
+    UIImage *strimage = [dict objectForKey:@"image"];
+    Dog.Dimage= strimage;
+    
+    NSString *strcolor = [dict objectForKey:@"Colors"];
+       Dog.Dcolors = strcolor;
+    
+    NSString *strheight = [dict objectForKey:@"Height"];
+       Dog.Dheight = strheight;
+    
+    NSString *strweight = [dict objectForKey:@"Weight"];
+       Dog.Dweight = strweight;
+    
+    
+    
     
     [dogModelarr addObject:Dog];
    

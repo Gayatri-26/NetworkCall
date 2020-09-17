@@ -24,7 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self requestdata];
+ //   [self requestdata];
     
     self.arrPerson = [[NSMutableArray alloc]init];
     

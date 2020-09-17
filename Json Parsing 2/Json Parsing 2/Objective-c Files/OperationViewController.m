@@ -70,18 +70,20 @@
     if (cell == nil) {
         cell = [[DogTableViewCell  alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"dcell"];
     }
-    DogModel *dogInfo = _arrDog[indexPath.row];
+     DogModel *dogInfo = _arrDog[indexPath.row];
      cell.Dbreed.text = [dogInfo Dbreed];
-     cell.DTemperament.text = [dogInfo DTemperament];
-   // cell.DImage.images = [dogInfo DImage];
-   
+     cell.Dtemperament.text = [dogInfo Dtemperament];
+     cell.Dcolors.text = [dogInfo Dcolors];
+     cell.Dheight.text = [dogInfo Dheight];
+     cell.Dweight.text = [dogInfo Dweight];
+   //  cell.Dimage.images = [dogInfo Dimage];
     
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 180;
+    return 300;
 }
 
 - (void)didReceiveMemoryWarning {

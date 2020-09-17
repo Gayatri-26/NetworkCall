@@ -13,8 +13,12 @@
 
 
 @property (strong, nonatomic)  UILabel *Dbreed;
-@property (strong, nonatomic)  UILabel *DTemperament ;
-@property (strong, nonatomic)  UIImage *DImage;
+@property (strong, nonatomic)  UILabel *Dtemperament ;
+@property (strong, nonatomic)  UIImage *Dimage;
+@property (strong, nonatomic)  UILabel *Dheight;
+@property (strong, nonatomic)  UILabel *Dweight;
+@property (strong, nonatomic)  UILabel *Dcolors;
+
 
 @end
 

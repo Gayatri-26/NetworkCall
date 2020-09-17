@@ -24,9 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    window?.rootViewController = FVC
 //     let VC = storyboard.instantiateViewController(withIdentifier:"NVC")
 //      window?.rootViewController = VC
-    let SVC = storyboard.instantiateViewController(withIdentifier:"SecondVC")
-    window?.rootViewController = SVC
-
+  //  let SVC = storyboard.instantiateViewController(withIdentifier:"SecondVC")
+//    window?.rootViewController = SVC
+        let OPVC = storyboard.instantiateViewController(withIdentifier:"OperationViewController")
+           window?.rootViewController = OPVC
       window?.makeKeyAndVisible()
        
         return true
