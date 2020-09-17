@@ -25,7 +25,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-  
     [self requestdata];
      self.view.backgroundColor = UIColor.blueColor;
     self.arrEmployee = [[NSMutableArray alloc]init];
@@ -72,8 +71,8 @@
             });
     };
 
-    dispatch_queue_t backgroundthread = dispatch_queue_create("download.data", NULL);
-    
+    dispatch_queue_t backgroundthread = dispatch_queue_create("download.data", DISPATCH_QUEUE_SERIAL);
+//    dispatch_queue_t backgroundthread = dispatch_queue_create("download.data", NULL);
     dispatch_async(backgroundthread, ^{
         NSData *Ddata = [NSData dataWithContentsOfURL:[NSURL URLWithString:_mainstr]];
         EmployeeListCallback(Ddata,nil);
