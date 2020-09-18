@@ -1,16 +1,14 @@
 //
-//  EmployeeDetailsCell.m
+//  DogDetailsCell.m
 //  Json Parsing 2
 //
-//  Created by Mac on 27/08/20.
+//  Created by Mac on 07/09/20.
 //  Copyright © 2020 Mac. All rights reserved.
 //
 
-#import "EmployeeDetailsCell.h"
+#import "DogDetailsCell.h"
 
-@implementation EmployeeDetailsCell
-
-//@synthesize _LblId, LblName, LblAge, LblSalary;
+@implementation DogDetailsCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -18,7 +16,7 @@
     if (self) {
         
         //Image
-         self.imageview = [[UIImageView alloc]initWithFrame:CGRectMake(20, 70, 100, 100)];
+        self.imageview = [[UIImageView alloc]initWithFrame:CGRectMake(10, 37, 130, 130)];
         [_imageview setImage:[UIImage imageNamed:@"7EE509HU_330x370.jpg"]];
         [_imageview setContentMode:UIViewContentModeScaleAspectFit];
         [self addSubview:self.imageview];
@@ -33,7 +31,7 @@
         
         [self addSubview:self.breed];
         
-        NSLayoutConstraint *leftbreed = [NSLayoutConstraint constraintWithItem:_breed attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:120];
+        NSLayoutConstraint *leftbreed = [NSLayoutConstraint constraintWithItem:_breed attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:140];
         NSLayoutConstraint *topbreed = [NSLayoutConstraint constraintWithItem:_breed attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:20];
         
         NSLayoutConstraint *heightbreed = [NSLayoutConstraint constraintWithItem:_breed attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:25];
@@ -52,7 +50,7 @@
         
         [self addSubview:self.highclass];
         
-        NSLayoutConstraint *lefthighclass = [NSLayoutConstraint constraintWithItem:_highclass attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:120];
+        NSLayoutConstraint *lefthighclass = [NSLayoutConstraint constraintWithItem:_highclass attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:140];
         NSLayoutConstraint *tophighclass = [NSLayoutConstraint constraintWithItem:_highclass attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:60];
         
         NSLayoutConstraint *heighthighclass = [NSLayoutConstraint constraintWithItem:_highclass attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:25];
@@ -69,7 +67,7 @@
         [_lifespam setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self addSubview:self.lifespam];
         
-        NSLayoutConstraint *leftlifespam = [NSLayoutConstraint constraintWithItem:_lifespam attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:120];
+        NSLayoutConstraint *leftlifespam = [NSLayoutConstraint constraintWithItem:_lifespam attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:140];
         NSLayoutConstraint *toplifespam = [NSLayoutConstraint constraintWithItem:_lifespam attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:100];
         
         NSLayoutConstraint *heightlifespam = [NSLayoutConstraint constraintWithItem:_lifespam attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:25];
@@ -87,7 +85,7 @@
         [_colors setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self addSubview:self.colors];
         
-        NSLayoutConstraint *leftcolors = [NSLayoutConstraint constraintWithItem:_colors attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:120];
+        NSLayoutConstraint *leftcolors = [NSLayoutConstraint constraintWithItem:_colors attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:140];
         NSLayoutConstraint *topcolors = [NSLayoutConstraint constraintWithItem:_colors attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:140];
         
         NSLayoutConstraint *rightcolors = [NSLayoutConstraint constraintWithItem:_colors attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight multiplier:1 constant:-20];
@@ -97,9 +95,15 @@
     return self;
 }
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    // Initialization code
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
     
+    // Configure the view for the selected state
 }
 
 @end

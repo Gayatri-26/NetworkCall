@@ -130,5 +130,20 @@
             </objects>
             <point key="canvasLocation" x="375" y="708"/>
         </scene>
+        <!--Dog DetailVC-->
+        <scene sceneID="Bxm-UZ-Yjn">
+            <objects>
+                <viewController storyboardIdentifier="DogDetailVC" id="UKQ-CT-MLY" customClass="DogDetailVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="37P-HW-GFZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="OVL-o7-FZT"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zb8-sb-G3N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1137" y="708"/>
+        </scene>
     </scenes>
 </document>

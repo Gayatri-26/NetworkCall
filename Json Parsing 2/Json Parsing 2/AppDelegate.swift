@@ -19,15 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       window = UIWindow(frame: UIScreen.main.bounds)
       let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
-
-    let FVC = storyboard.instantiateViewController(withIdentifier:"FirstVC")
-    window?.rootViewController = FVC
-//     let VC = storyboard.instantiateViewController(withIdentifier:"NVC")
-//      window?.rootViewController = VC
-//    let SVC = storyboard.instantiateViewController(withIdentifier:"SecondVC")
-//    window?.rootViewController = SVC
-
-      window?.makeKeyAndVisible()
+//
+//    let FVC = storyboard.instantiateViewController(withIdentifier:"FirstVC")
+//        window?.rootViewController = FVC
+        //     let VC = storyboard.instantiateViewController(withIdentifier:"NVC")
+        //      window?.rootViewController = VC
+        
+        
+        let DogDetail = storyboard.instantiateViewController(withIdentifier: "DogDetailVC")
+        window?.rootViewController = DogDetail
+//
+        window?.makeKeyAndVisible()
        
         return true
     }

@@ -6,6 +6,11 @@
 //  Copyright © 2020 Mac. All rights reserved.
 //
 
+//https://stackoverflow.com/questions/24062950/updating-ui-labels-while-downloading-images-in-ios
+//https://stackoverflow.com/questions/49271515/ios-makimagegalleryview-downloading-photos-using-afnetworking-afimagedownloader
+//https://gist.github.com/yannxou/3c4ea943909174ed2792
+//https://stackoverflow.com/questions/16352337/how-to-retrieve-images-from-server-asynchronously
+
 #import "FirstVC.h"
 #import "EmployeeDetailsVC.h"
 #import "EmployeeDetailsCell.h"
@@ -24,13 +29,13 @@
     UITableView *EmployeeDataTableView;
 }
 
-- (NSThread*)thread {
-
-    if (!_thread) {
-        _thread = [[NSThread alloc] initWithTarget:self selector:@selector(requestdata) object:nil];
-    }
-    return _thread;
-}
+//- (NSThread*)thread {
+//
+//    if (!_thread) {
+//        _thread = [[NSThread alloc] initWithTarget:self selector:@selector(requestdata) object:nil];
+//    }
+//    return _thread;
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,8 +43,11 @@
 //    if (!_thread) {
 //        _thread = [[NSThread alloc] initWithTarget:self selector:@selector(requestdata) object:nil];
 //    }
-    
-    [NSThread detachNewThreadSelector:@selector(requestdata) toTarget:self withObject:nil];
+    NSThread *dataDownloadThread = [[NSThread alloc]initWithTarget:self selector:@selector(requestdata) object:nil];
+    [dataDownloadThread start];
+//     NSThread *dataDownloadThread = [[NSThread alloc]init];
+//    [dataDownloadThread performSelectorInBackground:@selector(requestdata) withObject:nil];
+//    [NSThread detachNewThreadSelector:@selector(requestdata) toTarget:self withObject:nil];
     
     self.arrEmployee = [[NSMutableArray alloc]init];
     
@@ -66,7 +74,7 @@
 -(void)requestdata
 {
 //    while (![self.thread isCancelled]) {
-    _mainstr = [NSString stringWithFormat:@"http://dummy.restapiexample.com/api/v1/employees"];
+    _mainstr = [NSString stringWithFormat:@"http://bitcodetech.in/ws_ios_assignment/ws_dog_info.php"];
     
     void(^EmployeeListCallback)(NSData *data, NSError *error) = ^(NSData *dbdata, NSError *error) {
         NSLog(@"Data: %@", dbdata);
@@ -103,16 +111,17 @@
         cell = [[EmployeeDetailsCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ECell"];
     }
     EmployeeDetails *emp = _arrEmployee[indexPath.row];
-    cell.LblId.text = [emp EmpId];
-    cell.LblName.text = [emp Name];
-    cell.LblSalary.text = [emp Salary];
-    cell.LblAge.text = [emp Age];
+    cell.breed.text = [emp Breed];
+    cell.lifespam.text = [emp LifeSpan];
+    cell.highclass.text = [emp HigherClass];
+    cell.colors.text = [emp Colors];
+//    cell.imageview.image = [emp img];
     
     return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 160;
+    return 205;
 }
 
 - (void)didReceiveMemoryWarning {
