@@ -23,9 +23,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    NSOperationQueue *operationQueue = [[NSOperationQueue alloc]init];
+    NSOperation *op1 = [[NSOperation alloc]init];
+    [op1 setCompletionBlock:^{
+        NSLog(@"i am from op1");
+    }];
+    [operationQueue addOperationWithBlock:^{
+        NSLog(@"i am from operation addOperationWithBlock");
+    }];
+    
+    NSInvocationOperation *iOperation = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(NsUrldata) object:nil];
+    
+    [operationQueue addOperation: op1];
+    [operationQueue addOperation: iOperation];
 //    [self NsUrldata];
-    NSThread *dataDownloadThread = [[NSThread alloc]initWithTarget:self selector:@selector(NsUrldata) object:nil];
-    [dataDownloadThread start];
+ //   NSThread *dataDownloadThread = [[NSThread alloc]initWithTarget:self selector:@selector(NsUrldata) object:nil];
+ //   [dataDownloadThread start];
     
     self.arrDog = [[NSMutableArray alloc]init];
     
@@ -51,7 +65,6 @@
 -(void)NsUrldata{
     NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://bitcodetech.in/ws_ios_assignment/ws_dog_info.php"]];
     
-    //create the Method "GET"
     [urlRequest setHTTPMethod:@"GET"];
     
     NSURLSession *session = [NSURLSession sharedSession];
@@ -64,7 +77,7 @@
          NSArray *responseArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
                     NSLog(@"The response is - %@",responseArray);
                                               
-            _arrDog = [DogModel modelArrayFromDict:responseArray];
+            _arrDog = [DogModel modelArrayFromDict: responseArray];
             
             dispatch_queue_t dogdetailsdata = dispatch_get_main_queue();
             dispatch_async(dogdetailsdata, ^{
