@@ -42,11 +42,7 @@
     [operationQueue addOperation: op1];
     [operationQueue addOperation: iOperation];
     [operationQueue addOperation: iOperation1];
-    
-    
-    
-    
-    
+
     
     
     
@@ -105,7 +101,13 @@ NSURLSessionDownloadTask *downloadPhotoTask = [[NSURLSession sharedSession]
  downloadTaskWithURL:url completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
   UIImage *downloadedImage = [UIImage imageWithData:
     [NSData dataWithContentsOfURL:location]];
+    DogModel *dog = [_arrDog firstObject];
+    dog.img = downloadedImage;
+    [[NSOperationQueue mainQueue]addOperationWithBlock:^{
+        [self->DogsDetailsTableView reloadData];
+    }];
 }];
+    
     [downloadPhotoTask resume];
 }
 
@@ -127,7 +129,7 @@ NSURLSessionDownloadTask *downloadPhotoTask = [[NSURLSession sharedSession]
     cell.highclass.text = [dogDetails HigherClass];
     cell.lifespam.text = [dogDetails LifeSpan];
     cell.colors.text = [dogDetails Colors];
-    
+    cell.imgview.image = [dogDetails img];
     
     return cell;
 }

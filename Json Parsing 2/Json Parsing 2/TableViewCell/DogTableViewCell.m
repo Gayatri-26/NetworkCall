@@ -16,11 +16,11 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
-        //Image
-        self.imageview = [[UIImageView alloc]initWithFrame:CGRectMake(10, 37, 130, 130)];
-      //  [_imageview setImage:[UIImage imageNamed:@"appleicon.png"]];
-        [_imageview setContentMode:UIViewContentModeScaleAspectFit];
-        [self addSubview:self.imageview];
+        //Image+
+        self.imgview = [[UIImageView alloc]initWithFrame:CGRectMake(10, 37, 130, 150)];
+     //   [_imageview setImage:[UIImage imageNamed:@"appleicon.png"]];
+        [_imgview setContentMode:UIViewContentModeScaleAspectFit];
+        [self addSubview:self.imgview];
         
         //Breed
         self.breed = [[UILabel alloc] init];
