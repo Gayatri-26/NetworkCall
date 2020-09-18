@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0402D8BC2514629D00491B0D /* DogBreedsDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 0402D8BB2514629D00491B0D /* DogBreedsDetails.m */; };
-		0402D8C2251462EA00491B0D /* DogDetailsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0402D8C1251462EA00491B0D /* DogDetailsCell.m */; };
 		0402D8C52514696D00491B0D /* DogDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0402D8C42514696D00491B0D /* DogDetailVC.m */; };
 		041F37DC2512056F00F7AC1A /* 7EE509HU_330x370.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 041F37DB2512056F00F7AC1A /* 7EE509HU_330x370.jpg */; };
 		042619A224FEC10A00AC1C6E /* CountryDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042619A024FEC10A00AC1C6E /* CountryDetailCell.swift */; };
@@ -20,13 +18,11 @@
 		04650BCB23FF8D94002C5A80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04650BCA23FF8D94002C5A80 /* Assets.xcassets */; };
 		04650BCE23FF8D94002C5A80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04650BCC23FF8D94002C5A80 /* LaunchScreen.storyboard */; };
 		04650BD823FF9A80002C5A80 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04650BD723FF9A80002C5A80 /* DetailViewController.swift */; };
+		04BDA8DD2514DD7100024271 /* DogModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BDA8DC2514DD7100024271 /* DogModel.m */; };
+		04BDA8E02514DEAC00024271 /* DogTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BDA8DF2514DEAC00024271 /* DogTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0402D8BA2514629400491B0D /* DogBreedsDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DogBreedsDetails.h; sourceTree = "<group>"; };
-		0402D8BB2514629D00491B0D /* DogBreedsDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DogBreedsDetails.m; sourceTree = "<group>"; };
-		0402D8C0251462E400491B0D /* DogDetailsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DogDetailsCell.h; sourceTree = "<group>"; };
-		0402D8C1251462EA00491B0D /* DogDetailsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DogDetailsCell.m; sourceTree = "<group>"; };
 		0402D8C32514696D00491B0D /* DogDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DogDetailVC.h; sourceTree = "<group>"; };
 		0402D8C42514696D00491B0D /* DogDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DogDetailVC.m; sourceTree = "<group>"; };
 		041F37DB2512056F00F7AC1A /* 7EE509HU_330x370.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 7EE509HU_330x370.jpg; sourceTree = "<group>"; };
@@ -42,6 +38,10 @@
 		04650BCF23FF8D94002C5A80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04650BD723FF9A80002C5A80 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		04A140BD24F7707900570C52 /* Json Parsing 2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Json Parsing 2-Bridging-Header.h"; sourceTree = "<group>"; };
+		04BDA8DB2514DD7100024271 /* DogModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DogModel.h; sourceTree = "<group>"; };
+		04BDA8DC2514DD7100024271 /* DogModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DogModel.m; sourceTree = "<group>"; };
+		04BDA8DE2514DEAC00024271 /* DogTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DogTableViewCell.h; sourceTree = "<group>"; };
+		04BDA8DF2514DEAC00024271 /* DogTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DogTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +58,8 @@
 		04359A6923FFB4ED00670AA5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0402D8BA2514629400491B0D /* DogBreedsDetails.h */,
-				0402D8BB2514629D00491B0D /* DogBreedsDetails.m */,
+				04BDA8DB2514DD7100024271 /* DogModel.h */,
+				04BDA8DC2514DD7100024271 /* DogModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -111,8 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				041F37DB2512056F00F7AC1A /* 7EE509HU_330x370.jpg */,
-				0402D8C0251462E400491B0D /* DogDetailsCell.h */,
-				0402D8C1251462EA00491B0D /* DogDetailsCell.m */,
+				04BDA8DE2514DEAC00024271 /* DogTableViewCell.h */,
+				04BDA8DF2514DEAC00024271 /* DogTableViewCell.m */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -204,12 +204,12 @@
 			files = (
 				04359A6B23FFB54300670AA5 /* JSONModel.swift in Sources */,
 				0402D8C52514696D00491B0D /* DogDetailVC.m in Sources */,
-				0402D8BC2514629D00491B0D /* DogBreedsDetails.m in Sources */,
 				042619A224FEC10A00AC1C6E /* CountryDetailCell.swift in Sources */,
 				04650BC623FF8D94002C5A80 /* ViewController.swift in Sources */,
 				04650BC423FF8D94002C5A80 /* AppDelegate.swift in Sources */,
-				0402D8C2251462EA00491B0D /* DogDetailsCell.m in Sources */,
+				04BDA8E02514DEAC00024271 /* DogTableViewCell.m in Sources */,
 				0433F70D24FF7C9600BE29D7 /* CoredataModel.xcdatamodeld in Sources */,
+				04BDA8DD2514DD7100024271 /* DogModel.m in Sources */,
 				04650BD823FF9A80002C5A80 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,12 +7,12 @@
 //
 
 #import "DogDetailVC.h"
-#import "DogBreedsDetails.h"
-#import "DogDetailsCell.h"
+#import "DogModel.h"
+#import "DogTableViewCell.h"
 
 @interface DogDetailVC ()
 
-@property(strong,nonatomic) NSMutableArray<DogBreedsDetails *> *dogsdetailarr;
+@property(strong,nonatomic) NSMutableArray<DogModel *> *arrDog;
 
 @end
 
@@ -29,7 +29,7 @@
     NSThread *imageDownloadThread = [[NSThread alloc]initWithTarget:self selector:@selector(DownloadImage) object:nil];
     [imageDownloadThread start];
     
-    self.dogsdetailarr = [[NSMutableArray alloc]init];
+    self.arrDog = [[NSMutableArray alloc]init];
     
     DogsDetailsTableView = [[UITableView alloc]init];
     [DogsDetailsTableView setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -43,7 +43,7 @@
     
     [self.view addConstraints:@[left, top, bottom, right]];
     
-    [DogsDetailsTableView registerClass:[DogDetailsCell class] forCellReuseIdentifier:@"DCell"];
+    [DogsDetailsTableView registerClass:[DogTableViewCell class] forCellReuseIdentifier:@"DCell"];
     DogsDetailsTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     
     DogsDetailsTableView.dataSource = self;
@@ -65,13 +65,12 @@
          NSArray *responseArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
                     NSLog(@"The response is - %@",responseArray);
                                               
-            _dogsdetailarr = [DogBreedsDetails modelArrayFromDict:responseArray];
+            _arrDog = [DogModel modelArrayFromDict:responseArray];
             
             dispatch_queue_t dogdetailsdata = dispatch_get_main_queue();
             dispatch_async(dogdetailsdata, ^{
             [self->DogsDetailsTableView reloadData];
             });
-
         }
         else
         {
@@ -84,7 +83,7 @@
 -(void)DownloadImage{
    
 //    NSURL *url = [NSURL URLWithString:@"http://bitcodetech.in/ws_ios_assignment/ws_dog_info.php"];
-    NSURL *url = [NSURL URLWithString:@"http://bitcodetech.in/ws_ios_assignment/images/doberman.jpg"];
+    NSURL *url = [NSURL URLWithString:@"http://bitcodetech.in/ws_ios_assignment/images/bulldog.jpg"];
     
     NSURLSessionDownloadTask *downloadImageTask = [[NSURLSession sharedSession]
     downloadTaskWithURL:url completionHandler:^(NSURL *path, NSURLResponse *response, NSError *error) {
@@ -92,7 +91,7 @@
         UIImage *ImageDownload = [UIImage imageWithData:
         [NSData dataWithContentsOfURL:path]];
         NSLog(@"Url = %@",ImageDownload);
-        DogBreedsDetails *dog = [_dogsdetailarr firstObject];
+        DogModel *dog = [_arrDog firstObject];
         dog.img = ImageDownload;
 
         dispatch_queue_t imagedata = dispatch_get_main_queue();
@@ -106,18 +105,18 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return _dogsdetailarr.count;
+    return _arrDog.count;
     
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    DogDetailsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DCell"];
+    DogTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DCell"];
     
     if (cell == nil){
         
-        cell = [[DogDetailsCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"DCell"];
+        cell = [[DogTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"DCell"];
     }
-    DogBreedsDetails *dogDetails = _dogsdetailarr[indexPath.row];
+    DogModel *dogDetails = _arrDog[indexPath.row];
     cell.breed.text = [dogDetails Breed];
     cell.highclass.text = [dogDetails HigherClass];
     cell.lifespam.text = [dogDetails LifeSpan];
