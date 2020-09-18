@@ -59,7 +59,7 @@
         
         [self addConstraints:@[lefthighclass, tophighclass, heighthighclass, righthighclass]];
         
-        //LifeSpam
+        //LifeSpan
         self.lifespam = [[UILabel alloc] init];
         self.lifespam.textColor = [UIColor blackColor];
         self.lifespam.textAlignment = NSTextAlignmentCenter;
@@ -96,15 +96,8 @@
     return self;
 }
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-}
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-    
-    // Configure the view for the selected state
 }
 
 @end
