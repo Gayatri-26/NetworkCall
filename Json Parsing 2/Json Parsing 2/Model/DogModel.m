@@ -32,8 +32,8 @@
             NSString *strcolor = [dict objectForKey:@"Colors"];
             dogDetails.Colors = strcolor;
             
-            //            NSString *strimg = [dict objectForKey:@"image"];
-            //            EmpDetails.img = strimg;
+            UIImage *strimg = [dict objectForKey: @"image"];
+            dogDetails.img = strimg;
             
             [dogarr addObject:dogDetails];
         }
