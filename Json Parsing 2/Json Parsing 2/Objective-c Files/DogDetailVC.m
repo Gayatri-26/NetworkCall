@@ -12,7 +12,7 @@
 
 @interface DogDetailVC ()
 
-@property(strong,nonatomic) NSMutableArray<DogModel *> *dogsdetailarr;
+@property(strong,nonatomic) NSMutableArray<DogModel *> *arrDog;
 
 @end
 
@@ -27,7 +27,7 @@
     NSThread *dataDownloadThread = [[NSThread alloc]initWithTarget:self selector:@selector(NsUrldata) object:nil];
     [dataDownloadThread start];
     
-    self.dogsdetailarr = [[NSMutableArray alloc]init];
+    self.arrDog = [[NSMutableArray alloc]init];
     
     DogsDetailsTableView = [[UITableView alloc]init];
     [DogsDetailsTableView setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -58,14 +58,13 @@
     
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
     {
-        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
         if(data != nil)
         {
                                               
          NSArray *responseArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
                     NSLog(@"The response is - %@",responseArray);
                                               
-            _dogsdetailarr = [DogModel modelArrayFromDict:responseArray];
+            _arrDog = [DogModel modelArrayFromDict:responseArray];
             
             dispatch_queue_t dogdetailsdata = dispatch_get_main_queue();
             dispatch_async(dogdetailsdata, ^{
@@ -83,7 +82,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return _dogsdetailarr.count;
+    return _arrDog.count;
     
 }
 
@@ -94,7 +93,7 @@
         
         cell = [[DogTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"DCell"];
     }
-    DogModel *dogDetails = _dogsdetailarr[indexPath.row];
+    DogModel *dogDetails = _arrDog[indexPath.row];
     cell.breed.text = [dogDetails Breed];
     cell.highclass.text = [dogDetails HigherClass];
     cell.lifespam.text = [dogDetails LifeSpan];
@@ -104,7 +103,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 200;
+    return 250;
 }
 
 

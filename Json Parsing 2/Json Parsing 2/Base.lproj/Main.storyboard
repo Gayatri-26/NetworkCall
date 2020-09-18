@@ -123,10 +123,10 @@
             </objects>
             <point key="canvasLocation" x="375" y="708"/>
         </scene>
-        <!--Operation View Controller-->
+        <!--Dog DetailVC-->
         <scene sceneID="4oM-zz-MR5">
             <objects>
-                <viewController storyboardIdentifier="OperationViewController" id="5k8-iY-ktN" customClass="OperationViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DogDetailVC" id="5k8-iY-ktN" customClass="DogDetailVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lsc-jq-MGu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

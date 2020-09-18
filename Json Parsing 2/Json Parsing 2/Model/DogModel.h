@@ -17,7 +17,7 @@
 @property (strong,nonatomic) NSString *LifeSpan;
 @property (strong,nonatomic) NSString *Colors;
 
-+(NSMutableArray < DogModel * > *)modelArrayFromDict:(NSDictionary *) d1;
++(NSMutableArray < DogModel * > *)modelArrayFromDict:(NSDictionary *) d;
 
 @end
 

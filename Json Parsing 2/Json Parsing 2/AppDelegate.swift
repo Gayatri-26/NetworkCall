@@ -26,8 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //      window?.rootViewController = VC
   //  let SVC = storyboard.instantiateViewController(withIdentifier:"SecondVC")
 //    window?.rootViewController = SVC
-        let OPVC = storyboard.instantiateViewController(withIdentifier:"OperationViewController")
-           window?.rootViewController = OPVC
+        let DVC = storyboard.instantiateViewController(withIdentifier:"DogDetailVC")
+           window?.rootViewController = DVC
       window?.makeKeyAndVisible()
        
         return true

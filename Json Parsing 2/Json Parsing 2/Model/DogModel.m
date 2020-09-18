@@ -7,7 +7,7 @@
 //
 
 #import "DogModel.h"
-#import "OperationViewController.h"
+#import "DogDetailVC.h"
 
 @implementation DogModel
 
@@ -32,11 +32,13 @@
             NSString *strcolor = [dict objectForKey:@"Colors"];
             dogDetails.Colors = strcolor;
             
-            // NSString *strimg = [dict objectForKey:@"image"];
-            // EmpDetails.img = strimg;
-        }
+            //            NSString *strimg = [dict objectForKey:@"image"];
+            //            EmpDetails.img = strimg;
+            
             [dogarr addObject:dogDetails];
         }
-  
     }
+    return dogarr;
+}
+
 @end
