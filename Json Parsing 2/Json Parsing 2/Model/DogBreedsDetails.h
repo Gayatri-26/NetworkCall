@@ -15,8 +15,7 @@
 @property (strong,nonatomic) NSString *HigherClass;
 @property (strong,nonatomic) NSString *LifeSpan;
 @property (strong,nonatomic) NSString *Colors;
-@property (strong,nonatomic) NSString *img;
-@property (strong,nonatomic) UIImage *dogimg;
+@property (strong,nonatomic) UIImage  *img;
 
 +(NSMutableArray < DogBreedsDetails *> *)modelArrayFromDict:(NSDictionary *) d;
 

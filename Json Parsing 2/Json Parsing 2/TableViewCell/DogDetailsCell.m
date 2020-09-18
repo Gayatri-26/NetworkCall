@@ -16,10 +16,10 @@
     if (self) {
         
         //Image
-        self.imageview = [[UIImageView alloc]initWithFrame:CGRectMake(10, 37, 130, 130)];
-        [_imageview setImage:[UIImage imageNamed:@"7EE509HU_330x370.jpg"]];
-        [_imageview setContentMode:UIViewContentModeScaleAspectFit];
-        [self addSubview:self.imageview];
+        self.imgview = [[UIImageView alloc]initWithFrame:CGRectMake(10, 37, 130, 130)];
+        [_imgview setImage:[UIImage imageNamed:@"7EE509HU_330x370.jpg"]];
+        [_imgview setContentMode:UIViewContentModeScaleAspectFit];
+        [self addSubview:self.imgview];
         
         //Breed
         self.breed = [[UILabel alloc] init];

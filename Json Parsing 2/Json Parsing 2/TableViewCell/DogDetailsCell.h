@@ -14,6 +14,6 @@
 @property (strong,nonatomic) UILabel *highclass;
 @property (strong,nonatomic) UILabel *lifespam;
 @property (strong,nonatomic) UILabel *colors;
-@property (strong, nonatomic) UIImageView *imageview;
+@property (strong, nonatomic) UIImageView *imgview;
 
 @end

@@ -93,7 +93,7 @@
         [NSData dataWithContentsOfURL:path]];
         NSLog(@"Url = %@",ImageDownload);
         DogBreedsDetails *dog = [_dogsdetailarr firstObject];
-        dog.dogimg = ImageDownload;
+        dog.img = ImageDownload;
 
         dispatch_queue_t imagedata = dispatch_get_main_queue();
         dispatch_async(imagedata, ^{
@@ -122,7 +122,7 @@
     cell.highclass.text = [dogDetails HigherClass];
     cell.lifespam.text = [dogDetails LifeSpan];
     cell.colors.text = [dogDetails Colors];
-    cell.imageview.image = [dogDetails dogimg];
+    cell.imgview.image = [dogDetails img];
     
     return cell;
 }
