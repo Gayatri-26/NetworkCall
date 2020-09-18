@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DogDetailVC : UIViewController
+@interface DogDetailVC : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
 @end

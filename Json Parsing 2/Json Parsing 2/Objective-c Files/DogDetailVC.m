@@ -23,9 +23,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    [self NsUrldata];
-    NSThread *dataDownloadThread = [[NSThread alloc]initWithTarget:self selector:@selector(NsUrldata) object:nil];
+    NSThread *dataDownloadThread = [[NSThread alloc]initWithTarget:self selector:@selector(DownloadData) object:nil];
     [dataDownloadThread start];
+    
+    NSThread *imageDownloadThread = [[NSThread alloc]initWithTarget:self selector:@selector(DownloadImage) object:nil];
+    [imageDownloadThread start];
     
     self.dogsdetailarr = [[NSMutableArray alloc]init];
     
@@ -48,17 +50,15 @@
     DogsDetailsTableView.delegate = self;
 }
 
--(void)NsUrldata{
+-(void)DownloadData{
     NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://bitcodetech.in/ws_ios_assignment/ws_dog_info.php"]];
     
-    //create the Method "GET"
     [urlRequest setHTTPMethod:@"GET"];
     
     NSURLSession *session = [NSURLSession sharedSession];
     
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
     {
-        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
         if(data != nil)
         {
                                               
@@ -81,6 +81,29 @@
     [dataTask resume];
 }
 
+-(void)DownloadImage{
+   
+//    NSURL *url = [NSURL URLWithString:@"http://bitcodetech.in/ws_ios_assignment/ws_dog_info.php"];
+    NSURL *url = [NSURL URLWithString:@"http://bitcodetech.in/ws_ios_assignment/images/doberman.jpg"];
+    
+    NSURLSessionDownloadTask *downloadImageTask = [[NSURLSession sharedSession]
+    downloadTaskWithURL:url completionHandler:^(NSURL *path, NSURLResponse *response, NSError *error) {
+        
+        UIImage *ImageDownload = [UIImage imageWithData:
+        [NSData dataWithContentsOfURL:path]];
+        NSLog(@"Url = %@",ImageDownload);
+        DogBreedsDetails *dog = [_dogsdetailarr firstObject];
+        dog.dogimg = ImageDownload;
+
+        dispatch_queue_t imagedata = dispatch_get_main_queue();
+        dispatch_async(imagedata, ^{
+            [self->DogsDetailsTableView reloadData];
+        });
+
+    }];
+    [downloadImageTask resume];
+}
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     return _dogsdetailarr.count;
@@ -99,6 +122,7 @@
     cell.highclass.text = [dogDetails HigherClass];
     cell.lifespam.text = [dogDetails LifeSpan];
     cell.colors.text = [dogDetails Colors];
+    cell.imageview.image = [dogDetails dogimg];
     
     return cell;
 }
