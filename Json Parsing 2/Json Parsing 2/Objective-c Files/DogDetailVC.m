@@ -27,6 +27,7 @@
     
     NSOperationQueue *operationQueue = [[NSOperationQueue alloc]init];
     NSOperation *op1 = [[NSOperation alloc]init];
+    
     [op1 setCompletionBlock:^{
         NSLog(@"i am from op1");
     }];
@@ -36,7 +37,7 @@
     
     NSInvocationOperation *iOperation = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(NSdata) object:nil];
     
-       NSInvocationOperation *iOperation1 = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(DownloadImage) object:nil];
+    NSInvocationOperation *iOperation1 = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(DownloadImage1) object:nil];
     
     [operationQueue addOperation: op1];
     [operationQueue addOperation: iOperation];
@@ -71,30 +72,19 @@
 }
 
 -(void)NSdata{
+    
     NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://bitcodetech.in/ws_ios_assignment/ws_dog_info.php"]];
-    
     [urlRequest setHTTPMethod:@"GET"];
-    
     NSURLSession *session = [NSURLSession sharedSession];
-    
-    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
-    {
-        if(data != nil)
-        {
-                                              
-         NSArray *responseArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
+        if(data != nil){
+            NSArray *responseArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
                     NSLog(@"The response is - %@",responseArray);
-                                              
             _arrDog = [DogModel modelArrayFromDict: responseArray];
             
-            dispatch_queue_t dogdetailsdata = dispatch_get_main_queue();
-            dispatch_async(dogdetailsdata, ^{
-            [self->DogsDetailsTableView reloadData];
-//            NSOperation *op1 = [[NSOperation alloc]init];
-//            [op1 setCompletionBlock:^{
-//                [self->DogsDetailsTableView reloadData];
-//            }];
-           });
+            [[NSOperationQueue mainQueue]addOperationWithBlock:^{
+                [self->DogsDetailsTableView reloadData];
+            }];
         }
         else{
             NSLog(@"Error");
@@ -103,28 +93,26 @@
     [dataTask resume];
 }
 
--(void)DownloadImage{
-//1
-NSURL *url = [NSURL URLWithString:
+
+
+
+-(void)DownloadImage1{
+
+    NSURL *url = [NSURL URLWithString:
   @"http://bitcodetech.in/ws_ios_assignment/images/bulldog.jpg"];
 
-// 2
 NSURLSessionDownloadTask *downloadPhotoTask = [[NSURLSession sharedSession]
  downloadTaskWithURL:url completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
-  // 3
   UIImage *downloadedImage = [UIImage imageWithData:
     [NSData dataWithContentsOfURL:location]];
 }];
-
-// 4
-[downloadPhotoTask resume];
+    [downloadPhotoTask resume];
 }
 
 
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    
     return _arrDog.count;
-    
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -139,6 +127,7 @@ NSURLSessionDownloadTask *downloadPhotoTask = [[NSURLSession sharedSession]
     cell.highclass.text = [dogDetails HigherClass];
     cell.lifespam.text = [dogDetails LifeSpan];
     cell.colors.text = [dogDetails Colors];
+    
     
     return cell;
 }

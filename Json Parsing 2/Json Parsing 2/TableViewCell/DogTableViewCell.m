@@ -18,7 +18,7 @@
         
         //Image
         self.imageview = [[UIImageView alloc]initWithFrame:CGRectMake(10, 37, 130, 130)];
-        [_imageview setImage:[UIImage imageNamed:@"appleicon.png"]];
+      //  [_imageview setImage:[UIImage imageNamed:@"appleicon.png"]];
         [_imageview setContentMode:UIViewContentModeScaleAspectFit];
         [self addSubview:self.imageview];
         
