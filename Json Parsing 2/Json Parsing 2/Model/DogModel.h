@@ -12,12 +12,10 @@
 
 @interface DogModel : NSObject
 
-@property (nonatomic,strong) NSString *Dbreed;
-@property (nonatomic,strong) NSString *Dtemperament;
-@property (nonatomic,strong) UIImage  *Dimage;
-@property (nonatomic,strong) NSString *Dcolors;
-@property (nonatomic,strong) NSString *Dheight;
-@property (nonatomic,strong) NSString *Dweight;
+@property (strong,nonatomic) NSString *Breed;
+@property (strong,nonatomic) NSString *HigherClass;
+@property (strong,nonatomic) NSString *LifeSpan;
+@property (strong,nonatomic) NSString *Colors;
 
 +(NSMutableArray < DogModel * > *)modelArrayFromDict:(NSDictionary *) d1;
 

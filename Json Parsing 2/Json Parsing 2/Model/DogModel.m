@@ -11,43 +11,32 @@
 
 @implementation DogModel
 
-@synthesize Dbreed, Dtemperament, Dimage,Dcolors, Dheight, Dweight;
-
-
-+(NSMutableArray <DogModel * > *)modelArrayFromDict:(NSDictionary *) d1{
-    
-NSMutableArray *dogModelarr = [[NSMutableArray alloc]init];
-NSDictionary *dic1 = [d1 objectForKey:@"contacts"];
-   
-for (NSDictionary *dict in dic1)
++(NSMutableArray < DogModel *> *)modelArrayFromDict:(NSDictionary *) d
 {
-    DogModel *Dog = [[DogModel alloc]init];
-    NSString *strbreed = [dict objectForKey:@"breed"];
-    Dog.Dbreed = strbreed;
+    NSMutableArray *dogarr = [[NSMutableArray alloc]init];
     
-    NSString *strtemperament = [dict objectForKey:@"Temperament"];
-    Dog.Dtemperament = strtemperament;
-    
-    UIImage *strimage = [dict objectForKey:@"image"];
-    Dog.Dimage= strimage;
-    
-    NSString *strcolor = [dict objectForKey:@"Colors"];
-       Dog.Dcolors = strcolor;
-    
-    NSString *strheight = [dict objectForKey:@"Height"];
-       Dog.Dheight = strheight;
-    
-    NSString *strweight = [dict objectForKey:@"Weight"];
-       Dog.Dweight = strweight;
-    
-    
-    
-    
-    [dogModelarr addObject:Dog];
-   
- }
-    return dogModelarr;
-}
-
-
+    if (d != nil){
+        
+        for(NSDictionary *dict in d){
+            
+            DogModel *dogDetails = [[DogModel alloc]init];
+            NSString *strbreed = [dict objectForKey:@"breed"];
+            dogDetails.Breed = strbreed;
+            
+            NSString *strhighclass = [dict objectForKey:@"Higher classification"];
+            dogDetails.HigherClass = strhighclass;
+            
+            NSString *strlifespan = [dict objectForKey:@"Life span"];
+            dogDetails.LifeSpan = strlifespan;
+            
+            NSString *strcolor = [dict objectForKey:@"Colors"];
+            dogDetails.Colors = strcolor;
+            
+            // NSString *strimg = [dict objectForKey:@"image"];
+            // EmpDetails.img = strimg;
+        }
+            [dogarr addObject:dogDetails];
+        }
+  
+    }
 @end

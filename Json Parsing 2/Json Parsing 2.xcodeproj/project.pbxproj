@@ -13,7 +13,6 @@
 		044F601325133A8700DAADF3 /* OperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044F601225133A8700DAADF3 /* OperationViewController.m */; };
 		044F6016251354D000DAADF3 /* DogModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 044F6015251354D000DAADF3 /* DogModel.m */; };
 		044F601925135C9500DAADF3 /* DogTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 044F601825135C9500DAADF3 /* DogTableViewCell.m */; };
-		045C948324F799BD00CFC20F /* SecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 045C948224F799BD00CFC20F /* SecondVC.m */; };
 		045C948624F7A02E00CFC20F /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045C948524F7A02E00CFC20F /* PersonViewController.m */; };
 		04650BC423FF8D94002C5A80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04650BC323FF8D94002C5A80 /* AppDelegate.swift */; };
 		04650BC623FF8D94002C5A80 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04650BC523FF8D94002C5A80 /* ViewController.swift */; };
@@ -23,6 +22,8 @@
 		04650BD823FF9A80002C5A80 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04650BD723FF9A80002C5A80 /* DetailViewController.swift */; };
 		048ADB732501803200FAA28D /* PersonDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 048ADB722501803200FAA28D /* PersonDetail.m */; };
 		04C35A4524F792B4002D72D4 /* PersonViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C35A4424F792B4002D72D4 /* PersonViewCell.m */; };
+		04C95DF825148AC800813B5F /* DogDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C95DF725148AC800813B5F /* DogDetailVC.m */; };
+		04C95DFA25148C4200813B5F /* appleicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 04C95DF925148C4200813B5F /* appleicon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,8 +36,6 @@
 		044F6015251354D000DAADF3 /* DogModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DogModel.m; sourceTree = "<group>"; };
 		044F601725135C9500DAADF3 /* DogTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DogTableViewCell.h; sourceTree = "<group>"; };
 		044F601825135C9500DAADF3 /* DogTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DogTableViewCell.m; sourceTree = "<group>"; };
-		045C948124F799BD00CFC20F /* SecondVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondVC.h; sourceTree = "<group>"; };
-		045C948224F799BD00CFC20F /* SecondVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondVC.m; sourceTree = "<group>"; };
 		045C948424F7A02E00CFC20F /* PersonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonViewController.h; sourceTree = "<group>"; };
 		045C948524F7A02E00CFC20F /* PersonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonViewController.m; sourceTree = "<group>"; };
 		04650BC023FF8D94002C5A80 /* Json Parsing 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Json Parsing 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +51,9 @@
 		04A140BD24F7707900570C52 /* Json Parsing 2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Json Parsing 2-Bridging-Header.h"; sourceTree = "<group>"; };
 		04C35A4324F792B4002D72D4 /* PersonViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonViewCell.h; sourceTree = "<group>"; };
 		04C35A4424F792B4002D72D4 /* PersonViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonViewCell.m; sourceTree = "<group>"; };
+		04C95DF625148AC800813B5F /* DogDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DogDetailVC.h; sourceTree = "<group>"; };
+		04C95DF725148AC800813B5F /* DogDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DogDetailVC.m; sourceTree = "<group>"; };
+		04C95DF925148C4200813B5F /* appleicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appleicon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				04A140BC24F7701C00570C52 /* Objective-c Files */,
 				04A140C624F7710100570C52 /* TableViewCell */,
 				04650BCA23FF8D94002C5A80 /* Assets.xcassets */,
+				04C95DF925148C4200813B5F /* appleicon.png */,
 				04650BCC23FF8D94002C5A80 /* LaunchScreen.storyboard */,
 				04650BCF23FF8D94002C5A80 /* Info.plist */,
 				0433F70B24FF7C9600BE29D7 /* CoredataModel.xcdatamodeld */,
@@ -113,8 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				04A140BD24F7707900570C52 /* Json Parsing 2-Bridging-Header.h */,
-				045C948124F799BD00CFC20F /* SecondVC.h */,
-				045C948224F799BD00CFC20F /* SecondVC.m */,
+				04C95DF625148AC800813B5F /* DogDetailVC.h */,
+				04C95DF725148AC800813B5F /* DogDetailVC.m */,
 				045C948424F7A02E00CFC20F /* PersonViewController.h */,
 				045C948524F7A02E00CFC20F /* PersonViewController.m */,
 				044F601125133A8700DAADF3 /* OperationViewController.h */,
@@ -208,6 +211,7 @@
 				04650BCE23FF8D94002C5A80 /* LaunchScreen.storyboard in Resources */,
 				04650BCB23FF8D94002C5A80 /* Assets.xcassets in Resources */,
 				04650BC923FF8D94002C5A80 /* Main.storyboard in Resources */,
+				04C95DFA25148C4200813B5F /* appleicon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,13 +224,13 @@
 			files = (
 				045C948624F7A02E00CFC20F /* PersonViewController.m in Sources */,
 				04359A6B23FFB54300670AA5 /* JSONModel.swift in Sources */,
+				04C95DF825148AC800813B5F /* DogDetailVC.m in Sources */,
 				044F6016251354D000DAADF3 /* DogModel.m in Sources */,
 				044F601325133A8700DAADF3 /* OperationViewController.m in Sources */,
 				04C35A4524F792B4002D72D4 /* PersonViewCell.m in Sources */,
 				042619A224FEC10A00AC1C6E /* CountryDetailCell.swift in Sources */,
 				04650BC623FF8D94002C5A80 /* ViewController.swift in Sources */,
 				04650BC423FF8D94002C5A80 /* AppDelegate.swift in Sources */,
-				045C948324F799BD00CFC20F /* SecondVC.m in Sources */,
 				048ADB732501803200FAA28D /* PersonDetail.m in Sources */,
 				044F601925135C9500DAADF3 /* DogTableViewCell.m in Sources */,
 				0433F70D24FF7C9600BE29D7 /* CoredataModel.xcdatamodeld in Sources */,

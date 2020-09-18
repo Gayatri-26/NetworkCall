@@ -5,7 +5,7 @@
 //  Created by Mac on 04/09/20.
 //  Copyright © 2020 Mac. All rights reserved.
 //
-
+/*
 #import "PersonDetail.h"
 #import "SecondVC.h"
 
@@ -42,3 +42,4 @@ for (NSDictionary *dict in dic1)
     return personDetailArr;
 }
 @end
+*/

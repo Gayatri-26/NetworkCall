@@ -12,12 +12,11 @@
 @interface DogTableViewCell : UITableViewCell
 
 
-@property (strong, nonatomic)  UILabel *Dbreed;
-@property (strong, nonatomic)  UILabel *Dtemperament ;
-@property (strong, nonatomic)  UIImage *Dimage;
-@property (strong, nonatomic)  UILabel *Dheight;
-@property (strong, nonatomic)  UILabel *Dweight;
-@property (strong, nonatomic)  UILabel *Dcolors;
+@property (strong,nonatomic) UILabel *breed;
+@property (strong,nonatomic) UILabel *highclass;
+@property (strong,nonatomic) UILabel *lifespam;
+@property (strong,nonatomic) UILabel *colors;
+@property (strong, nonatomic) UIImageView *imageview;
 
 
 @end
