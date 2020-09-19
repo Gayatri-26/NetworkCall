@@ -33,6 +33,7 @@
     
     DogsDetailsTableView = [[UITableView alloc]init];
     [DogsDetailsTableView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    DogsDetailsTableView.allowsSelection = UITableViewCellSelectionStyleNone;
     [self.view addSubview:DogsDetailsTableView];
     
     NSLayoutConstraint *left = [NSLayoutConstraint constraintWithItem:DogsDetailsTableView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1 constant:0];
