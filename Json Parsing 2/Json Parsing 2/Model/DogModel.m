@@ -1,15 +1,17 @@
 //
-//  DogBreedsDetails.m
+//  DogModel.m
 //  Json Parsing 2
 //
-//  Created by Mac on 07/09/20.
+//  Created by Mac on 18/09/20.
 //  Copyright © 2020 Mac. All rights reserved.
 //
 
-#import "DogBreedsDetails.h"
+#import "DogModel.h"
+#import "DogDetailVC.h"
 
-@implementation DogBreedsDetails
-+(NSMutableArray < DogBreedsDetails *> *)modelArrayFromDict:(NSDictionary *) d
+@implementation DogModel
+
++(NSMutableArray < DogModel *> *)modelArrayFromDict:(NSDictionary *) d
 {
     NSMutableArray *dogarr = [[NSMutableArray alloc]init];
     
@@ -17,7 +19,7 @@
         
         for(NSDictionary *dict in d){
             
-            DogBreedsDetails *dogDetails = [[DogBreedsDetails alloc]init];
+            DogModel *dogDetails = [[DogModel alloc]init];
             NSString *strbreed = [dict objectForKey:@"breed"];
             dogDetails.Breed = strbreed;
             
@@ -30,7 +32,7 @@
             NSString *strcolor = [dict objectForKey:@"Colors"];
             dogDetails.Colors = strcolor;
             
-//            NSString *strimg = [dict objectForKey:@"image"];
+//            UIImage *strimg = [dict objectForKey: @"image"];
 //            dogDetails.img = strimg;
             
             [dogarr addObject:dogDetails];

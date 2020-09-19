@@ -1,14 +1,14 @@
 //
-//  DogDetailsCell.m
+//  DogTableViewCell.m
 //  Json Parsing 2
 //
-//  Created by Mac on 07/09/20.
+//  Created by Mac on 18/09/20.
 //  Copyright © 2020 Mac. All rights reserved.
 //
 
-#import "DogDetailsCell.h"
+#import "DogTableViewCell.h"
 
-@implementation DogDetailsCell
+@implementation DogTableViewCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -16,10 +16,10 @@
     if (self) {
         
         //Image
-        self.imageview = [[UIImageView alloc]initWithFrame:CGRectMake(10, 37, 130, 130)];
-        [_imageview setImage:[UIImage imageNamed:@"7EE509HU_330x370.jpg"]];
-        [_imageview setContentMode:UIViewContentModeScaleAspectFit];
-        [self addSubview:self.imageview];
+        self.imgview = [[UIImageView alloc]initWithFrame:CGRectMake(10, 37, 130, 130)];
+        [_imgview setImage:[UIImage imageNamed:@"7EE509HU_330x370.jpg"]];
+        [_imgview setContentMode:UIViewContentModeScaleAspectFit];
+        [self addSubview:self.imgview];
         
         //Breed
         self.breed = [[UILabel alloc] init];
@@ -95,15 +95,9 @@
     return self;
 }
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-    
-    // Configure the view for the selected state
 }
 
 @end
