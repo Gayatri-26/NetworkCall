@@ -31,17 +31,20 @@
     [op1 setCompletionBlock:^{
         NSLog(@"i am from op1");
     }];
-    [operationQueue addOperationWithBlock:^{
-        NSLog(@"i am from operation addOperationWithBlock");
-    }];
+//    [operationQueue addOperationWithBlock:^{
+//        NSLog(@"i am from operation addOperationWithBlock");
+//    }];
+    [[NSOperationQueue mainQueue]addOperationWithBlock:^{
+           [ DogsDetailsTableView reloadData];
+       }];
     
     NSInvocationOperation *iOperation = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(NSdata) object:nil];
     
-    NSInvocationOperation *iOperation1 = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(DownloadImage1) object:nil];
+ //   NSInvocationOperation *iOperation1 = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(DownloadImage1) object:nil];
     
     [operationQueue addOperation: op1];
     [operationQueue addOperation: iOperation];
-    [operationQueue addOperation: iOperation1];
+  //  [operationQueue addOperation: iOperation1];
 
     
     
@@ -89,27 +92,6 @@
     [dataTask resume];
 }
 
-
-
-
--(void)DownloadImage1{
-
-    NSURL *url = [NSURL URLWithString:
-  @"http://bitcodetech.in/ws_ios_assignment/images/bulldog.jpg"];
-
-NSURLSessionDownloadTask *downloadPhotoTask = [[NSURLSession sharedSession]
- downloadTaskWithURL:url completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
-  UIImage *downloadedImage = [UIImage imageWithData:
-    [NSData dataWithContentsOfURL:location]];
-    DogModel *dog = [_arrDog firstObject];
-    dog.img = downloadedImage;
-    [[NSOperationQueue mainQueue]addOperationWithBlock:^{
-        [self->DogsDetailsTableView reloadData];
-    }];
-}];
-    
-    [downloadPhotoTask resume];
-}
 
 
 

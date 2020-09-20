@@ -18,6 +18,7 @@
 		04650BCB23FF8D94002C5A80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04650BCA23FF8D94002C5A80 /* Assets.xcassets */; };
 		04650BCE23FF8D94002C5A80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04650BCC23FF8D94002C5A80 /* LaunchScreen.storyboard */; };
 		04650BD823FF9A80002C5A80 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04650BD723FF9A80002C5A80 /* DetailViewController.swift */; };
+		0494143B2517525D0095C204 /* ImageDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0494143A2517525D0095C204 /* ImageDownloadManager.m */; };
 		04C95DF825148AC800813B5F /* DogDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C95DF725148AC800813B5F /* DogDetailVC.m */; };
 		04C95DFA25148C4200813B5F /* appleicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 04C95DF925148C4200813B5F /* appleicon.png */; };
 /* End PBXBuildFile section */
@@ -38,6 +39,8 @@
 		04650BCD23FF8D94002C5A80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04650BCF23FF8D94002C5A80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04650BD723FF9A80002C5A80 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		049414392517525D0095C204 /* ImageDownloadManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageDownloadManager.h; sourceTree = "<group>"; };
+		0494143A2517525D0095C204 /* ImageDownloadManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageDownloadManager.m; sourceTree = "<group>"; };
 		04A140BD24F7707900570C52 /* Json Parsing 2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Json Parsing 2-Bridging-Header.h"; sourceTree = "<group>"; };
 		04C95DF625148AC800813B5F /* DogDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DogDetailVC.h; sourceTree = "<group>"; };
 		04C95DF725148AC800813B5F /* DogDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DogDetailVC.m; sourceTree = "<group>"; };
@@ -104,6 +107,8 @@
 				04A140BD24F7707900570C52 /* Json Parsing 2-Bridging-Header.h */,
 				04C95DF625148AC800813B5F /* DogDetailVC.h */,
 				04C95DF725148AC800813B5F /* DogDetailVC.m */,
+				049414392517525D0095C204 /* ImageDownloadManager.h */,
+				0494143A2517525D0095C204 /* ImageDownloadManager.m */,
 			);
 			path = "Objective-c Files";
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 				044F601925135C9500DAADF3 /* DogTableViewCell.m in Sources */,
 				0433F70D24FF7C9600BE29D7 /* CoredataModel.xcdatamodeld in Sources */,
 				04650BD823FF9A80002C5A80 /* DetailViewController.swift in Sources */,
+				0494143B2517525D0095C204 /* ImageDownloadManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
