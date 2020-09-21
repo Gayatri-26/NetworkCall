@@ -22,6 +22,7 @@
 {
     UITableView *DogsDetailsTableView;
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -54,7 +55,7 @@
 }
 
 -(void)DownloadData{
-
+    
     void(^DataDownloadCallBack)(NSData *data, NSError *error) = ^(NSData *dogdata, NSError *error){
         NSLog(@"Data: %@", dogdata);
         if(dogdata != nil){
@@ -75,24 +76,19 @@
 
 -(void)DownloadImage{
     
-    NSURL *url = [NSURL URLWithString:@"http://bitcodetech.in/ws_ios_assignment/images/bulldog.jpg"];
-    
-    NSURLSessionDownloadTask *downloadImageTask = [[NSURLSession sharedSession]
-                                                   downloadTaskWithURL:url completionHandler:^(NSURL *path, NSURLResponse *response, NSError *error) {
-                                                       
-                                                       UIImage *ImageDownload = [UIImage imageWithData:
-                                                                                 [NSData dataWithContentsOfURL:path]];
-                                                       NSLog(@"Url = %@",ImageDownload);
-                                                       DogModel *dog = [_arrDog firstObject];
-                                                       dog.img = ImageDownload;
-                                                       
-                                                       dispatch_queue_t imagedata = dispatch_get_main_queue();
-                                                       dispatch_async(imagedata, ^{
-                                                           [self->DogsDetailsTableView reloadData];
-                                                       });
-                                                       
-                                                   }];
-    [downloadImageTask resume];
+    void(^ImageDownloadCallBack)(NSURL *path, NSError *error) = ^(NSURL *dogpath, NSError *error){
+        
+        UIImage *ImageDownload = [UIImage imageWithData:[NSData dataWithContentsOfURL:dogpath]];
+        NSLog(@"Url = %@",ImageDownload);
+        DogModel *dog = [_arrDog firstObject];
+        dog.img = ImageDownload;
+        
+        dispatch_queue_t imagedata = dispatch_get_main_queue();
+        dispatch_async(imagedata, ^{
+            [self->DogsDetailsTableView reloadData];
+        });
+    };
+    [ImageDownloadThread withblock:ImageDownloadCallBack];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

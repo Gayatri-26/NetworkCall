@@ -19,18 +19,18 @@
     NSURLSession *session = [NSURLSession sharedSession];
     
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
-                                      {
-                                          if(data != nil)
-                                          {
-                                              NSLog(@"Response : %@",data);
-                                              block(data,error);
-                                          }
-                                          else
-                                          {
-                                              NSLog(@"Error");
-                                              block(nil,error);
-                                          }
-                                      }];
+    {
+        if(data != nil)
+            {
+                NSLog(@"Response : %@",data);
+                block(data,error);
+            }
+        else
+            {
+                NSLog(@"Error");
+                block(nil,error);
+            }
+    }];
     
     [dataTask resume];
 }
