@@ -27,20 +27,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
     NSOperationQueue *operationQueue = [[NSOperationQueue alloc]init];
-   // NSOperation *op1 = [[NSOperation alloc]init];
+   
+    NSInvocationOperation *dOperation = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(downloadData) object:nil];
+    NSInvocationOperation *iOperation = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(downloadImage) object:nil];
     
-//    [op1 setCompletionBlock:^{
-//        NSLog(@"i am from op1");
-//    }];
-    
-    
-    NSInvocationOperation *dOperation = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(DownloadData) object:nil];
-    
-   // [operationQueue addOperation: op1];
     [operationQueue addOperation: dOperation];
+    [operationQueue addOperation: iOperation];
 
-
+    
     
     self.arrDog = [[NSMutableArray alloc]init];
     
@@ -62,7 +58,7 @@
     DogsDetailsTableView.delegate = self;
 }
 
--(void)DownloadData{
+-(void)downloadData{
 
     void(^DataDownloadCallBack)(NSData *data, NSError *error) = ^(NSData *dogdata, NSError *error){
         NSLog(@"Data: %@", dogdata);
@@ -81,17 +77,27 @@
     [JSONDownloadOperation withblock:DataDownloadCallBack];
 }
 
--(void)DownloadImage{
-
+-(void)downloadImage{
+        
+        void(^ImageDownloadCallBack)(NSURL *path, NSError *error) = ^(NSURL *dogpath, NSError *error){
+            
+//            NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+//             [queue addOperationWithBlock:^{
+            UIImage *ImageDownload = [UIImage imageWithData:[NSData dataWithContentsOfURL:dogpath]];
+            NSLog(@"Url = %@",ImageDownload);
+            DogModel *dog = [_arrDog firstObject];
+            dog.img = ImageDownload;
+                
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    [self->DogsDetailsTableView reloadData];
+                }];
+            };
+        [ImageDownloadOperation withblock:ImageDownloadCallBack];
 }
-
-
-
-
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return _arrDog.count;
+    return  _arrDog.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

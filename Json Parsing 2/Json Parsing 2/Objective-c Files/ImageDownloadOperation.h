@@ -10,7 +10,7 @@
 
 @interface ImageDownloadOperation : NSOperation
 
-+(void) imageblock:(void (^)(NSData *, NSError *))block;
++(void) withblock:(void (^)(NSURL *, NSError *))block;
 
 @end
 
