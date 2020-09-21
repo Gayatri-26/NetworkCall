@@ -67,10 +67,10 @@
         NSLog(@"Data: %@", dogdata);
         if(dogdata != nil){
             
-            NSDictionary *responseArray = [NSJSONSerialization JSONObjectWithData:dogdata options:NSJSONReadingAllowFragments error:nil];
-            NSLog(@"The response is - %@",responseArray);
+            NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:dogdata options:NSJSONReadingAllowFragments error:nil];
+            NSLog(@"The response is - %@",responseDic);
             
-            _arrDog = [DogModel modelArrayFromDict:responseArray];
+            _arrDog = [DogModel modelArrayFromDict:responseDic];
 
                 [[NSOperationQueue mainQueue]addOperationWithBlock:^{
                        [self-> DogsDetailsTableView reloadData];
