@@ -11,8 +11,7 @@
 
 @interface JSONDownloadOperation : NSOperation
 
-+(void)dataDownload:(NSString *)strurl strparameter:(NSString *)parameter withblock:(void(^)(NSData *, NSError*))block;
-
++(void) withblock:(void (^)(NSData *, NSError *))block;
 
 
 @end

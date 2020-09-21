@@ -9,7 +9,8 @@
 #import "DogDetailVC.h"
 #import "DogModel.h"
 #import "DogTableViewCell.h"
-
+#import  "JSONDownloadOperation.h"
+ 
 @interface DogDetailVC ()
 
 @property(strong,nonatomic) NSMutableArray<DogModel *> *arrDog;
@@ -26,28 +27,19 @@
     [super viewDidLoad];
     
     NSOperationQueue *operationQueue = [[NSOperationQueue alloc]init];
-    NSOperation *op1 = [[NSOperation alloc]init];
+   // NSOperation *op1 = [[NSOperation alloc]init];
     
-    [op1 setCompletionBlock:^{
-        NSLog(@"i am from op1");
-    }];
-//    [operationQueue addOperationWithBlock:^{
-//        NSLog(@"i am from operation addOperationWithBlock");
+//    [op1 setCompletionBlock:^{
+//        NSLog(@"i am from op1");
 //    }];
-    [[NSOperationQueue mainQueue]addOperationWithBlock:^{
-           [ DogsDetailsTableView reloadData];
-       }];
     
-    NSInvocationOperation *iOperation = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(NSdata) object:nil];
     
- //   NSInvocationOperation *iOperation1 = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(DownloadImage1) object:nil];
+    NSInvocationOperation *dOperation = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(DownloadData) object:nil];
     
-    [operationQueue addOperation: op1];
-    [operationQueue addOperation: iOperation];
-  //  [operationQueue addOperation: iOperation1];
+   // [operationQueue addOperation: op1];
+    [operationQueue addOperation: dOperation];
 
-    
-    
+
     
     self.arrDog = [[NSMutableArray alloc]init];
     
@@ -62,7 +54,6 @@
     NSLayoutConstraint *right = [NSLayoutConstraint constraintWithItem:DogsDetailsTableView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1 constant:-0];
     
     [self.view addConstraints:@[left, top, bottom, right]];
-    
     [DogsDetailsTableView registerClass:[DogTableViewCell class] forCellReuseIdentifier:@"DCell"];
     DogsDetailsTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     
@@ -70,11 +61,30 @@
     DogsDetailsTableView.delegate = self;
 }
 
+-(void)DownloadData{
+
+    void(^DataDownloadCallBack)(NSData *data, NSError *error) = ^(NSData *dogdata, NSError *error){
+        NSLog(@"Data: %@", dogdata);
+        if(dogdata != nil){
+            
+            NSDictionary *responseArray = [NSJSONSerialization JSONObjectWithData:dogdata options:NSJSONReadingAllowFragments error:nil];
+            NSLog(@"The response is - %@",responseArray);
+            
+            _arrDog = [DogModel modelArrayFromDict:responseArray];
+
+                [[NSOperationQueue mainQueue]addOperationWithBlock:^{
+                       [self-> DogsDetailsTableView reloadData];
+                   }];
+        }
+    };
+    [JSONDownloadOperation withblock:DataDownloadCallBack];
+}
 
 
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
     return _arrDog.count;
 }
 
