@@ -77,12 +77,12 @@
 -(void)DownloadImage{
     
     void(^ImageDownloadCallBack)(NSURL *path, NSError *error) = ^(NSURL *dogpath, NSError *error){
-        
+//        if (dogpath.firstDownloadTask == 1){
         UIImage *ImageDownload = [UIImage imageWithData:[NSData dataWithContentsOfURL:dogpath]];
         NSLog(@"Url = %@",ImageDownload);
         DogModel *dog = [_arrDog firstObject];
         dog.img = ImageDownload;
-        
+//        }
         dispatch_queue_t imagedata = dispatch_get_main_queue();
         dispatch_async(imagedata, ^{
             [self->DogsDetailsTableView reloadData];

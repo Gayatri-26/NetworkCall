@@ -10,6 +10,9 @@
 
 @interface ImageDownloadThread : NSThread
 
+@property (strong,nonatomic) NSURLSessionDownloadTask *firstDownloadTask;
+@property (strong,nonatomic) NSURLSessionDownloadTask *secondDownloadTask;
+
 +(void) withblock:(void (^)(NSURL *, NSError *))block;
 
 @end
