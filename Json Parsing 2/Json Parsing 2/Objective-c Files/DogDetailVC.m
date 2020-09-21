@@ -10,6 +10,7 @@
 #import "DogModel.h"
 #import "DogTableViewCell.h"
 #import  "JSONDownloadOperation.h"
+#import "ImageDownloadOperation.h"
  
 @interface DogDetailVC ()
 
@@ -79,6 +80,11 @@
     };
     [JSONDownloadOperation withblock:DataDownloadCallBack];
 }
+
+-(void)DownloadImage{
+
+}
+
 
 
 
