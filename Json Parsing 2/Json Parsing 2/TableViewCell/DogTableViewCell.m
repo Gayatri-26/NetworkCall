@@ -16,7 +16,7 @@
     if (self) {
         
         //Image
-        self.imgview = [[UIImageView alloc]initWithFrame:CGRectMake(10, 37, 130, 130)];
+        self.imgview = [[UIImageView alloc]initWithFrame:CGRectMake(20,10, 130, 130)];
         [_imgview setImage:[UIImage imageNamed:@"7EE509HU_330x370.jpg"]];
         [_imgview setContentMode:UIViewContentModeScaleAspectFit];
         [self addSubview:self.imgview];
@@ -31,7 +31,7 @@
         
         [self addSubview:self.breed];
         
-        NSLayoutConstraint *leftbreed = [NSLayoutConstraint constraintWithItem:_breed attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:140];
+        NSLayoutConstraint *leftbreed = [NSLayoutConstraint constraintWithItem:_breed attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:170];
         NSLayoutConstraint *topbreed = [NSLayoutConstraint constraintWithItem:_breed attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:20];
         
         NSLayoutConstraint *heightbreed = [NSLayoutConstraint constraintWithItem:_breed attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:25];
@@ -50,7 +50,7 @@
         
         [self addSubview:self.highclass];
         
-        NSLayoutConstraint *lefthighclass = [NSLayoutConstraint constraintWithItem:_highclass attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:140];
+        NSLayoutConstraint *lefthighclass = [NSLayoutConstraint constraintWithItem:_highclass attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:170];
         NSLayoutConstraint *tophighclass = [NSLayoutConstraint constraintWithItem:_highclass attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:60];
         
         NSLayoutConstraint *heighthighclass = [NSLayoutConstraint constraintWithItem:_highclass attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:25];
@@ -67,7 +67,7 @@
         [_lifespam setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self addSubview:self.lifespam];
         
-        NSLayoutConstraint *leftlifespam = [NSLayoutConstraint constraintWithItem:_lifespam attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:140];
+        NSLayoutConstraint *leftlifespam = [NSLayoutConstraint constraintWithItem:_lifespam attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:170];
         NSLayoutConstraint *toplifespam = [NSLayoutConstraint constraintWithItem:_lifespam attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:100];
         
         NSLayoutConstraint *heightlifespam = [NSLayoutConstraint constraintWithItem:_lifespam attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:25];
@@ -85,7 +85,7 @@
         [_colors setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self addSubview:self.colors];
         
-        NSLayoutConstraint *leftcolors = [NSLayoutConstraint constraintWithItem:_colors attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:140];
+        NSLayoutConstraint *leftcolors = [NSLayoutConstraint constraintWithItem:_colors attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:20];
         NSLayoutConstraint *topcolors = [NSLayoutConstraint constraintWithItem:_colors attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:140];
         
         NSLayoutConstraint *rightcolors = [NSLayoutConstraint constraintWithItem:_colors attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight multiplier:1 constant:-20];
