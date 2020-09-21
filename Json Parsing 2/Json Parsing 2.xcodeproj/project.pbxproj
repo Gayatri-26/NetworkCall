@@ -12,6 +12,7 @@
 		04359A6B23FFB54300670AA5 /* JSONModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04359A6A23FFB54300670AA5 /* JSONModel.swift */; };
 		044F6016251354D000DAADF3 /* DogModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 044F6015251354D000DAADF3 /* DogModel.m */; };
 		044F601925135C9500DAADF3 /* DogTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 044F601825135C9500DAADF3 /* DogTableViewCell.m */; };
+		04633E9525185B8500AC4D74 /* JSONDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04633E9425185B8500AC4D74 /* JSONDownloadOperation.m */; };
 		04650BC423FF8D94002C5A80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04650BC323FF8D94002C5A80 /* AppDelegate.swift */; };
 		04650BC623FF8D94002C5A80 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04650BC523FF8D94002C5A80 /* ViewController.swift */; };
 		04650BC923FF8D94002C5A80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04650BC723FF8D94002C5A80 /* Main.storyboard */; };
@@ -31,6 +32,8 @@
 		044F6015251354D000DAADF3 /* DogModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DogModel.m; sourceTree = "<group>"; };
 		044F601725135C9500DAADF3 /* DogTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DogTableViewCell.h; sourceTree = "<group>"; };
 		044F601825135C9500DAADF3 /* DogTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DogTableViewCell.m; sourceTree = "<group>"; };
+		04633E9325185B8500AC4D74 /* JSONDownloadOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONDownloadOperation.h; sourceTree = "<group>"; };
+		04633E9425185B8500AC4D74 /* JSONDownloadOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSONDownloadOperation.m; sourceTree = "<group>"; };
 		04650BC023FF8D94002C5A80 /* Json Parsing 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Json Parsing 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04650BC323FF8D94002C5A80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04650BC523FF8D94002C5A80 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +112,8 @@
 				04C95DF725148AC800813B5F /* DogDetailVC.m */,
 				049414392517525D0095C204 /* ImageDownloadManager.h */,
 				0494143A2517525D0095C204 /* ImageDownloadManager.m */,
+				04633E9325185B8500AC4D74 /* JSONDownloadOperation.h */,
+				04633E9425185B8500AC4D74 /* JSONDownloadOperation.m */,
 			);
 			path = "Objective-c Files";
 			sourceTree = "<group>";
@@ -214,6 +219,7 @@
 				04650BC623FF8D94002C5A80 /* ViewController.swift in Sources */,
 				04650BC423FF8D94002C5A80 /* AppDelegate.swift in Sources */,
 				044F601925135C9500DAADF3 /* DogTableViewCell.m in Sources */,
+				04633E9525185B8500AC4D74 /* JSONDownloadOperation.m in Sources */,
 				0433F70D24FF7C9600BE29D7 /* CoredataModel.xcdatamodeld in Sources */,
 				04650BD823FF9A80002C5A80 /* DetailViewController.swift in Sources */,
 				0494143B2517525D0095C204 /* ImageDownloadManager.m in Sources */,

@@ -14,5 +14,8 @@
 
 @property(strong,nonatomic) NSMutableArray<DogModel *> *temparr;
 
++(void)executequery:(NSString *)strurl strparameter:(NSString *)parameter withblock:(void(^)(NSData *, NSError*))block;
+
+
 @end
 

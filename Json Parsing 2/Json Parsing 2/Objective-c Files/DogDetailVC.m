@@ -70,27 +70,6 @@
     DogsDetailsTableView.delegate = self;
 }
 
--(void)NSdata{
-    
-    NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://bitcodetech.in/ws_ios_assignment/ws_dog_info.php"]];
-    [urlRequest setHTTPMethod:@"GET"];
-    NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
-        if(data != nil){
-            NSDictionary *responsedic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-                    NSLog(@"The response is - %@",responsedic);
-            _arrDog = [DogModel modelArrayFromDict: responsedic];
-            
-            [[NSOperationQueue mainQueue]addOperationWithBlock:^{
-                [self->DogsDetailsTableView reloadData];
-            }];
-        }
-        else{
-            NSLog(@"Error");
-        }
-    }];
-    [dataTask resume];
-}
 
 
 
