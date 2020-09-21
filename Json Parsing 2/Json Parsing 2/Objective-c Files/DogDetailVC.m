@@ -30,11 +30,32 @@
     
     NSOperationQueue *operationQueue = [[NSOperationQueue alloc]init];
    
-    NSInvocationOperation *dOperation = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(downloadData) object:nil];
-    NSInvocationOperation *iOperation = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(downloadImage) object:nil];
+//    NSInvocationOperation *dOperation = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(downloadData) object:nil];
     
-    [operationQueue addOperation: dOperation];
-    [operationQueue addOperation: iOperation];
+    
+   // NSInvocationOperation *iOperation = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(downloadImage) object:nil];
+ NSURL *url1 = [NSURL URLWithString:@"http://bitcodetech.in/ws_ios_assignment/ws_dog_info.php"];
+    void(^DataDownloadCallBack)(NSData *data, NSError *error) = ^(NSData *dogdata, NSError *error){
+           NSLog(@"Data: %@", dogdata);
+           if(dogdata != nil){
+               
+               NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:dogdata options:NSJSONReadingAllowFragments error:nil];
+               NSLog(@"The response is - %@",responseDic);
+               
+               _arrDog = [DogModel modelArrayFromDict:responseDic];
+
+                   [[NSOperationQueue mainQueue]addOperationWithBlock:^{
+                          [self-> DogsDetailsTableView reloadData];
+                      }];
+           }
+       };
+    JSONDownloadOperation *datadl = [[JSONDownloadOperation alloc]initWithURL: url1 andCallBack: DataDownloadCallBack];
+                                     
+    [operationQueue addOperation: datadl];
+  //  datadl.is
+    
+//    [operationQueue addOperation: dOperation];
+//    [operationQueue addOperation: iOperation];
 
     
     
@@ -83,12 +104,15 @@
             
 //            NSOperationQueue *queue = [[NSOperationQueue alloc] init];
 //             [queue addOperationWithBlock:^{
+
             UIImage *ImageDownload = [UIImage imageWithData:[NSData dataWithContentsOfURL:dogpath]];
             NSLog(@"Url = %@",ImageDownload);
             DogModel *dog = [_arrDog firstObject];
+            
             dog.img = ImageDownload;
                 
                 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    
                     [self->DogsDetailsTableView reloadData];
                 }];
             };

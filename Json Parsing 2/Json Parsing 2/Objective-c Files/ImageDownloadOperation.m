@@ -17,7 +17,11 @@
 
 +(void) withblock:(void (^)(NSURL *, NSError *))block{
     
-    NSURL *url = [NSURL URLWithString:@"http://bitcodetech.in/ws_ios_assignment/images/bulldog.jpg"];
+    NSURL *url = [NSURL URLWithString: @"http://bitcodetech.in/ws_ios_assignment/images/bulldog.jpg"];
+//
+//   NSBlockOperation* theOp = [NSBlockOperation blockOperationWithBlock: ^{
+//       NSLog(@"Beginning operation.\n");
+//    }];
     
     NSURLSessionDownloadTask *downloadImageTask = [[NSURLSession sharedSession]
     downloadTaskWithURL:url completionHandler:^(NSURL *path, NSURLResponse *response, NSError *error) {
@@ -35,3 +39,17 @@
     
 }
 @end
+
+//  NSURL *url1 = [NSURL URLWithString: @"http://bitcodetech.in/ws_ios_assignment/images/labrador.jpg"];
+
+ // NSURL *url2 = [NSURL URLWithString: @"http://bitcodetech.in/ws_ios_assignment/images/shefard.jpg"];
+
+ // NSURL *url3 = [NSURL URLWithString: @"http://bitcodetech.in/ws_ios_assignment/images/golden_retriever.jpg"];
+
+ // NSURL *url4 = [NSURL URLWithString: @"http://bitcodetech.in/ws_ios_assignment/images/pug.jpg"];
+
+//  NSURL *url5 = [NSURL URLWithString: @"http://bitcodetech.in/ws_ios_assignment/images/husky.jpg"];
+
+ // NSURL *url6 = [NSURL URLWithString: @"http://bitcodetech.in/ws_ios_assignment/images/rottweiler.jpg"];
+
+ // NSURL *url7 = [NSURL URLWithString: @"http://bitcodetech.in/ws_ios_assignment/images/doberman.jpg"];

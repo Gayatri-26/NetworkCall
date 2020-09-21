@@ -13,6 +13,7 @@
 
 +(void) withblock:(void (^)(NSData *, NSError *))block;
 
-
+@property(nonatomic, strong) NSURL *url;
+@property (nonatomic, copy) void (^JsonCallback)(NSData *data, NSError *error);
 @end
 
