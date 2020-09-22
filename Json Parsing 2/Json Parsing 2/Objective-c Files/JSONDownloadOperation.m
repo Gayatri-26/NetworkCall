@@ -23,6 +23,14 @@
     return self;
 }
 
+//NSError* error = nil;
+//NSData* data = [NSData dataWithContentsOfURL:yourURL options:NSDataReadingUncached error:&error];
+//if (error) {
+//    NSLog(@"%@", [error localizedDescription]);
+//    [error release];
+//} else {
+//    NSLog(@"Data has loaded successfully.");
+//}
 
 //+(void) withblock:(void (^)(NSData *, NSError *))block{
 //

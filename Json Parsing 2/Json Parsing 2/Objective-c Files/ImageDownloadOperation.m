@@ -14,43 +14,51 @@
 
 @implementation ImageDownloadOperation
 
+-(void) main{
+    [super main];
+  //  NSURL *strimg = [NSURL URLWithString:@"http://bitcodetech.in/ws_ios_assignment/images/bulldog.jpg"];
+   //  NSData *data = [NSData dataWithContentsOfURL:self.url];
+   // UIImage *ImageDownload = [UIImage imageWithData:[NSData dataWithContentsOfURL:dogpath]];
 
-+(void) withblock:(void (^)(NSURL *, NSError *))block{
-    
-    NSURL *url = [NSURL URLWithString: @"http://bitcodetech.in/ws_ios_assignment/images/bulldog.jpg"];
-
-    NSURLSessionDownloadTask *downloadImageTask = [[NSURLSession sharedSession]
-    downloadTaskWithURL:url completionHandler:^(NSURL *path, NSURLResponse *response, NSError *error) {
-        if(path != nil){
-            NSLog(@"ImageResponse: %@",path);
-            block(path,error);
-        }
-        else{
-            NSLog(@"Error: %@",error);
-            block(nil,error);
-        }
-                                                       
-        }];
-    [downloadImageTask resume];
-    
+    self.ImageCallBack(_url, nil);
 }
+
+- (id)initWithURL: (NSURL *)url andCallBack1: (void (^)( NSURL *url, NSError *error))completionHandler{
+    self = [super init];
+    self.url = url;
+    self.ImageCallBack = completionHandler;
+    return self;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+//+(void) withblock:(void (^)(NSURL *, NSError *))block{
+//
+//    NSURL *url = [NSURL URLWithString: @"http://bitcodetech.in/ws_ios_assignment/images/bulldog.jpg"];
+//
+//    NSURLSessionDownloadTask *downloadImageTask = [[NSURLSession sharedSession]
+//    downloadTaskWithURL:url completionHandler:^(NSURL *path, NSURLResponse *response, NSError *error) {
+//        if(path != nil){
+//            NSLog(@"ImageResponse: %@",path);
+//            block(path,error);
+//        }
+//        else{
+//            NSLog(@"Error: %@",error);
+//            block(nil,error);
+//        }
+//
+//        }];
+//    [downloadImageTask resume];
+//
+//}
 @end
 
-//  NSURL *url1 = [NSURL URLWithString: @"http://bitcodetech.in/ws_ios_assignment/images/labrador.jpg"];
-
- // NSURL *url2 = [NSURL URLWithString: @"http://bitcodetech.in/ws_ios_assignment/images/shefard.jpg"];
-
- // NSURL *url3 = [NSURL URLWithString: @"http://bitcodetech.in/ws_ios_assignment/images/golden_retriever.jpg"];
-
- // NSURL *url4 = [NSURL URLWithString: @"http://bitcodetech.in/ws_ios_assignment/images/pug.jpg"];
-
-//  NSURL *url5 = [NSURL URLWithString: @"http://bitcodetech.in/ws_ios_assignment/images/husky.jpg"];
-
- // NSURL *url6 = [NSURL URLWithString: @"http://bitcodetech.in/ws_ios_assignment/images/rottweiler.jpg"];
-
- // NSURL *url7 = [NSURL URLWithString: @"http://bitcodetech.in/ws_ios_assignment/images/doberman.jpg"];
-
-//
-//   NSBlockOperation* theOp = [NSBlockOperation blockOperationWithBlock: ^{
-//       NSLog(@"Beginning operation.\n");
-//    }];

@@ -10,8 +10,11 @@
 
 @interface ImageDownloadOperation : NSOperation
 
-+(void) withblock:(void (^)(NSURL *, NSError *))block;
+-(id)initWithURL: (NSURL *)url andCallBack1: (void (^)( NSURL *url, NSError *error))completionHandler;
 
+@property(nonatomic, strong) NSURL *url;
+
+@property (nonatomic, copy) void (^ImageCallBack)(NSURL *url, NSError *error);
 @end
 
 
