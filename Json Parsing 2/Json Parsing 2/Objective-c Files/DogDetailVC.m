@@ -50,7 +50,7 @@
                 };
                 DogModel *dog = [_arrDog objectAtIndex:j];
                 NSURL *u = [NSURL URLWithString:dog.url];
-                ImageDownloadThread *imagedown = [[ImageDownloadThread alloc]initWithbreed:dog.Breed andWithURL1:u andCallBack1:ImageDownloadCallBack];
+                ImageDownloadThread *imagedown = [[ImageDownloadThread alloc]initWithbreed:dog.Breed andWithURL:u andCallBack:ImageDownloadCallBack];
                 [imagedown start];
                 
             }

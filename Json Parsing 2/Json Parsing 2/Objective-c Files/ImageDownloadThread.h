@@ -14,8 +14,9 @@
 //+(void) withblock:(void (^)(NSURL *, NSError *))block;
 
 @property(nonatomic, strong) NSURL *url2;
-@property (nonatomic, strong) void (^ImageCallback)(UIImage *img, NSError *error);
+@property (nonatomic, strong) void (^ImageCallback)(NSString *breed, UIImage *img, NSError *error);
 @property (nonatomic,strong) NSString *breed;
 
-- (id)initWithbreed:(NSString *)breed andWithURL1: (NSURL *)url1 andCallBack1: (void (^)(NSData *breed, UIImage *img, NSError *error))completionHandler;
+- (id)initWithbreed:(NSString *)breed andWithURL: (NSURL *)url1 andCallBack: (void (^)(NSString *breed, UIImage *img, NSError *error))completionHandler;
+
 @end

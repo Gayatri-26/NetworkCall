@@ -12,17 +12,18 @@
 
 -(void)main{
     [super main];
+    
     UIImage *imgdata = [UIImage imageWithData:[NSData dataWithContentsOfURL:self.url2]];
-    self.ImageCallback(imgdata, nil);
+    self.ImageCallback(nil, imgdata, nil);
 }
 
-- (id)initWithbreed:(NSString *)breed andWithURL1: (NSURL *)url1 andCallBack1: (void (^)(NSData *breed, UIImage *img, NSError *error))completionHandler{
+- (id)initWithbreed:(NSString *)breed andWithURL: (NSURL *)url1 andCallBack: (void (^)(NSString *breed, UIImage *img, NSError *error))completionHandler{
     
     self = [super init];
     self.breed = breed;
     self.url2 = url1;
     self.ImageCallback = completionHandler;
-    
+
     return self;
 }
 
