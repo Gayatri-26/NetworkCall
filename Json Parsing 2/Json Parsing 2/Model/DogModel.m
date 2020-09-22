@@ -11,7 +11,7 @@
 
 @implementation DogModel
 
-+(NSMutableArray < DogModel *> *)modelArrayFromDict:(NSDictionary *) d
++(NSMutableArray < DogModel *> *)modelArrayFromDict:(NSArray *) d
 {
     NSMutableArray *dogarr = [[NSMutableArray alloc]init];
     
@@ -32,8 +32,8 @@
             NSString *strcolor = [dict objectForKey:@"Colors"];
             dogDetails.Colors = strcolor;
             
-//            UIImage *strimg = [dict objectForKey: @"image"];
-//            dogDetails.img = strimg;
+            NSString *strurl = [dict objectForKey:@"image"];
+            dogDetails.url = strurl;
             
             [dogarr addObject:dogDetails];
         }

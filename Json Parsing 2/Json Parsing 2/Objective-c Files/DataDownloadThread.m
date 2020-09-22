@@ -10,28 +10,21 @@
 
 @implementation DataDownloadThread
 
-+(void) withblock:(void (^)(NSData *, NSError *))block{
+-(void)main{
+    [super main];
+    NSData *data = [NSData dataWithContentsOfURL:self.url1];
+    self.DataCallback(data, nil);
     
-    NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://bitcodetech.in/ws_ios_assignment/ws_dog_info.php"]];
-    
-    [urlRequest setHTTPMethod:@"GET"];
-    
-    NSURLSession *session = [NSURLSession sharedSession];
-    
-    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
-    {
-        if(data != nil)
-            {
-                NSLog(@"Response : %@",data);
-                block(data,error);
-            }
-        else
-            {
-                NSLog(@"Error");
-                block(nil,error);
-            }
-    }];
-    
-    [dataTask resume];
 }
+
+- (id)initWithURL: (NSURL *)url1 andCallBack: (void (^)( NSData *data, NSError *error))completionHandler{
+
+    self = [super init];
+    self.url1 = url1;
+    self.DataCallback = completionHandler;
+    
+    return self;
+
+}
+
 @end

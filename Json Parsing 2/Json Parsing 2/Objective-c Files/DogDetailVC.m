@@ -25,14 +25,70 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self tableviewData];
     
-    NSThread *dataDownloadThread = [[NSThread alloc]initWithTarget:self selector:@selector(DownloadData) object:nil];
-    [dataDownloadThread start];
+    //Data Download
+    NSURL *url = [NSURL URLWithString:@"http://bitcodetech.in/ws_ios_assignment/ws_dog_info.php"];
+    void(^DataDownloadCallBack)(NSData *data, NSError *error) = ^(NSData *dogdata, NSError *error){
+        NSLog(@"Data: %@", dogdata);
+        if(dogdata != nil){
+            
+            NSArray *responseArray = [NSJSONSerialization JSONObjectWithData:dogdata options:NSJSONReadingAllowFragments error:nil];
+            NSLog(@"The response is - %@",responseArray);
+            
+            _arrDog = [DogModel modelArrayFromDict:responseArray];
+            
+        
+            
+            for(int j=0;j<_arrDog.count;j++){
+                
+            void(^ImageDownloadCallBack)(NSString *breed, UIImage *path, NSError *error) = ^(NSString *dogbreed, UIImage *dogpath, NSError *error){
+                
+                UIImage *ImageDownload = [UIImage imageWithData:[NSData dataWithContentsOfURL:dogpath]];
+                NSLog(@"Url = %@",ImageDownload);
+                
+                };
+                DogModel *dog = [_arrDog objectAtIndex:j];
+                NSURL *u = [NSURL URLWithString:dog.url];
+                ImageDownloadThread *imagedown = [[ImageDownloadThread alloc]initWithbreed:dog.Breed andWithURL1:u andCallBack1:ImageDownloadCallBack];
+                [imagedown start];
+                
+            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self->DogsDetailsTableView reloadData];
+            });
+            
+        }
+    };
     
-    NSThread *imageDownloadThread = [[NSThread alloc]initWithTarget:self selector:@selector(DownloadImage) object:nil];
-    [imageDownloadThread start];
+    DataDownloadThread * datadl = [[DataDownloadThread alloc]initWithURL:url andCallBack:DataDownloadCallBack];
+    [datadl start];
     
+    
+    //Image Download
+
+    
+//    void(^ImageDownloadCallBack)(NSURL *path, NSError *error) = ^(NSURL *dogpath, NSError *error){
+//
+//
+//
+////        for(int i=0;i<_arrDog.count;i++){
+////        DogModel *dog = [_arrDog objectAtIndex:i ];
+////        dog.img = ImageDownload;
+////        }
+//
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [self->DogsDetailsTableView reloadData];
+//        });
+//
+//    };
+    
+    
+
     self.arrDog = [[NSMutableArray alloc]init];
+   
+}
+-(void)tableviewData{
     
     DogsDetailsTableView = [[UITableView alloc]init];
     [DogsDetailsTableView setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -52,43 +108,7 @@
     DogsDetailsTableView.allowsSelection = UITableViewCellSelectionStyleNone;
     DogsDetailsTableView.dataSource = self;
     DogsDetailsTableView.delegate = self;
-}
-
--(void)DownloadData{
     
-    void(^DataDownloadCallBack)(NSData *data, NSError *error) = ^(NSData *dogdata, NSError *error){
-        NSLog(@"Data: %@", dogdata);
-        if(dogdata != nil){
-            
-            NSArray *responseArray = [NSJSONSerialization JSONObjectWithData:dogdata options:NSJSONReadingAllowFragments error:nil];
-            NSLog(@"The response is - %@",responseArray);
-            
-            _arrDog = [DogModel modelArrayFromDict:responseArray];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self->DogsDetailsTableView reloadData];
-            });
-        }
-        
-    };
-    [DataDownloadThread withblock:DataDownloadCallBack];
-    
-}
-
--(void)DownloadImage{
-    
-    void(^ImageDownloadCallBack)(NSURL *path, NSError *error) = ^(NSURL *dogpath, NSError *error){
-//        if (dogpath.firstDownloadTask == 1){
-        UIImage *ImageDownload = [UIImage imageWithData:[NSData dataWithContentsOfURL:dogpath]];
-        NSLog(@"Url = %@",ImageDownload);
-        DogModel *dog = [_arrDog firstObject];
-        dog.img = ImageDownload;
-//        }
-        dispatch_queue_t imagedata = dispatch_get_main_queue();
-        dispatch_async(imagedata, ^{
-            [self->DogsDetailsTableView reloadData];
-        });
-    };
-    [ImageDownloadThread withblock:ImageDownloadCallBack];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

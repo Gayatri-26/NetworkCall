@@ -91,8 +91,8 @@
 			children = (
 				04A140CB24F7716500570C52 /* Swifts Files */,
 				04359A6923FFB4ED00670AA5 /* Model */,
-				04650BC323FF8D94002C5A80 /* AppDelegate.swift */,
 				04650BC723FF8D94002C5A80 /* Main.storyboard */,
+				04650BC323FF8D94002C5A80 /* AppDelegate.swift */,
 				04A140BC24F7701C00570C52 /* Objective-c Files */,
 				04A140C624F7710100570C52 /* TableViewCell */,
 				04650BCA23FF8D94002C5A80 /* Assets.xcassets */,
