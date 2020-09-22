@@ -10,10 +10,16 @@
 
 @implementation JSONDownloadOperation
 
-- (id)initWithURL: (NSURL *)url1 andCallBack: (void (^)( NSData *data, NSError *error))completionHandler{
+-(void) main{
+    [super main];
+    NSData *data = [NSData dataWithContentsOfURL:self.url];
+    self.DataCallback(data, nil);
+}
+
+- (id)initWithURL: (NSURL *)url andCallBack: (void (^)( NSData *data, NSError *error))completionHandler{
     self = [super init];
-    self.url = url1;
-    self.JsonCallback = completionHandler;
+    self.url = url;
+    self.DataCallback = completionHandler;
     return self;
 }
 

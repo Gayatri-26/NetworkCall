@@ -18,11 +18,7 @@
 +(void) withblock:(void (^)(NSURL *, NSError *))block{
     
     NSURL *url = [NSURL URLWithString: @"http://bitcodetech.in/ws_ios_assignment/images/bulldog.jpg"];
-//
-//   NSBlockOperation* theOp = [NSBlockOperation blockOperationWithBlock: ^{
-//       NSLog(@"Beginning operation.\n");
-//    }];
-    
+
     NSURLSessionDownloadTask *downloadImageTask = [[NSURLSession sharedSession]
     downloadTaskWithURL:url completionHandler:^(NSURL *path, NSURLResponse *response, NSError *error) {
         if(path != nil){
@@ -53,3 +49,8 @@
  // NSURL *url6 = [NSURL URLWithString: @"http://bitcodetech.in/ws_ios_assignment/images/rottweiler.jpg"];
 
  // NSURL *url7 = [NSURL URLWithString: @"http://bitcodetech.in/ws_ios_assignment/images/doberman.jpg"];
+
+//
+//   NSBlockOperation* theOp = [NSBlockOperation blockOperationWithBlock: ^{
+//       NSLog(@"Beginning operation.\n");
+//    }];

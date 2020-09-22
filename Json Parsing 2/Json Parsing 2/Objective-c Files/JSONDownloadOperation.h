@@ -11,9 +11,16 @@
 
 @interface JSONDownloadOperation : NSOperation
 
-+(void) withblock:(void (^)(NSData *, NSError *))block;
+
+//+(void) withblock:(void (^)(NSData *, NSError *))block;
+
+- (id)initWithURL: (NSURL *)url andCallBack: (void (^)( NSData *data, NSError *error))completionHandler;
 
 @property(nonatomic, strong) NSURL *url;
-@property (nonatomic, copy) void (^JsonCallback)(NSData *data, NSError *error);
+
+@property (nonatomic, copy) void (^DataCallback)(NSData *data, NSError *error);
+
+
+
 @end
 

@@ -30,17 +30,13 @@
     
     NSOperationQueue *operationQueue = [[NSOperationQueue alloc]init];
    
-//    NSInvocationOperation *dOperation = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(downloadData) object:nil];
-    
-    
-   // NSInvocationOperation *iOperation = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(downloadImage) object:nil];
- NSURL *url1 = [NSURL URLWithString:@"http://bitcodetech.in/ws_ios_assignment/ws_dog_info.php"];
-    void(^DataDownloadCallBack)(NSData *data, NSError *error) = ^(NSData *dogdata, NSError *error){
+
+    void(^DataCallback)(NSData *data, NSError *error) = ^(NSData *dogdata, NSError *error){
            NSLog(@"Data: %@", dogdata);
            if(dogdata != nil){
                
                NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:dogdata options:NSJSONReadingAllowFragments error:nil];
-               NSLog(@"The response is - %@",responseDic);
+                  NSLog(@"The response is - %@",responseDic);
                
                _arrDog = [DogModel modelArrayFromDict:responseDic];
 
@@ -49,16 +45,12 @@
                       }];
            }
        };
-    JSONDownloadOperation *datadl = [[JSONDownloadOperation alloc]initWithURL: url1 andCallBack: DataDownloadCallBack];
+     NSURL *url1 = [NSURL URLWithString:@"http://bitcodetech.in/ws_ios_assignment/ws_dog_info.php"];
+    JSONDownloadOperation *jsonData = [[JSONDownloadOperation alloc]initWithURL: url1 andCallBack: DataCallback];
                                      
-    [operationQueue addOperation: datadl];
-  //  datadl.is
+    [operationQueue addOperation: jsonData];
     
-//    [operationQueue addOperation: dOperation];
-//    [operationQueue addOperation: iOperation];
-
-    
-    
+     
     self.arrDog = [[NSMutableArray alloc]init];
     
     DogsDetailsTableView = [[UITableView alloc]init];
@@ -79,31 +71,29 @@
     DogsDetailsTableView.delegate = self;
 }
 
--(void)downloadData{
+//-(void)downloadData{
 
-    void(^DataDownloadCallBack)(NSData *data, NSError *error) = ^(NSData *dogdata, NSError *error){
-        NSLog(@"Data: %@", dogdata);
-        if(dogdata != nil){
-            
-            NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:dogdata options:NSJSONReadingAllowFragments error:nil];
-            NSLog(@"The response is - %@",responseDic);
-            
-            _arrDog = [DogModel modelArrayFromDict:responseDic];
-
-                [[NSOperationQueue mainQueue]addOperationWithBlock:^{
-                       [self-> DogsDetailsTableView reloadData];
-                   }];
-        }
-    };
-    [JSONDownloadOperation withblock:DataDownloadCallBack];
-}
+//    void(^DataDownloadCallBack)(NSData *data, NSError *error) = ^(NSData *dogdata, NSError *error){
+//        NSLog(@"Data: %@", dogdata);
+//        if(dogdata != nil){
+//
+//            NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:dogdata options:NSJSONReadingAllowFragments error:nil];
+//            NSLog(@"The response is - %@",responseDic);
+//
+//            _arrDog = [DogModel modelArrayFromDict:responseDic];
+//
+//                [[NSOperationQueue mainQueue]addOperationWithBlock:^{
+//                       [self-> DogsDetailsTableView reloadData];
+//                   }];
+//        }
+//    };
+//    [JSONDownloadOperation withblock:DataDownloadCallBack];
+//
+//}
 
 -(void)downloadImage{
         
         void(^ImageDownloadCallBack)(NSURL *path, NSError *error) = ^(NSURL *dogpath, NSError *error){
-            
-//            NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-//             [queue addOperationWithBlock:^{
 
             UIImage *ImageDownload = [UIImage imageWithData:[NSData dataWithContentsOfURL:dogpath]];
             NSLog(@"Url = %@",ImageDownload);
