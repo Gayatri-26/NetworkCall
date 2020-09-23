@@ -110,10 +110,10 @@
 				04A140BD24F7707900570C52 /* Json Parsing 2-Bridging-Header.h */,
 				04C95DF625148AC800813B5F /* DogDetailVC.h */,
 				04C95DF725148AC800813B5F /* DogDetailVC.m */,
-				04633E96251875B900AC4D74 /* ImageDownloadOperation.h */,
-				04633E97251875B900AC4D74 /* ImageDownloadOperation.m */,
 				04633E9325185B8500AC4D74 /* JSONDownloadOperation.h */,
 				04633E9425185B8500AC4D74 /* JSONDownloadOperation.m */,
+				04633E96251875B900AC4D74 /* ImageDownloadOperation.h */,
+				04633E97251875B900AC4D74 /* ImageDownloadOperation.m */,
 			);
 			path = "Objective-c Files";
 			sourceTree = "<group>";

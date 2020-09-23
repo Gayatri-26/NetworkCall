@@ -7,14 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
 
 @interface ImageDownloadOperation : NSOperation
 
--(id)initWithURL: (NSURL *)url andCallBack1: (void (^)( NSURL *url, NSError *error))completionHandler;
-
 @property(nonatomic, strong) NSURL *url;
 
-@property (nonatomic, copy) void (^ImageCallBack)(NSURL *url, NSError *error);
+@property (nonatomic, strong) void (^ImageCallback)(NSString *breed, UIImage *img, NSError *error);
+@property (nonatomic,strong) NSString *breed;
+
+- (id)initWithbreed:(NSString *)breed andWithURL: (NSURL *)url andCallBack: (void (^)(NSString *breed, UIImage *img, NSError *error))completionHandler;
 @end
 
 

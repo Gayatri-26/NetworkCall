@@ -16,17 +16,18 @@
 
 -(void) main{
     [super main];
-  //  NSURL *strimg = [NSURL URLWithString:@"http://bitcodetech.in/ws_ios_assignment/images/bulldog.jpg"];
-   //  NSData *data = [NSData dataWithContentsOfURL:self.url];
-   // UIImage *ImageDownload = [UIImage imageWithData:[NSData dataWithContentsOfURL:dogpath]];
 
-    self.ImageCallBack(_url, nil);
+   UIImage *imgdata = [UIImage imageWithData:[NSData dataWithContentsOfURL:self.url]];
+   self.ImageCallback(nil, imgdata, nil);
+    self.ImageCallback(nil, _url, nil);
 }
 
-- (id)initWithURL: (NSURL *)url andCallBack1: (void (^)( NSURL *url, NSError *error))completionHandler{
+- (id)initWithbreed:(NSString *)breed andWithURL: (NSURL *)url andCallBack: (void (^)(NSString *breed, UIImage *img, NSError *error))completionHandler{
+    
     self = [super init];
+    self.breed = breed;
     self.url = url;
-    self.ImageCallBack = completionHandler;
+    self.ImageCallback = completionHandler;
     return self;
 }
 
