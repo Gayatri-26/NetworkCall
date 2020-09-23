@@ -11,9 +11,7 @@
 
 @interface ImageDownloadThread : NSThread
 
-//+(void) withblock:(void (^)(NSURL *, NSError *))block;
-
-@property(nonatomic, strong) NSURL *url2;
+@property(nonatomic, strong) NSURL *url1;
 @property (nonatomic, strong) void (^ImageCallback)(NSString *breed, UIImage *img, NSError *error);
 @property (nonatomic,strong) NSString *breed;
 

@@ -27,7 +27,7 @@
     [super viewDidLoad];
     [self tableviewData];
     
-    //Data Download
+    //Data and Image Download
     NSURL *url = [NSURL URLWithString:@"http://bitcodetech.in/ws_ios_assignment/ws_dog_info.php"];
     void(^DataDownloadCallBack)(NSData *data, NSError *error) = ^(NSData *dogdata, NSError *error){
         NSLog(@"Data: %@", dogdata);
@@ -44,13 +44,11 @@
                     
                     for(int j=0;j<_arrDog.count;j++){
                         
-
-                        UIImage *ImageDownload = [UIImage imageWithData:[NSData dataWithContentsOfURL:dogpath]];
-                        NSLog(@"Url = %@",ImageDownload);
+                        DogModel *dogimage = [_arrDog objectAtIndex:i];
                         
-                        DogModel *dogimage = [_arrDog objectAtIndex:j];
-                        if(dogimage.Breed == dogimage.img){
-                        dogimage.img = ImageDownload;
+                        if([dogimage.Breed isEqualToString:dogbreed]){
+                            
+                            dogimage.img = dogpath;
                         }
                     }
                     dispatch_async(dispatch_get_main_queue(), ^{

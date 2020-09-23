@@ -10,10 +10,9 @@
 
 @interface DataDownloadThread : NSThread
 
-//+(void) withblock:(void (^)(NSData *, NSError *))block;
-
 @property(nonatomic, strong) NSURL *url1;
 @property (nonatomic, strong) void (^DataCallback)(NSData *data, NSError *error);
+
 - (id)initWithURL: (NSURL *)url1 andCallBack: (void (^)( NSData *data, NSError *error))completionHandler;
 
 
