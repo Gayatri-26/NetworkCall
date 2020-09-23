@@ -11,13 +11,13 @@
 #import "AFNetworking.h"
 #import "AFHTTPRequestOperation.h"
 #import <CoreData/CoreData.h>
-// #import "AppDelegate.swift"
-
+#import "Json_Parsing_2-Swift.h"
 @interface SecondVC ()
 
 @property (strong,nonatomic) NSMutableArray<PersonDetail *> *arrPerson;
 @property (nonatomic,strong) NSString *mainstr;
 @property (nonatomic,strong) NSDictionary *PersonData;
+@property (nonatomic,strong) AppDelegate *appDelegate;
 
 @end
 
@@ -30,9 +30,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self tableData];
     [self afnetworkingdata];
     
     self.arrPerson = [[NSMutableArray alloc]init];
+    
+    
+    
+}
+
+
+
+
+-(void)tableData{
     
     PersonDataTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     [PersonDataTableView setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -50,7 +60,6 @@
     
     PersonDataTableView.dataSource = self;
     PersonDataTableView.delegate = self;
-    
 }
 
 -(void)afnetworkingdata{

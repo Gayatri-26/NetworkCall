@@ -16,9 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    var managedoObjectModel = NSManagedObjectModel()
-    var managedObjectContect = NSManagedObjectContext()
-    var persistentStoreCordinator = NSPersistentStoreCoordinator()
+    var managedoObjectModel :NSManagedObjectModel!
+    var managedObjectContect :NSManagedObjectContext!
+    var persistentStoreCordinator : NSPersistentStoreCoordinator!
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
@@ -37,50 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         return true
     }
-    
-    
-var managedobjectcontext:NSManagedObjectContext {
-    
-    if (self.managedobjectcontext != nil){
-        return self.managedobjectcontext
-    }
-    let coordinator:NSPersistentStoreCoordinator = self.persistentStoreCordinator
-    if coordinator != nil{
-        self.managedobjectcontext.persistentStoreCoordinator = coordinator
-    }
-    return self.managedobjectcontext
-}
-    
-//    var managedObjectModel: NSManagedObjectModel {
-//        if  (self.managedObjectModel != nil) {
-//            return self.managedObjectModel
-//        }
-//        NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"CDCourses" withExtension:@"momd"];
-//        _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
-//        return self.managedObjectModel;
-//
-//    }
-    
-//    - (NSPersistentStoreCoordinator *)persistentStoreCoordinator
-//    {
-//        if (_persistentStoreCoordinator != nil) {
-//            return _persistentStoreCoordinator;
-//        }
-//
-//        NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"CDCourses.sqlite"];
-//
-//        NSError *error = nil;
-//        _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-//        if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
-//            /*
-//             Replace this implementation with code to handle the error appropriately.
-//             */
-//            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-//            abort();
-//        }
-//
-//        return _persistentStoreCoordinator;
-//    }
 
     func applicationWillResignActive(_ application: UIApplication) {
        
