@@ -26,49 +26,54 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self tableviewData];
     
     NSOperationQueue *operationQueue = [[NSOperationQueue alloc]init];
     
-    void(^DataCallback)(NSData *data, NSError *error) = ^(NSData *dogdata, NSError *error){
+    void(^DataDownloadCallBack)(NSData *data, NSError *error) = ^(NSData *dogdata, NSError *error){
            NSLog(@"Data: %@", dogdata);
            if(dogdata != nil){
                
         NSArray *responseArray = [NSJSONSerialization JSONObjectWithData:dogdata options:NSJSONReadingAllowFragments error:nil];
                   NSLog(@"The response is - %@",responseArray);
                
-    _arrDog = [DogModel modelArrayFromDict:responseArray];
+        _arrDog = [DogModel modelArrayFromDict:responseArray];
                
                for(int j=0;j<_arrDog.count;j++){
                    
                void(^ImageDownloadCallBack)(NSString *breed, UIImage *path, NSError *error) = ^(NSString *dogbreed, UIImage *dogpath, NSError *error){
                    
-                UIImage *ImageDownload = [UIImage imageWithData:[NSData dataWithContentsOfURL:dogpath]];
-                   NSLog(@"Url = %@",ImageDownload);
-                   };
+                   DogModel *dogImage = [_arrDog objectAtIndex:j];
+                   
+                            if([dogImage.Breed isEqualToString:dogbreed]){
+                                             dogImage.img = dogpath;
+                                         }
+               };
+                    [[NSOperationQueue mainQueue]addOperationWithBlock:^{
+                        [self->DogsDetailsTableView reloadData];
+                    }];
+               
                 DogModel *dog = [_arrDog objectAtIndex:j];
                 NSURL *u = [NSURL URLWithString:dog.url];
-                ImageDownloadOperation *imageDL = [[ImageDownloadOperation alloc]initWithbreed:dog.Breed andWithURL:u andCallBack:ImageDownloadCallBack];
-                [imageDL start];
+                ImageDownloadOperation *imagedown = [[ImageDownloadOperation alloc]initWithbreed:dog.Breed andWithURL:u andCallBack:ImageDownloadCallBack];
+                [imagedown start];
+           }
                 [[NSOperationQueue mainQueue]addOperationWithBlock:^{
                           [self-> DogsDetailsTableView reloadData];
               }];
            }
-       };
+    };
+    
      NSURL *url1 = [NSURL URLWithString:@"http://bitcodetech.in/ws_ios_assignment/ws_dog_info.php"];
-    JSONDownloadOperation *datadl = [[JSONDownloadOperation alloc]initWithURL: url1 andCallBack: DataCallback];
+    JSONDownloadOperation *datadl = [[JSONDownloadOperation alloc]initWithURL: url1 andCallBack: DataDownloadCallBack];
         
     [operationQueue addOperation: datadl];
-
-
-    };
      
     self.arrDog = [[NSMutableArray alloc]init];
-    tableviewData();
-   
-
 
 }
--void  tableviewData(){
+
+-(void) tableviewData{
     
     DogsDetailsTableView = [[UITableView alloc]init];
        [DogsDetailsTableView setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -89,8 +94,8 @@
 
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     return  _arrDog.count;
 }
 
@@ -111,7 +116,8 @@
     return cell;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     return 250;
 }
 

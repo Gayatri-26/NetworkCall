@@ -23,37 +23,5 @@
     return self;
 }
 
-//NSError* error = nil;
-//NSData* data = [NSData dataWithContentsOfURL:yourURL options:NSDataReadingUncached error:&error];
-//if (error) {
-//    NSLog(@"%@", [error localizedDescription]);
-//    [error release];
-//} else {
-//    NSLog(@"Data has loaded successfully.");
-//}
 
-//+(void) withblock:(void (^)(NSData *, NSError *))block{
-//
-//   NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://bitcodetech.in/ws_ios_assignment/ws_dog_info.php"]];
-//
-//    [urlRequest setHTTPMethod:@"GET"];
-//
-//    NSURLSession *session = [NSURLSession sharedSession];
-//
-//    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
-//                                      {
-//                                          if(data != nil)
-//                                          {
-//                                              NSLog(@"Response : %@",data);
-//                                              block(data,error);
-//                                          }
-//                                          else
-//                                          {
-//                                              NSLog(@"Error");
-//                                              block(nil,error);
-//                                          }
-//                                      }];
-//
-//    [dataTask resume];
-//}
 @end

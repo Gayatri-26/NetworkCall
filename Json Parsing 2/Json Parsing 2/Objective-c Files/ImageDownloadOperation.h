@@ -18,6 +18,9 @@
 @property (nonatomic,strong) NSString *breed;
 
 - (id)initWithbreed:(NSString *)breed andWithURL: (NSURL *)url andCallBack: (void (^)(NSString *breed, UIImage *img, NSError *error))completionHandler;
+
+
+
 @end
 
 
