@@ -12,9 +12,9 @@
 
 -(void)main{
     [super main];
-    
+    NSString *dgbreed = [NSString stringWithString:self.breed];
     UIImage *imgdata = [UIImage imageWithData:[NSData dataWithContentsOfURL:self.url2]];
-    self.ImageCallback(nil, imgdata, nil);
+    self.ImageCallback(dgbreed, imgdata, nil);
 }
 
 - (id)initWithbreed:(NSString *)breed andWithURL: (NSURL *)url1 andCallBack: (void (^)(NSString *breed, UIImage *img, NSError *error))completionHandler{

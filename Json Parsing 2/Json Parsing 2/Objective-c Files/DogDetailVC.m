@@ -38,17 +38,27 @@
             
             _arrDog = [DogModel modelArrayFromDict:responseArray];
             
-        
-            
-            for(int j=0;j<_arrDog.count;j++){
+            for(int i=0;i<_arrDog.count;i++){
                 
-            void(^ImageDownloadCallBack)(NSString *breed, UIImage *path, NSError *error) = ^(NSString *dogbreed, UIImage *dogpath, NSError *error){
-                
-                UIImage *ImageDownload = [UIImage imageWithData:[NSData dataWithContentsOfURL:dogpath]];
-                NSLog(@"Url = %@",ImageDownload);
-                
+                void(^ImageDownloadCallBack)(NSString *breed, UIImage *path, NSError *error) = ^(NSString *dogbreed, UIImage *dogpath, NSError *error){
+                    
+                    for(int j=0;j<_arrDog.count;j++){
+                        
+
+                        UIImage *ImageDownload = [UIImage imageWithData:[NSData dataWithContentsOfURL:dogpath]];
+                        NSLog(@"Url = %@",ImageDownload);
+                        
+                        DogModel *dogimage = [_arrDog objectAtIndex:j];
+                        if(dogimage.Breed == dogimage.img){
+                        dogimage.img = ImageDownload;
+                        }
+                    }
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self->DogsDetailsTableView reloadData];
+                    });
                 };
-                DogModel *dog = [_arrDog objectAtIndex:j];
+                
+                DogModel *dog = [_arrDog objectAtIndex:i];
                 NSURL *u = [NSURL URLWithString:dog.url];
                 ImageDownloadThread *imagedown = [[ImageDownloadThread alloc]initWithbreed:dog.Breed andWithURL:u andCallBack:ImageDownloadCallBack];
                 [imagedown start];
@@ -64,30 +74,10 @@
     DataDownloadThread * datadl = [[DataDownloadThread alloc]initWithURL:url andCallBack:DataDownloadCallBack];
     [datadl start];
     
-    
-    //Image Download
-
-    
-//    void(^ImageDownloadCallBack)(NSURL *path, NSError *error) = ^(NSURL *dogpath, NSError *error){
-//
-//
-//
-////        for(int i=0;i<_arrDog.count;i++){
-////        DogModel *dog = [_arrDog objectAtIndex:i ];
-////        dog.img = ImageDownload;
-////        }
-//
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            [self->DogsDetailsTableView reloadData];
-//        });
-//
-//    };
-    
-    
-
     self.arrDog = [[NSMutableArray alloc]init];
-   
+    
 }
+
 -(void)tableviewData{
     
     DogsDetailsTableView = [[UITableView alloc]init];
