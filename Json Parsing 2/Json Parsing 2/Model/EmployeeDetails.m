@@ -39,21 +39,21 @@
 }
 
 
-- (id)init
-{
-    self = [super init];
-    if (!self) return nil;
- 
-    self.persistentContainer = [[NSPersistentContainer alloc] initWithName:@"CoredataModel"];
-    [self.persistentContainer loadPersistentStoresWithCompletionHandler:^(NSPersistentStoreDescription *description, NSError *error) {
-        if (error != nil) {
-            NSLog(@"Failed to load Core Data stack: %@", error);
-            abort();
-        }
-        callback();
-    }];
- 
-    return self;
-}
-
+//- (id)init
+//{
+//    self = [super init];
+//    if (!self) return nil;
+//
+//    self.persistentContainer = [[NSPersistentContainer alloc] initWithName:@"CoredataModel"];
+//    [self.persistentContainer loadPersistentStoresWithCompletionHandler:^(NSPersistentStoreDescription *description, NSError *error) {
+//        if (error != nil) {
+//            NSLog(@"Failed to load Core Data stack: %@", error);
+//            abort();
+//        }
+//        callback();
+//    }];
+//
+//    return self;
+//}
+//
 @end

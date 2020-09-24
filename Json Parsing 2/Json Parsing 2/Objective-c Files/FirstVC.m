@@ -28,9 +28,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self tableviewData];
     [self afnetworkingcode];
     self.arrEmployee = [[NSMutableArray alloc]init];
+    
+    
+}
+
+
+-(void)tableviewData{
     
     EmployeeDataTableView = [[UITableView alloc]init];
     [EmployeeDataTableView setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -49,7 +55,6 @@
     
     EmployeeDataTableView.dataSource = self;
     EmployeeDataTableView.delegate = self;
-    
 }
 
 -(void)afnetworkingcode{

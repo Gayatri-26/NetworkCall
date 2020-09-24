@@ -11,10 +11,10 @@
 
 
 @interface DatabaseHelper : UIViewController
-
-- (id)initWithCompletionBlock:(CallbackBlock)callback;
-@property (strong, nonatomic, readonly) NSPersistentContainer *persistentContainer;
-
+//
+//- (id)initWithCompletionBlock:(CallbackBlock)callback;
+//@property (strong, nonatomic, readonly) NSPersistentContainer *persistentContainer;
+//
 
 @end
 
