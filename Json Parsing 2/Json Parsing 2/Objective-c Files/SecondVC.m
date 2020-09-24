@@ -19,6 +19,8 @@
 @property (nonatomic,strong) NSString *mainstr;
 @property (nonatomic,strong) NSDictionary *PersonData;
 @property (nonatomic,strong) AppDelegate *appDelegate;
+@property( strong,nonatomic) NSManagedObjectContext *context;
+@property( strong,nonatomic) NSArray *dictionaries;
 
 @end
 
@@ -27,18 +29,21 @@
     UITableView *PersonDataTableView;
     
 }
-@synthesize contactdb;
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self tableData];
+    [self tableViewData];
     [self afnetworkingdata];
     
     self.arrPerson = [[NSMutableArray alloc]init];
-   
+  
+    _appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    _context = _appDelegate.persistentConatiner.viewContext
+    
+    
+    
 }
 
--(void)tableData{
+-(void)tableViewData{
     
     PersonDataTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     [PersonDataTableView setTranslatesAutoresizingMaskIntoConstraints:NO];

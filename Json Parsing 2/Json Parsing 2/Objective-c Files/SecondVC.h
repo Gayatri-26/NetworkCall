@@ -12,7 +12,7 @@
 
 @interface SecondVC : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
-@property( strong) NSManagedObject *contactdb;
+
 
 @end
 

@@ -33,6 +33,15 @@
     [self afnetworkingcode];
     self.arrEmployee = [[NSMutableArray alloc]init];
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
 
 -(void)tableviewData{
