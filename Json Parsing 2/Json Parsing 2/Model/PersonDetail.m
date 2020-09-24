@@ -1,7 +1,12 @@
-
+//
+//  PersonDetail.m
+//  Json Parsing 2
+//
+//  Created by Mac on 24/09/20.
+//  Copyright © 2020 Mac. All rights reserved.
+//
 
 #import "PersonDetail.h"
-#import "SecondVC.h"
 
 @implementation PersonDetail
 
@@ -14,7 +19,7 @@ NSMutableArray *personDetailArr = [[NSMutableArray alloc]init];
 NSDictionary *dic1 = [d objectForKey:@"contacts"];
    
 for (NSDictionary *dict in dic1)
-{
+ {
     PersonDetail *PersonDet = [[PersonDetail alloc]init];
     NSString *strid = [dict objectForKey:@"id"];
     PersonDet.Pid = strid;
@@ -32,7 +37,8 @@ for (NSDictionary *dict in dic1)
     PersonDet.Pgender = strgender;
     [personDetailArr addObject:PersonDet];
    
- }
+  }
     return personDetailArr;
 }
+
 @end

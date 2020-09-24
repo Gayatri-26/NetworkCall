@@ -3,11 +3,7 @@
 //
 
 #import "PersonDetail.h"
-#import "EmployeeDetails.h"
-#import "FirstVC.h"
 #import "SecondVC.h"
-#import "EmployeeDetailsCell.h"
 #import "PersonViewCell.h"
-//#import "Json_Parsing_2-Swift.h"
-
+#import "Person.h"
 

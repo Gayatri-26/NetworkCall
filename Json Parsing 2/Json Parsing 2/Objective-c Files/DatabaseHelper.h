@@ -15,10 +15,11 @@
 
 
 @property (nonatomic,strong) AppDelegate *appDelegate;
-@property( strong,nonatomic) NSManagedObjectContext *moc;
+@property( strong,nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic, readonly) NSPersistentContainer *persistentContainer;
 
 + (id)sharedInstance;
+
 -(void) save:(PersonDetail *) object;
 
 @end

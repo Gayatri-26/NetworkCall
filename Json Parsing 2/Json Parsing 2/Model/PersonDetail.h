@@ -6,10 +6,11 @@
 //  Copyright © 2020 Mac. All rights reserved.
 //
 
-#import <CoreData/CoreData.h>
+#import <Foundation/Foundation.h>
 
 
-@interface PersonDetail : NSManagedObject
+@interface PersonDetail : NSObject
+
 
 @property (nonatomic,strong) NSString *Pid;
 @property (nonatomic,strong) NSString *Pname;
@@ -18,6 +19,7 @@
 @property (nonatomic,strong) NSString *Pgender;
 
 +(NSMutableArray < PersonDetail *> *)modelArrayFromDict:(NSDictionary *) d;
+
 
 @end
 

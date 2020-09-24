@@ -10,16 +10,15 @@
 #import <CoreData/CoreData.h>
 #import "Json_Parsing_2-Swift.h"
 #import "PersonDetail.h"
+#import "Person.h"
 
 @interface DatabaseHelper ()
-
-
 
 @end
 
 @implementation DatabaseHelper
 
-@synthesize appDelegate, persistentContainer, moc;
+@synthesize appDelegate, persistentContainer, managedObjectContext;
 
 + (id)sharedInstance {
     static DatabaseHelper *sharedInstance = nil;
@@ -30,32 +29,19 @@
     return sharedInstance;
 }
 
-//- (id)init {
-//  if (self = [super init]) {
-//
-//
-//  }
-//  return self;
-//}
 
-
- // AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-  
 - (AppDelegate *)appDelegate{
     return (AppDelegate *)[[UIApplication sharedApplication]delegate];
-
 }
 
-- (NSManagedObjectContext *)moc{
 
+- (NSManagedObjectContext *)managedObjectContext{
     return [[self appDelegate] persistentContainer].viewContext;
-   
-    //return moc;
-}
+  }
 
--(void) save:(PersonDetail *) object{
+-(void) savethis:(PersonDetail *) object{
     
- PersonDetail *person = [NSEntityDescription insertNewObjectForEntityForName:@"Person" inManagedObjectContext:[self moc]];
+ PersonDetail *person = [NSEntityDescription insertNewObjectForEntityForName:@"Person" inManagedObjectContext:[self managedObjectContext]];
 
     person.Pname = object.Pname;
     person.Pid = object.Pid;
@@ -63,21 +49,23 @@
     person.Pgender = object.Pgender;
     person.Paddress = object.Paddress;
 
-//
-//      NSError *error = nil;
-//      if ([[self mcontext] save:&error] == NO) {
-//          NSAssert(NO, @"Error saving context: %@\n%@", [error localizedDescription], [error userInfo]);
-          
 
           NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Person"];
            
           NSError *error = nil;
-          NSArray *results = [moc executeFetchRequest:request error:&error];
+          NSArray *results = [managedObjectContext executeFetchRequest:request error:&error];
           if (!results) {
               NSLog(@"Error fetching Employee objects: %@\n%@", [error localizedDescription], [error userInfo]);
               abort();
           }
       }
+
+
+// AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+//      NSError *error = nil;
+//      if ([[self mcontext] save:&error] == NO) {
+//          NSAssert(NO, @"Error saving context: %@\n%@", [error localizedDescription], [error userInfo]);
+          
 
 
 //    UIApplication *application = [UIApplication sharedApplication];
