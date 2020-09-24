@@ -12,8 +12,6 @@
 
 @interface SecondVC : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
-// @property (nonatomic,strong) AppDelegate *delegate;
-
 @property( strong) NSManagedObject *contactdb;
 
 @end

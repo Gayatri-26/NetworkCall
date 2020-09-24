@@ -12,6 +12,7 @@
 #import "AFHTTPRequestOperation.h"
 #import <CoreData/CoreData.h>
 #import "Json_Parsing_2-Swift.h"
+
 @interface SecondVC ()
 
 @property (strong,nonatomic) NSMutableArray<PersonDetail *> *arrPerson;
@@ -34,13 +35,8 @@
     [self afnetworkingdata];
     
     self.arrPerson = [[NSMutableArray alloc]init];
-    
-    
-    
+   
 }
-
-
-
 
 -(void)tableData{
     
@@ -76,29 +72,7 @@
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"Response: %@",responseObject);
         
-        self.PersonData = [responseObject valueForKey:@"contacts"];
-        
-        for (NSDictionary *dict in _PersonData)
-        {
-            PersonDetail *PersonDet = [[PersonDetail alloc]init];
-            
-            NSString *strid = [dict valueForKey:@"id"];
-            PersonDet.Pid = strid;
-            
-            NSString *strname = [dict valueForKey:@"name"];
-            PersonDet.Pname = strname;
-            
-            NSString *stremail = [dict valueForKey:@"email"];
-            PersonDet.Pemail= stremail;
-            
-            NSString *straddress = [dict valueForKey:@"address"];
-            PersonDet.Paddress = straddress;
-            
-            NSString *strgender = [dict valueForKey:@"gender"];
-            PersonDet.Pgender = strgender;
-            
-            [self.arrPerson addObject:PersonDet];
-        }
+        _arrPerson = [PersonDetail modelArrayFromDict:responseObject];
         [self->PersonDataTableView reloadData];
         
     }

@@ -27,14 +27,13 @@
 }
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     [self tableviewData];
     [self afnetworkingcode];
     self.arrEmployee = [[NSMutableArray alloc]init];
     
-    
 }
-
 
 -(void)tableviewData{
     
@@ -70,33 +69,16 @@
     operation.responseSerializer = [AFJSONResponseSerializer serializer];
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"Response: %@",responseObject);
-      
-        self.EmployeeData = [responseObject valueForKey:@"data"];
         
-        for (NSDictionary *dict in _EmployeeData)
-        {
-            EmployeeDetails *EmpDetails = [[EmployeeDetails alloc]init];
-            
-            NSString *strid = [dict valueForKey:@"id"];
-            EmpDetails.EmpId = strid;
-            
-            NSString *strname = [dict valueForKey:@"employee_name"];
-            EmpDetails.Name = strname;
-            
-            NSString *strsalary = [dict valueForKey:@"employee_salary"];
-            EmpDetails.Salary = strsalary;
-            
-            NSString *strage = [dict valueForKey:@"employee_age"];
-            EmpDetails.Age = strage;
-            
-            [self.arrEmployee addObject:EmpDetails];
-        }
+        _arrEmployee = [EmployeeDetails modelArrayFromDict:responseObject];
+        
         [self->EmployeeDataTableView reloadData];
         
     }
-    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                         NSLog(@"Error: %@",error);
-                                     }];
+                                     failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+         NSLog(@"Error: %@",error);
+     }];
     
     [operation start];
 }
@@ -125,12 +107,12 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 160;
+    return 165;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-
+    
 }
 
 

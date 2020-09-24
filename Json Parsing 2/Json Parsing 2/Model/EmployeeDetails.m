@@ -31,8 +31,6 @@
             NSString *strage = [dict objectForKey:@"employee_age"];
             EmpDetails.Age = strage;
             
-//          NSLog(@"employee: %@ %@", strid,strage);
-
             [emparr addObject:EmpDetails];
         }
     } return emparr;
