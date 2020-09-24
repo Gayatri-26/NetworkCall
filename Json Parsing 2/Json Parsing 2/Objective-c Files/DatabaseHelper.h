@@ -8,13 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "Json_Parsing_2-Swift.h"
 
 
 @interface DatabaseHelper : UIViewController
-//
-//- (id)initWithCompletionBlock:(CallbackBlock)callback;
-//@property (strong, nonatomic, readonly) NSPersistentContainer *persistentContainer;
-//
+
+
+@property (nonatomic,strong) AppDelegate *appDelegate;
+@property( strong,nonatomic) NSManagedObjectContext *moc;
+@property (strong, nonatomic, readonly) NSPersistentContainer *persistentContainer;
+
++ (id)sharedInstance;
+-(void) save;
 
 @end
 

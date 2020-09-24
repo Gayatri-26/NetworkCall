@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Employee" representedClassName="DatabaseHelper" syncable="YES">
+    <entity name="Employee" representedClassName="" syncable="YES">
         <attribute name="age" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="salary" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="Person" representedClassName="SecondVC" syncable="YES">
+    <entity name="Person" representedClassName="PersonMO" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String"/>
         <attribute name="email" optional="YES" attributeType="String"/>
         <attribute name="gender" optional="YES" attributeType="String"/>

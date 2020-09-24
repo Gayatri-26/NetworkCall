@@ -12,6 +12,7 @@
 #import "AFHTTPRequestOperation.h"
 #import <CoreData/CoreData.h>
 #import "Json_Parsing_2-Swift.h"
+#import "DatabaseHelper.h"
 
 @interface SecondVC ()
 
@@ -20,7 +21,6 @@
 @property (nonatomic,strong) NSDictionary *PersonData;
 @property (nonatomic,strong) AppDelegate *appDelegate;
 @property( strong,nonatomic) NSManagedObjectContext *context;
-@property( strong,nonatomic) NSArray *dictionaries;
 
 @end
 
@@ -36,11 +36,6 @@
     
     self.arrPerson = [[NSMutableArray alloc]init];
   
-    _appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-    _context = _appDelegate.persistentConatiner.viewContext
-    
-    
-    
 }
 
 -(void)tableViewData{
@@ -78,7 +73,20 @@
         NSLog(@"Response: %@",responseObject);
         
         _arrPerson = [PersonDetail modelArrayFromDict:responseObject];
-        [self->PersonDataTableView reloadData];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            for (NSArray *arr in _arrPerson){
+                [[DatabaseHelper sharedInstance] save];
+                
+                
+        
+            }
+            [self->PersonDataTableView reloadData];
+            
+        });
+        
+   //     [self->PersonDataTableView reloadData];
         
     }
     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
