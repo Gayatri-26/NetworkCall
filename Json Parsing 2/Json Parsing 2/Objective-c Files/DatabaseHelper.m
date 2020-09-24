@@ -32,13 +32,14 @@
 
 //- (id)init {
 //  if (self = [super init]) {
-//      someProperty = [[NSString alloc] initWithString:@"Default Property Value"];
+//
+//
 //  }
 //  return self;
 //}
 
 
-//  AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+ // AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
   
 - (AppDelegate *)appDelegate{
     return (AppDelegate *)[[UIApplication sharedApplication]delegate];
@@ -46,8 +47,10 @@
 }
 
 - (NSManagedObjectContext *)moc{
-//    return AppDelegate.persistentContainer.viewContext;
-    return moc;
+
+    return [[self appDelegate] persistentContainer].viewContext;
+   
+    //return moc;
 }
 
 -(void) save:(PersonDetail *) object{

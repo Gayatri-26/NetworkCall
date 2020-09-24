@@ -75,15 +75,14 @@
         _arrPerson = [PersonDetail modelArrayFromDict:responseObject];
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            
-            for (NSArray *arr in _arrPerson){
-                [[DatabaseHelper sharedInstance] save];
-                
-                
-        
+
+            for (PersonDetail *arr in _arrPerson){
+
+                [[DatabaseHelper sharedInstance] save:arr];
+
             }
             [self->PersonDataTableView reloadData];
-            
+
         });
         
    //     [self->PersonDataTableView reloadData];

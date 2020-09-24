@@ -10,8 +10,8 @@
 #import <CoreData/CoreData.h>
 #import "Json_Parsing_2-Swift.h"
 
-
-@interface DatabaseHelper : UIViewController
+@class PersonDetail;
+@interface DatabaseHelper : NSObject
 
 
 @property (nonatomic,strong) AppDelegate *appDelegate;
@@ -19,7 +19,7 @@
 @property (strong, nonatomic, readonly) NSPersistentContainer *persistentContainer;
 
 + (id)sharedInstance;
--(void) save;
+-(void) save:(PersonDetail *) object;
 
 @end
 

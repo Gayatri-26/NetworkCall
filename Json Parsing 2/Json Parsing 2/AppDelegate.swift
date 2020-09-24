@@ -17,8 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //
 //    var managedoObjectModel :NSManagedObjectModel!
 //    var managedObjectContect :NSManagedObjectContext!
-//    var persistentStoreCordinator : NSPersistentStoreCoordinator!
-    
+//   var persistentStoreCordinator : NSPersistentStoreCoordinator!
+  /*   @objc var pContainer:NSPersistentContainer{
+        get{
+            return persistentContainer
+        }
+        
+    }
+    */
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -59,12 +65,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      saveContext()
     }
     
-    lazy var persistentContainer: NSPersistentContainer = {
+@objc  lazy public var persistentContainer: NSPersistentContainer = {
 
         
         
         let container = NSPersistentContainer(name: "CoredataModel")
+    
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            
             if let error = error as NSError? {
      
                  

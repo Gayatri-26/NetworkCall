@@ -11,7 +11,6 @@
 
 @interface PersonDetail : NSManagedObject
 
-
 @property (nonatomic,strong) NSString *Pid;
 @property (nonatomic,strong) NSString *Pname;
 @property (nonatomic,strong) NSString *Pemail;
