@@ -28,6 +28,8 @@
     [super viewDidLoad];
     [self tableviewData];
     
+    
+    [NSException raise:@"abc" format:@"def"];
     NSOperationQueue *operationQueue = [[NSOperationQueue alloc]init];
     
     void(^DataDownloadCallBack)(NSData *data, NSError *error) = ^(NSData *dogdata, NSError *error){
@@ -56,11 +58,12 @@
                 DogModel *dog = [_arrDog objectAtIndex:j];
                 NSURL *u = [NSURL URLWithString:dog.url];
                 ImageDownloadOperation *imagedown = [[ImageDownloadOperation alloc]initWithbreed:dog.Breed andWithURL:u andCallBack:ImageDownloadCallBack];
-                [imagedown start];
+             //   [imagedown start];
+                   [operationQueue addOperation:imagedown];
            }
-                [[NSOperationQueue mainQueue]addOperationWithBlock:^{
-                          [self-> DogsDetailsTableView reloadData];
-              }];
+//                [[NSOperationQueue mainQueue]addOperationWithBlock:^{
+//                          [self-> DogsDetailsTableView reloadData];
+//              }];
            }
     };
     
@@ -68,6 +71,7 @@
     JSONDownloadOperation *datadl = [[JSONDownloadOperation alloc]initWithURL: url1 andCallBack: DataDownloadCallBack];
         
     [operationQueue addOperation: datadl];
+    
      
     self.arrDog = [[NSMutableArray alloc]init];
 
