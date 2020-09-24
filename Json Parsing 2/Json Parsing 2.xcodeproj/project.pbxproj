@@ -11,13 +11,13 @@
 		0433F70D24FF7C9600BE29D7 /* CoredataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0433F70B24FF7C9600BE29D7 /* CoredataModel.xcdatamodeld */; };
 		04359A6B23FFB54300670AA5 /* JSONModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04359A6A23FFB54300670AA5 /* JSONModel.swift */; };
 		045C948324F799BD00CFC20F /* SecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 045C948224F799BD00CFC20F /* SecondVC.m */; };
+		045EE4BB251C852E004F8363 /* PersonDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 045EE4BA251C852E004F8363 /* PersonDetail.m */; };
 		04650BC423FF8D94002C5A80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04650BC323FF8D94002C5A80 /* AppDelegate.swift */; };
 		04650BC623FF8D94002C5A80 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04650BC523FF8D94002C5A80 /* ViewController.swift */; };
 		04650BC923FF8D94002C5A80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04650BC723FF8D94002C5A80 /* Main.storyboard */; };
 		04650BCB23FF8D94002C5A80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04650BCA23FF8D94002C5A80 /* Assets.xcassets */; };
 		04650BCE23FF8D94002C5A80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04650BCC23FF8D94002C5A80 /* LaunchScreen.storyboard */; };
 		04650BD823FF9A80002C5A80 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04650BD723FF9A80002C5A80 /* DetailViewController.swift */; };
-		048ADB732501803200FAA28D /* PersonDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 048ADB722501803200FAA28D /* PersonDetail.m */; };
 		0497DBD925062C38002F8BE8 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 0497DBC625062C38002F8BE8 /* AFURLResponseSerialization.m */; };
 		0497DBDA25062C38002F8BE8 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0497DBC725062C38002F8BE8 /* AFHTTPSessionManager.m */; };
 		0497DBDB25062C38002F8BE8 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0497DBC825062C38002F8BE8 /* AFURLConnectionOperation.m */; };
@@ -57,6 +57,8 @@
 		045E408B250742B1008EE34E /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
 		045E408C250742B1008EE34E /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		045E408D250742B1008EE34E /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		045EE4B9251C852E004F8363 /* PersonDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonDetail.h; sourceTree = "<group>"; };
+		045EE4BA251C852E004F8363 /* PersonDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonDetail.m; sourceTree = "<group>"; };
 		04650BC023FF8D94002C5A80 /* Json Parsing 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Json Parsing 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04650BC323FF8D94002C5A80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04650BC523FF8D94002C5A80 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,8 +67,6 @@
 		04650BCD23FF8D94002C5A80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04650BCF23FF8D94002C5A80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04650BD723FF9A80002C5A80 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		048ADB712501803200FAA28D /* PersonDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonDetail.h; sourceTree = "<group>"; };
-		048ADB722501803200FAA28D /* PersonDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonDetail.m; sourceTree = "<group>"; };
 		0497DBBF25062C38002F8BE8 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
 		0497DBC025062C38002F8BE8 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
 		0497DBC125062C38002F8BE8 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -116,8 +116,8 @@
 			children = (
 				04B204F824F8C5D9004E7482 /* EmployeeDetails.h */,
 				04B204F924F8C5D9004E7482 /* EmployeeDetails.m */,
-				048ADB712501803200FAA28D /* PersonDetail.h */,
-				048ADB722501803200FAA28D /* PersonDetail.m */,
+				045EE4B9251C852E004F8363 /* PersonDetail.h */,
+				045EE4BA251C852E004F8363 /* PersonDetail.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -324,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04359A6B23FFB54300670AA5 /* JSONModel.swift in Sources */,
+				045EE4BB251C852E004F8363 /* PersonDetail.m in Sources */,
 				04A140C024F7707900570C52 /* FirstVC.m in Sources */,
 				0497DBDB25062C38002F8BE8 /* AFURLConnectionOperation.m in Sources */,
 				04C35A4524F792B4002D72D4 /* PersonViewCell.m in Sources */,
@@ -340,7 +341,6 @@
 				04A140C924F7713100570C52 /* EmployeeDetailsCell.m in Sources */,
 				0497DBE025062C38002F8BE8 /* AFNetworkReachabilityManager.m in Sources */,
 				045C948324F799BD00CFC20F /* SecondVC.m in Sources */,
-				048ADB732501803200FAA28D /* PersonDetail.m in Sources */,
 				0433F70D24FF7C9600BE29D7 /* CoredataModel.xcdatamodeld in Sources */,
 				04650BD823FF9A80002C5A80 /* DetailViewController.swift in Sources */,
 				04B6C395250F536100AB6AE5 /* DatabaseHelper.m in Sources */,

@@ -8,20 +8,21 @@
 
 import UIKit
 import CoreData
-
-
+ 
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
-    var managedoObjectModel :NSManagedObjectModel!
-    var managedObjectContect :NSManagedObjectContext!
-    var persistentStoreCordinator : NSPersistentStoreCoordinator!
+//
+//    var managedoObjectModel :NSManagedObjectModel!
+//    var managedObjectContect :NSManagedObjectContext!
+//    var persistentStoreCordinator : NSPersistentStoreCoordinator!
     
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+    print("Document Directory: ", FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last ?? "Not found!")
     
       window = UIWindow(frame: UIScreen.main.bounds)
       let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
