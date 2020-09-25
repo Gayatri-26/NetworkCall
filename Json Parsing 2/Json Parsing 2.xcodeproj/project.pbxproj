@@ -19,6 +19,8 @@
 		04650BCB23FF8D94002C5A80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04650BCA23FF8D94002C5A80 /* Assets.xcassets */; };
 		04650BCE23FF8D94002C5A80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04650BCC23FF8D94002C5A80 /* LaunchScreen.storyboard */; };
 		04650BD823FF9A80002C5A80 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04650BD723FF9A80002C5A80 /* DetailViewController.swift */; };
+		04781070251DEB5500B9565E /* Person+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478106E251DEB5500B9565E /* Person+CoreDataClass.m */; };
+		04781071251DEB5500B9565E /* Person+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478106F251DEB5500B9565E /* Person+CoreDataProperties.m */; };
 		0497DBD925062C38002F8BE8 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 0497DBC625062C38002F8BE8 /* AFURLResponseSerialization.m */; };
 		0497DBDA25062C38002F8BE8 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0497DBC725062C38002F8BE8 /* AFHTTPSessionManager.m */; };
 		0497DBDB25062C38002F8BE8 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0497DBC825062C38002F8BE8 /* AFURLConnectionOperation.m */; };
@@ -70,6 +72,10 @@
 		04650BCD23FF8D94002C5A80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04650BCF23FF8D94002C5A80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04650BD723FF9A80002C5A80 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		0478106C251DEB5500B9565E /* Person+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+CoreDataProperties.h"; sourceTree = "<group>"; };
+		0478106D251DEB5500B9565E /* Person+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+CoreDataClass.h"; sourceTree = "<group>"; };
+		0478106E251DEB5500B9565E /* Person+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+CoreDataClass.m"; sourceTree = "<group>"; };
+		0478106F251DEB5500B9565E /* Person+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+CoreDataProperties.m"; sourceTree = "<group>"; };
 		0497DBBF25062C38002F8BE8 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
 		0497DBC025062C38002F8BE8 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
 		0497DBC125062C38002F8BE8 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -152,6 +158,10 @@
 		04650BB723FF8D94002C5A80 = {
 			isa = PBXGroup;
 			children = (
+				0478106C251DEB5500B9565E /* Person+CoreDataProperties.h */,
+				0478106D251DEB5500B9565E /* Person+CoreDataClass.h */,
+				0478106E251DEB5500B9565E /* Person+CoreDataClass.m */,
+				0478106F251DEB5500B9565E /* Person+CoreDataProperties.m */,
 				04650BC223FF8D94002C5A80 /* Json Parsing 2 */,
 				04650BC123FF8D94002C5A80 /* Products */,
 				04B2FBA7250BA165003E4B6D /* Frameworks */,
@@ -287,7 +297,7 @@
 				TargetAttributes = {
 					04650BBF23FF8D94002C5A80 = {
 						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1120;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -340,11 +350,13 @@
 				042619A224FEC10A00AC1C6E /* CountryDetailCell.swift in Sources */,
 				0497DBDC25062C38002F8BE8 /* AFURLSessionManager.m in Sources */,
 				04650BC623FF8D94002C5A80 /* ViewController.swift in Sources */,
+				04781070251DEB5500B9565E /* Person+CoreDataClass.m in Sources */,
 				04650BC423FF8D94002C5A80 /* AppDelegate.swift in Sources */,
 				0497DBDA25062C38002F8BE8 /* AFHTTPSessionManager.m in Sources */,
 				0497DBDE25062C38002F8BE8 /* AFURLRequestSerialization.m in Sources */,
 				04A140C924F7713100570C52 /* EmployeeDetailsCell.m in Sources */,
 				0497DBE025062C38002F8BE8 /* AFNetworkReachabilityManager.m in Sources */,
+				04781071251DEB5500B9565E /* Person+CoreDataProperties.m in Sources */,
 				045C948324F799BD00CFC20F /* SecondVC.m in Sources */,
 				0433F70D24FF7C9600BE29D7 /* CoredataModel.xcdatamodeld in Sources */,
 				04650BD823FF9A80002C5A80 /* DetailViewController.swift in Sources */,

@@ -39,9 +39,10 @@
     return [[self appDelegate] persistentContainer].viewContext;
   }
 
--(void) savethis:(PersonDetail *) object{
+
+-(void) saveData:(Person *) object{
     
- PersonDetail *person = [NSEntityDescription insertNewObjectForEntityForName:@"Person" inManagedObjectContext:[self managedObjectContext]];
+ Person *person = [NSEntityDescription insertNewObjectForEntityForName:@"Person" inManagedObjectContext:[self managedObjectContext]];
 
     person.Pname = object.Pname;
     person.Pid = object.Pid;
@@ -55,7 +56,7 @@
           NSError *error = nil;
           NSArray *results = [managedObjectContext executeFetchRequest:request error:&error];
           if (!results) {
-              NSLog(@"Error fetching Employee objects: %@\n%@", [error localizedDescription], [error userInfo]);
+              NSLog(@"Error fetching Person objects: %@\n%@", [error localizedDescription], [error userInfo]);
               abort();
           }
       }
