@@ -9,18 +9,10 @@
 import UIKit
 import CoreData
  
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-//          @objc var pContainer:NSPersistentContainer{
-//              get{
-//              return persistentContainer
-//              }
-//            }
-  
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -36,8 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let SVC = storyboard.instantiateViewController(withIdentifier:"SecondVC")
     window?.rootViewController = SVC
         
-        
-      window?.makeKeyAndVisible()
+    window?.makeKeyAndVisible()
        
         return true
     }
@@ -83,14 +74,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             do {
                 try context.save()
             } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
     }
-
-
 }
 

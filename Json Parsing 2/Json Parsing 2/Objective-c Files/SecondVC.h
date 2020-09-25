@@ -12,7 +12,5 @@
 
 @interface SecondVC : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
-
-
 @end
 

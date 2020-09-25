@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0420876D251CF97F00D38B2F /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 0420876C251CF97F00D38B2F /* Person.m */; };
 		04208770251CF9D200D38B2F /* PersonDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 0420876F251CF9D200D38B2F /* PersonDetail.m */; };
 		042619A224FEC10A00AC1C6E /* CountryDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042619A024FEC10A00AC1C6E /* CountryDetailCell.swift */; };
 		0433F70D24FF7C9600BE29D7 /* CoredataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0433F70B24FF7C9600BE29D7 /* CoredataModel.xcdatamodeld */; };
@@ -39,8 +38,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0420876B251CF97F00D38B2F /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
-		0420876C251CF97F00D38B2F /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		0420876E251CF9D200D38B2F /* PersonDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonDetail.h; sourceTree = "<group>"; };
 		0420876F251CF9D200D38B2F /* PersonDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonDetail.m; sourceTree = "<group>"; };
 		042619A024FEC10A00AC1C6E /* CountryDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailCell.swift; sourceTree = "<group>"; };
@@ -125,8 +122,6 @@
 			children = (
 				04B204F824F8C5D9004E7482 /* EmployeeDetails.h */,
 				04B204F924F8C5D9004E7482 /* EmployeeDetails.m */,
-				0420876B251CF97F00D38B2F /* Person.h */,
-				0420876C251CF97F00D38B2F /* Person.m */,
 				0420876E251CF9D200D38B2F /* PersonDetail.h */,
 				0420876F251CF9D200D38B2F /* PersonDetail.m */,
 			);
@@ -158,9 +153,9 @@
 		04650BB723FF8D94002C5A80 = {
 			isa = PBXGroup;
 			children = (
-				0478106C251DEB5500B9565E /* Person+CoreDataProperties.h */,
 				0478106D251DEB5500B9565E /* Person+CoreDataClass.h */,
 				0478106E251DEB5500B9565E /* Person+CoreDataClass.m */,
+				0478106C251DEB5500B9565E /* Person+CoreDataProperties.h */,
 				0478106F251DEB5500B9565E /* Person+CoreDataProperties.m */,
 				04650BC223FF8D94002C5A80 /* Json Parsing 2 */,
 				04650BC123FF8D94002C5A80 /* Products */,
@@ -340,7 +335,6 @@
 			files = (
 				04359A6B23FFB54300670AA5 /* JSONModel.swift in Sources */,
 				04A140C024F7707900570C52 /* FirstVC.m in Sources */,
-				0420876D251CF97F00D38B2F /* Person.m in Sources */,
 				0497DBDB25062C38002F8BE8 /* AFURLConnectionOperation.m in Sources */,
 				04C35A4524F792B4002D72D4 /* PersonViewCell.m in Sources */,
 				0497DBDF25062C38002F8BE8 /* AFHTTPRequestOperation.m in Sources */,
