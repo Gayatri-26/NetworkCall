@@ -11,9 +11,13 @@
 
 @interface Person : NSManagedObject
 
+@property (nonatomic,strong) NSString *Pid;
+@property (nonatomic,strong) NSString *Pname;
+@property (nonatomic,strong) NSString *Pemail;
+@property (nonatomic,strong) NSString *Paddress;
+@property (nonatomic,strong) NSString *Pgender;
 
-
-
++(NSMutableArray < Person *> *)modelArrayFromDict1:(NSDictionary *) d1;
 
 @end
 

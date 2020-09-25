@@ -13,14 +13,13 @@
 #import <CoreData/CoreData.h>
 #import "Json_Parsing_2-Swift.h"
 #import "DatabaseHelper.h"
+#import "Person.h"
 
 @interface SecondVC ()
 
-@property (strong,nonatomic) NSMutableArray<PersonDetail *> *arrPerson;
+@property (strong,nonatomic) NSMutableArray <Person *> *arrPerson;
 @property (nonatomic,strong) NSString *mainstr;
-@property (nonatomic,strong) NSDictionary *PersonData;
 @property (nonatomic,strong) AppDelegate *appDelegate;
-@property( strong,nonatomic) NSManagedObjectContext *context;
 
 @end
 
@@ -72,15 +71,15 @@
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"Response: %@",responseObject);
         
-        _arrPerson = [PersonDetail modelArrayFromDict:responseObject];
+        _arrPerson = [Person modelArrayFromDict1:responseObject];
         
         dispatch_async(dispatch_get_main_queue(), ^{
 
-            for (PersonDetail *arr in _arrPerson){
+            for (Person *arr in _arrPerson){
 
-                [[DatabaseHelper sharedInstance] save:arr];
-
+                [[DatabaseHelper sharedInstance] saveData:arr];
             }
+            
             [self->PersonDataTableView reloadData];
 
         });
@@ -106,7 +105,7 @@
     if (cell == nil) {
         cell = [[PersonViewCell  alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"pcell"];
     }
-    PersonDetail *pDetails = _arrPerson[indexPath.row];
+    Person *pDetails = _arrPerson[indexPath.row];
     cell.Pid.text = [pDetails Pid];
     cell.Pname.text = [pDetails Pname];
     cell.Pemail.text = [pDetails Pemail];
