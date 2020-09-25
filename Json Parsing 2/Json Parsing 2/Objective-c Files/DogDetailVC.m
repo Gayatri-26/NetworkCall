@@ -51,9 +51,7 @@
                             dogimage.img = dogpath;
                         }
                     }
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [self->DogsDetailsTableView reloadData];
-                    });
+                    
                 };
                 
                 DogModel *dog = [_arrDog objectAtIndex:i];
