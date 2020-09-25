@@ -17,8 +17,6 @@
 
 +(NSMutableArray < EmployeeDetails *> *)modelArrayFromDict:(NSDictionary *) d;
 
-// @property (strong, nonatomic, readonly) NSPersistentContainer *persistentContainer;
-
 @end
  
 

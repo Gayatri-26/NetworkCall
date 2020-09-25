@@ -13,6 +13,4 @@
 
 @interface FirstVC : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
-
-
 @end

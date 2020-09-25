@@ -35,7 +35,7 @@
     [self afnetworkingdata];
     
     self.arrPerson = [[NSMutableArray alloc]init];
-  
+    
 }
 
 -(void)tableViewData{
@@ -66,7 +66,7 @@
     NSString *string = [NSString stringWithFormat:@"https://api.androidhive.info/contacts/", BaseURLString];
     NSURL *url = [NSURL URLWithString:string];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
-
+    
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     operation.responseSerializer = [AFJSONResponseSerializer serializer];
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -75,22 +75,20 @@
         _arrPerson = [PersonDetail modelArrayFromDict:responseObject];
         
         dispatch_async(dispatch_get_main_queue(), ^{
-
+            
             for (Person *arr in _arrPerson){
-
+                
                 [[DatabaseHelper sharedInstance] saveData:arr];
             }
             
             [self->PersonDataTableView reloadData];
-
+            
         });
-        
-   //     [self->PersonDataTableView reloadData];
         
     }
     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                         NSLog(@"Error: %@",error);
-                                     }];
+    NSLog(@"Error: %@",error);
+        }];
     
     [operation start];
 }
