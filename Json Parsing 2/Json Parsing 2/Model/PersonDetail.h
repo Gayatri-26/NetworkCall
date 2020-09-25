@@ -12,14 +12,13 @@
 @interface PersonDetail : NSObject
 
 
-@property (nonatomic,strong) NSString *Pid;
-@property (nonatomic,strong) NSString *Pname;
-@property (nonatomic,strong) NSString *Pemail;
-@property (nonatomic,strong) NSString *Paddress;
-@property (nonatomic,strong) NSString *Pgender;
+@property (nonatomic,strong) NSString *id;
+@property (nonatomic,strong) NSString *name;
+@property (nonatomic,strong) NSString *email;
+@property (nonatomic,strong) NSString *address;
+@property (nonatomic,strong) NSString *gender;
 
 +(NSMutableArray < PersonDetail *> *)modelArrayFromDict:(NSDictionary *) d;
-
 
 @end
 

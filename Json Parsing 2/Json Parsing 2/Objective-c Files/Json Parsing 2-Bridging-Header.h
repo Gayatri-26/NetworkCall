@@ -5,5 +5,4 @@
 #import "PersonDetail.h"
 #import "SecondVC.h"
 #import "PersonViewCell.h"
-#import "Person.h"
 

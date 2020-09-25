@@ -10,7 +10,7 @@
 #import <CoreData/CoreData.h>
 #import "Json_Parsing_2-Swift.h"
 #import "PersonDetail.h"
-#import "Person.h"
+#import "Person+CoreDataClass.h"
 
 @interface DatabaseHelper ()
 
@@ -42,23 +42,29 @@
 
 -(void) saveData:(Person *) object{
     
- Person *person = [NSEntityDescription insertNewObjectForEntityForName:@"Person" inManagedObjectContext:[self managedObjectContext]];
+ PersonDetail *person = [NSEntityDescription insertNewObjectForEntityForName:@"Person" inManagedObjectContext:[self managedObjectContext]];
 
-    person.Pname = object.Pname;
-    person.Pid = object.Pid;
-    person.Pemail = object.Pemail;
-    person.Pgender = object.Pgender;
-    person.Paddress = object.Paddress;
+    person.name = object.name;
+    person.id = object.id;
+    person.email = object.email;
+    person.gender = object.gender;
+    person.address = object.address;
 
 
           NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Person"];
-           
-          NSError *error = nil;
-          NSArray *results = [managedObjectContext executeFetchRequest:request error:&error];
-          if (!results) {
-              NSLog(@"Error fetching Person objects: %@\n%@", [error localizedDescription], [error userInfo]);
-              abort();
-          }
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    NSError *error = nil;
+    if ([[self managedObjectContext] save:&error] == NO) {
+        NSAssert(NO, @"Error saving context: %@\n%@", [error localizedDescription], [error userInfo]);
+        
+    }
+//          NSError *error = nil;
+//          NSArray *results = [managedObjectContext executeFetchRequest:request error:&error];
+//          if (!results) {
+//              NSLog(@"Error fetching Person objects: %@\n%@", [error localizedDescription], [error userInfo]);
+//              abort();
+//          }
       }
 
 

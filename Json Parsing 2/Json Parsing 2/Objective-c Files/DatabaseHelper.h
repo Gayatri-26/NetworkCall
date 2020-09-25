@@ -10,6 +10,7 @@
 #import <CoreData/CoreData.h>
 #import "Json_Parsing_2-Swift.h"
 
+//@class PersonDetail;
 @class Person;
 @interface DatabaseHelper : NSObject
 
