@@ -29,7 +29,7 @@
     [self tableviewData];
     
     
-    [NSException raise:@"abc" format:@"def"];
+//    [NSException raise:@"abc" format:@"def"];
     NSOperationQueue *operationQueue = [[NSOperationQueue alloc]init];
     
     void(^DataDownloadCallBack)(NSData *data, NSError *error) = ^(NSData *dogdata, NSError *error){
