@@ -50,8 +50,10 @@
     person.gender = object.gender;
     person.address = object.address;
     
-    
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Person"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"Identifier == %@",object];
+    [request setPredicate:predicate];
+    PersonDetail *obj = [managedObjectContext executeRequest:request error:nil];
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     NSError *error = nil;
