@@ -153,10 +153,6 @@
 		04650BB723FF8D94002C5A80 = {
 			isa = PBXGroup;
 			children = (
-				0478106D251DEB5500B9565E /* Person+CoreDataClass.h */,
-				0478106E251DEB5500B9565E /* Person+CoreDataClass.m */,
-				0478106C251DEB5500B9565E /* Person+CoreDataProperties.h */,
-				0478106F251DEB5500B9565E /* Person+CoreDataProperties.m */,
 				04650BC223FF8D94002C5A80 /* Json Parsing 2 */,
 				04650BC123FF8D94002C5A80 /* Products */,
 				04B2FBA7250BA165003E4B6D /* Frameworks */,
@@ -174,6 +170,10 @@
 		04650BC223FF8D94002C5A80 /* Json Parsing 2 */ = {
 			isa = PBXGroup;
 			children = (
+				0478106D251DEB5500B9565E /* Person+CoreDataClass.h */,
+				0478106E251DEB5500B9565E /* Person+CoreDataClass.m */,
+				0478106C251DEB5500B9565E /* Person+CoreDataProperties.h */,
+				0478106F251DEB5500B9565E /* Person+CoreDataProperties.m */,
 				0497DBBE25062C38002F8BE8 /* AFNetworking */,
 				045E407E250742B1008EE34E /* UIKit+AFNetworking */,
 				04A140CB24F7716500570C52 /* Swifts Files */,
