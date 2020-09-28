@@ -17,7 +17,7 @@
         
         //Image
         self.imgview = [[UIImageView alloc]initWithFrame:CGRectMake(20,10, 130, 130)];
-        [_imgview setImage:[UIImage imageNamed:@"7EE509HU_330x370.jpg"]];
+//        [_imgview setImage:[UIImage imageNamed:@"7EE509HU_330x370.jpg"]];
         [_imgview setContentMode:UIViewContentModeScaleAspectFit];
         [self addSubview:self.imgview];
         

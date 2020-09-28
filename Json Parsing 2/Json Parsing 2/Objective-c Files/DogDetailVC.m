@@ -11,6 +11,7 @@
 #import "DogTableViewCell.h"
 #import "DataDownloadThread.h"
 #import "ImageDownloadThread.h"
+#import "DogVC.h"
 
 @interface DogDetailVC ()
 
@@ -91,7 +92,7 @@
     
     [DogsDetailsTableView registerClass:[DogTableViewCell class] forCellReuseIdentifier:@"DCell"];
     DogsDetailsTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-    DogsDetailsTableView.allowsSelection = UITableViewCellSelectionStyleNone;
+    DogsDetailsTableView.allowsSelection = UITableViewCellSelectionStyleBlue;
     DogsDetailsTableView.dataSource = self;
     DogsDetailsTableView.delegate = self;
     
@@ -117,11 +118,26 @@
     cell.colors.text = [dogDetails Colors];
     cell.imgview.image = [dogDetails img];
     
+    UIView *customColorView = [[UIView alloc] init];
+    customColorView.backgroundColor = [UIColor colorWithRed:180/255.0
+                                                      green:138/255.0
+                                                       blue:171/255.0
+                                                      alpha:0.5];
+    cell.selectedBackgroundView =  customColorView;
+    
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    DogVC* DogDetails = [storyboard instantiateViewControllerWithIdentifier:@"DogVC"];
+    [self.navigationController pushViewController:DogDetails animated:YES];
+    
+}
+
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 200;
+    return 205;
 }
 
 
