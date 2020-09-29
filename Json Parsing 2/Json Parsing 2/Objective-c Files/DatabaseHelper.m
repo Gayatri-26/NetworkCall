@@ -18,7 +18,7 @@
 
 @implementation DatabaseHelper
 
-@synthesize appDelegate, persistentContainer, managedObjectContext;
+@synthesize appDelegate, persistentContainer;
 
 + (id)sharedInstance {
     static DatabaseHelper *sharedInstance = nil;
@@ -40,40 +40,41 @@
 }
 
 
--(BOOL) saveData:(Person *) object{
+-(BOOL) saveData:(PersonDetail *) object{
     
     Person *person = [NSEntityDescription insertNewObjectForEntityForName:@"Person" inManagedObjectContext:[self managedObjectContext]];
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Person"];
-    [request setEntity:person];
-    [request setPredicate:[NSPredicate predicateWithFormat:@"person.id == object.id ",person.id,object.id]];
+     NSFetchRequest *request = [[NSFetchRequest alloc] init];
+     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Person" inManagedObjectContext: [self managedObjectContext]];
+ //   NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Person"];
+    [request setEntity:entity];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"pid == %@", object.pid]];
     [request setFetchLimit:1];
+    
 
     NSError *error = nil;
-    NSUInteger count = [managedObjectContext countForFetchRequest:request error:&error];
+    NSUInteger count = [[self managedObjectContext] countForFetchRequest:request error:&error];
 
-    if (count)
-    {
-        return YES;
-    }
-    else
-    {
-        return NO;
-    }
-
+  
     person.name = object.name;
-    person.id = object.id;
+    person.pid = object.pid;
     person.email = object.email;
     person.gender = object.gender;
     person.address = object.address;
     
-   
-    
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-    if ([[self managedObjectContext] save:&error] == NO) {
+        if ([[self managedObjectContext] save:&error] == NO)
+        {
         NSAssert(NO, @"Error saving context: %@\n%@", [error localizedDescription], [error userInfo]);
-        
-    }
-    
+        }
+    if (count)
+      {
+          return YES;
+      }
+      else
+      {
+          return NO;
+      }
 }
 
 @end
+
+

@@ -5,8 +5,8 @@
         <attribute name="address" optional="YES" attributeType="String"/>
         <attribute name="email" optional="YES" attributeType="String"/>
         <attribute name="gender" optional="YES" attributeType="String"/>
-        <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="pid" optional="YES" attributeType="String"/>
     </entity>
     <elements>
         <element name="Employee" positionX="-36" positionY="13" width="128" height="43"/>

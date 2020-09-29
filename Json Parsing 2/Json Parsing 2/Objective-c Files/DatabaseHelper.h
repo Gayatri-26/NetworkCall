@@ -10,7 +10,7 @@
 #import <CoreData/CoreData.h>
 #import "Json_Parsing_2-Swift.h"
 
-//@class PersonDetail;
+@class PersonDetail;
 @class Person;
 @interface DatabaseHelper : NSObject
 
@@ -21,7 +21,7 @@
 
 + (id)sharedInstance;
 
--(BOOL) saveData:(Person *) object;
+-(BOOL) saveData:(PersonDetail *) object;
 
 @end
 

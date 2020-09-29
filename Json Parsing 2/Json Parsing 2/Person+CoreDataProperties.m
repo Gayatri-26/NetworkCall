@@ -18,7 +18,7 @@
 @dynamic address;
 @dynamic email;
 @dynamic gender;
-@dynamic id;
+@dynamic pid;
 @dynamic name;
 
 @end

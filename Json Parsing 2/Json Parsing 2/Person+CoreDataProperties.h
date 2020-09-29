@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSString *address;
 @property (nullable, nonatomic, copy) NSString *email;
 @property (nullable, nonatomic, copy) NSString *gender;
-@property (nullable, nonatomic, copy) NSString *id;
+@property (nullable, nonatomic, copy) NSString *pid;
 @property (nullable, nonatomic, copy) NSString *name;
 
 @end
