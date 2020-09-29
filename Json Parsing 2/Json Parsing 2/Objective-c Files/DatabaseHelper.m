@@ -42,7 +42,12 @@
 
 -(void) saveData:(Person *) object{
     
-    PersonDetail *person = [NSEntityDescription insertNewObjectForEntityForName:@"Person" inManagedObjectContext:[self managedObjectContext]];
+   // Person *person = [NSEntityDescription insertNewObjectForEntityForName:@"Person" inManagedObjectContext:[self managedObjectContext]];
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Person"];
+    
+    Person *person = [NSEntityDescription entityForName:@"Person" inManagedObjectContext:[self managedObjectContext]];
+
     
     person.name = object.name;
     person.id = object.id;
@@ -50,12 +55,11 @@
     person.gender = object.gender;
     person.address = object.address;
     
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Person"];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"Identifier == %@",object];
     [request setPredicate:predicate];
-    PersonDetail *obj = [managedObjectContext executeRequest:request error:nil];
+  //  Person *obj = [managedObjectContext executeRequest:request error:nil];
     
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+ //   AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     NSError *error = nil;
     if ([[self managedObjectContext] save:&error] == NO) {
         NSAssert(NO, @"Error saving context: %@\n%@", [error localizedDescription], [error userInfo]);
