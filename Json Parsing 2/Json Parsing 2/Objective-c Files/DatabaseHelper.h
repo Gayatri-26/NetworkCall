@@ -21,7 +21,7 @@
 
 + (id)sharedInstance;
 
--(void) saveData:(Person *) object;
+-(BOOL) saveData:(Person *) object;
 
 @end
 

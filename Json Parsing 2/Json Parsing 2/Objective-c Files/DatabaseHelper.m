@@ -40,27 +40,35 @@
 }
 
 
--(void) saveData:(Person *) object{
+-(BOOL) saveData:(Person *) object{
     
-   // Person *person = [NSEntityDescription insertNewObjectForEntityForName:@"Person" inManagedObjectContext:[self managedObjectContext]];
-    
+    Person *person = [NSEntityDescription insertNewObjectForEntityForName:@"Person" inManagedObjectContext:[self managedObjectContext]];
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Person"];
-    
-    Person *person = [NSEntityDescription entityForName:@"Person" inManagedObjectContext:[self managedObjectContext]];
+    [request setEntity:person];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"person.id == object.id ",person.id,object.id]];
+    [request setFetchLimit:1];
 
-    
+    NSError *error = nil;
+    NSUInteger count = [managedObjectContext countForFetchRequest:request error:&error];
+
+    if (count)
+    {
+        return YES;
+    }
+    else
+    {
+        return NO;
+    }
+
     person.name = object.name;
     person.id = object.id;
     person.email = object.email;
     person.gender = object.gender;
     person.address = object.address;
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"Identifier == %@",object];
-    [request setPredicate:predicate];
-  //  Person *obj = [managedObjectContext executeRequest:request error:nil];
+   
     
- //   AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-    NSError *error = nil;
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     if ([[self managedObjectContext] save:&error] == NO) {
         NSAssert(NO, @"Error saving context: %@\n%@", [error localizedDescription], [error userInfo]);
         
