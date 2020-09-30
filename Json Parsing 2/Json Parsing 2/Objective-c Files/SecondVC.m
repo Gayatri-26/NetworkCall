@@ -18,7 +18,8 @@
 @interface SecondVC ()
 
 
-@property (strong,nonatomic) NSMutableArray <PersonDetail *> *arrPerson;
+@property (strong,nonatomic) NSMutableArray <PersonDetail *> *arrPersonDetail;
+@property (strong,nonatomic) NSMutableArray <Person *> *arrPerson;
 @property (nonatomic,strong) NSString *mainstr;
 @property (nonatomic,strong) AppDelegate *appDelegate;
 
@@ -34,7 +35,8 @@
     [self tableViewData];
     [self afnetworkingdata];
     
-    self.arrPerson = [[NSMutableArray alloc]init];
+     self.arrPerson = [[NSMutableArray alloc]init];
+    self.arrPersonDetail = [[NSMutableArray alloc]init];
     
 }
 
@@ -72,13 +74,16 @@
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"Response: %@",responseObject);
         
-        _arrPerson = [PersonDetail modelArrayFromDict:responseObject];
+        _arrPersonDetail = [PersonDetail modelArrayFromDict:responseObject];
+    //    _arrPerson = [Person modelArrayFromDict:responseObject];
+
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
-            for (Person *arr in _arrPerson){
+        //  for (Person *arr in _arrPerson)
+            for (_arrPerson in _arrPersonDetail){
                 
-                [[DatabaseHelper sharedInstance] saveData:arr];
+                [[DatabaseHelper sharedInstance] saveData:_arrPerson];
             }
             
             [self->PersonDataTableView reloadData];
@@ -104,13 +109,19 @@
     if (cell == nil) {
         cell = [[PersonViewCell  alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"pcell"];
     }
-    PersonDetail *pDetails = _arrPerson[indexPath.row];
-    cell.Pid.text = [pDetails id];
+//    PersonDetail *pDetails = _arrPersonDetail[indexPath.row];
+//    cell.Pid.text = [pDetails id];
+//    cell.Pname.text = [pDetails name];
+//    cell.Pemail.text = [pDetails email];
+//    cell.Paddress.text = [pDetails address];
+//    cell.Pgender.text = [pDetails gender];
+    
+    Person *pDetails = _arrPerson[indexPath.row];
+    cell.Pid.text = [pDetails pid];
     cell.Pname.text = [pDetails name];
     cell.Pemail.text = [pDetails email];
     cell.Paddress.text = [pDetails address];
     cell.Pgender.text = [pDetails gender];
-    
     return cell;
 }
 

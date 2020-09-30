@@ -10,7 +10,7 @@
 
 @implementation PersonDetail
 
-@synthesize id, name, email, address, gender;
+@synthesize pid, name, email, address, gender;
 
 
 +(NSMutableArray < PersonDetail * > *)modelArrayFromDict:(NSDictionary *) d{
@@ -22,7 +22,7 @@ for (NSDictionary *dict in dic1)
  {
     PersonDetail *PersonDet = [[PersonDetail alloc]init];
     NSString *strid = [dict objectForKey:@"id"];
-    PersonDet.id = strid;
+    PersonDet.pid = strid;
     
     NSString *strname = [dict objectForKey:@"name"];
     PersonDet.name = strname;
