@@ -30,6 +30,14 @@
     UITableView *PersonDataTableView;
     
 }
+- (NSManagedObjectContext *)managedObjectContext {
+    NSManagedObjectContext *context = nil;
+    id delegate = [[UIApplication sharedApplication] delegate];
+    if ([delegate performSelector:@selector(managedObjectContext)]) {
+        context = [delegate managedObjectContext];
+    }
+    return context;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self tableViewData];
@@ -75,16 +83,16 @@
         NSLog(@"Response: %@",responseObject);
         
         _arrPersonDetail = [PersonDetail modelArrayFromDict:responseObject];
-    //    _arrPerson = [Person modelArrayFromDict:responseObject];
 
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
-        //  for (Person *arr in _arrPerson)
-            for (_arrPerson in _arrPersonDetail){
+            
+            for (PersonDetail *arr in _arrPersonDetail){
                 
-                [[DatabaseHelper sharedInstance] saveData:_arrPerson];
+                [[DatabaseHelper sharedInstance] saveData:arr];
             }
+            _arrPerson = [NSMutableArray arrayWithArray: [[DatabaseHelper sharedInstance] getPersondb]];
             
             [self->PersonDataTableView reloadData];
             
@@ -108,20 +116,19 @@
     PersonViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pcell"];
     if (cell == nil) {
         cell = [[PersonViewCell  alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"pcell"];
+     }
+    if ([self.arrPerson count]>0)
+    {
+        NSLog(@"pid == %@",[self.arrPerson lastObject]);
+        Person *pDetails = [self.arrPerson objectAtIndex:indexPath.row];
+     //   Person *pDetails = _arrPerson[indexPath.row];
+         cell.Pid.text = [pDetails pid];
+         cell.Pname.text = [pDetails name];
+         cell.Pemail.text = [pDetails email];
+         cell.Paddress.text = [pDetails address];
+         cell.Pgender.text = [pDetails gender];
+        
     }
-//    PersonDetail *pDetails = _arrPersonDetail[indexPath.row];
-//    cell.Pid.text = [pDetails id];
-//    cell.Pname.text = [pDetails name];
-//    cell.Pemail.text = [pDetails email];
-//    cell.Paddress.text = [pDetails address];
-//    cell.Pgender.text = [pDetails gender];
-    
-    Person *pDetails = _arrPerson[indexPath.row];
-    cell.Pid.text = [pDetails pid];
-    cell.Pname.text = [pDetails name];
-    cell.Pemail.text = [pDetails email];
-    cell.Paddress.text = [pDetails address];
-    cell.Pgender.text = [pDetails gender];
     return cell;
 }
 

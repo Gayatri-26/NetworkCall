@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 #import "Json_Parsing_2-Swift.h"
+#import "SecondVC.h"
 
 @class PersonDetail;
 @class Person;
@@ -21,7 +22,9 @@
 
 + (id)sharedInstance;
 
--(BOOL) saveData:(PersonDetail *) object;
+-(void) saveData:(PersonDetail *) object;
+
+-(NSArray *) getPersondb;
 
 @end
 
