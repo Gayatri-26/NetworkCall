@@ -30,16 +30,13 @@
     return sharedInstance;
 }
 
-
 - (AppDelegate *)appDelegate{
     return (AppDelegate *)[[UIApplication sharedApplication]delegate];
 }
 
-
 - (NSManagedObjectContext *)managedObjectContext{
     return [[self appDelegate] persistentContainer].viewContext;
 }
-
 
 -(NSArray *) getPersondb {
     
@@ -48,9 +45,6 @@
     NSArray *result  = [self.managedObjectContext executeFetchRequest: request error:nil];
     return result;
 }
-
-
-
 
 -(void) saveData:(PersonDetail *) object{
     

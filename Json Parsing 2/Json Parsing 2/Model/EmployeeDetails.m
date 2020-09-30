@@ -12,7 +12,7 @@
 
 @implementation EmployeeDetails
 
-@synthesize EmpId, Name, Salary, Age;
+@synthesize empId, name, salary, age;
 
 +(NSMutableArray < EmployeeDetails *> *)modelArrayFromDict:(NSDictionary *) d {
 
@@ -23,13 +23,13 @@
         for(NSDictionary *dict in dict1){
             EmployeeDetails *EmpDetails = [[EmployeeDetails alloc]init];
             NSString *strid = [dict objectForKey:@"id"];
-            EmpDetails.EmpId = strid;
+            EmpDetails.empId = strid;
             NSString *strname = [dict objectForKey:@"employee_name"];
-            EmpDetails.Name = strname;
+            EmpDetails.name = strname;
             NSString *strsalary = [dict objectForKey:@"employee_salary"];
-            EmpDetails.Salary = strsalary;
+            EmpDetails.salary = strsalary;
             NSString *strage = [dict objectForKey:@"employee_age"];
-            EmpDetails.Age = strage;
+            EmpDetails.age = strage;
             
             [emparr addObject:EmpDetails];
         }

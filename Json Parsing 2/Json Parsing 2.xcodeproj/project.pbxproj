@@ -18,6 +18,9 @@
 		04650BCB23FF8D94002C5A80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04650BCA23FF8D94002C5A80 /* Assets.xcassets */; };
 		04650BCE23FF8D94002C5A80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04650BCC23FF8D94002C5A80 /* LaunchScreen.storyboard */; };
 		04650BD823FF9A80002C5A80 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04650BD723FF9A80002C5A80 /* DetailViewController.swift */; };
+		04774EA42524D51800CCC57F /* Employee+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 04774EA12524D51800CCC57F /* Employee+CoreDataClass.m */; };
+		04774EA52524D51800CCC57F /* Employee+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 04774EA32524D51800CCC57F /* Employee+CoreDataProperties.m */; };
+		04774EA82524D60A00CCC57F /* DataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 04774EA72524D60A00CCC57F /* DataBase.m */; };
 		04781070251DEB5500B9565E /* Person+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478106E251DEB5500B9565E /* Person+CoreDataClass.m */; };
 		04781071251DEB5500B9565E /* Person+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478106F251DEB5500B9565E /* Person+CoreDataProperties.m */; };
 		0497DBD925062C38002F8BE8 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 0497DBC625062C38002F8BE8 /* AFURLResponseSerialization.m */; };
@@ -69,6 +72,12 @@
 		04650BCD23FF8D94002C5A80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04650BCF23FF8D94002C5A80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04650BD723FF9A80002C5A80 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		04774EA02524D51800CCC57F /* Employee+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Employee+CoreDataClass.h"; sourceTree = "<group>"; };
+		04774EA12524D51800CCC57F /* Employee+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Employee+CoreDataClass.m"; sourceTree = "<group>"; };
+		04774EA22524D51800CCC57F /* Employee+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Employee+CoreDataProperties.h"; sourceTree = "<group>"; };
+		04774EA32524D51800CCC57F /* Employee+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Employee+CoreDataProperties.m"; sourceTree = "<group>"; };
+		04774EA62524D60A00CCC57F /* DataBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataBase.h; sourceTree = "<group>"; };
+		04774EA72524D60A00CCC57F /* DataBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataBase.m; sourceTree = "<group>"; };
 		0478106C251DEB5500B9565E /* Person+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+CoreDataProperties.h"; sourceTree = "<group>"; };
 		0478106D251DEB5500B9565E /* Person+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+CoreDataClass.h"; sourceTree = "<group>"; };
 		0478106E251DEB5500B9565E /* Person+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+CoreDataClass.m"; sourceTree = "<group>"; };
@@ -174,6 +183,10 @@
 				0478106E251DEB5500B9565E /* Person+CoreDataClass.m */,
 				0478106C251DEB5500B9565E /* Person+CoreDataProperties.h */,
 				0478106F251DEB5500B9565E /* Person+CoreDataProperties.m */,
+				04774EA02524D51800CCC57F /* Employee+CoreDataClass.h */,
+				04774EA12524D51800CCC57F /* Employee+CoreDataClass.m */,
+				04774EA22524D51800CCC57F /* Employee+CoreDataProperties.h */,
+				04774EA32524D51800CCC57F /* Employee+CoreDataProperties.m */,
 				0497DBBE25062C38002F8BE8 /* AFNetworking */,
 				045E407E250742B1008EE34E /* UIKit+AFNetworking */,
 				04A140CB24F7716500570C52 /* Swifts Files */,
@@ -221,6 +234,8 @@
 			children = (
 				045E407D250741FD008EE34E /* FirstVC.h */,
 				04A140BF24F7707900570C52 /* FirstVC.m */,
+				04774EA62524D60A00CCC57F /* DataBase.h */,
+				04774EA72524D60A00CCC57F /* DataBase.m */,
 				04A140BD24F7707900570C52 /* Json Parsing 2-Bridging-Header.h */,
 				045C948124F799BD00CFC20F /* SecondVC.h */,
 				045C948224F799BD00CFC20F /* SecondVC.m */,
@@ -341,12 +356,15 @@
 				0497DBDD25062C38002F8BE8 /* AFHTTPRequestOperationManager.m in Sources */,
 				0497DBE125062C38002F8BE8 /* AFSecurityPolicy.m in Sources */,
 				04B204FA24F8C5D9004E7482 /* EmployeeDetails.m in Sources */,
+				04774EA82524D60A00CCC57F /* DataBase.m in Sources */,
 				042619A224FEC10A00AC1C6E /* CountryDetailCell.swift in Sources */,
 				0497DBDC25062C38002F8BE8 /* AFURLSessionManager.m in Sources */,
 				04650BC623FF8D94002C5A80 /* ViewController.swift in Sources */,
+				04774EA52524D51800CCC57F /* Employee+CoreDataProperties.m in Sources */,
 				04781070251DEB5500B9565E /* Person+CoreDataClass.m in Sources */,
 				04650BC423FF8D94002C5A80 /* AppDelegate.swift in Sources */,
 				0497DBDA25062C38002F8BE8 /* AFHTTPSessionManager.m in Sources */,
+				04774EA42524D51800CCC57F /* Employee+CoreDataClass.m in Sources */,
 				0497DBDE25062C38002F8BE8 /* AFURLRequestSerialization.m in Sources */,
 				04A140C924F7713100570C52 /* EmployeeDetailsCell.m in Sources */,
 				0497DBE025062C38002F8BE8 /* AFNetworkReachabilityManager.m in Sources */,

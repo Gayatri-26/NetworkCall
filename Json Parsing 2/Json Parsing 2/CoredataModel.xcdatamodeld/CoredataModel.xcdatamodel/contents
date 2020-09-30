@@ -1,15 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
-    <entity name="Employee" representedClassName="" syncable="YES"/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="18G84" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="Employee" representedClassName="Employee" syncable="YES">
+        <attribute name="age" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="empId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="salary" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Person" representedClassName="Person" syncable="YES">
-        <attribute name="address" optional="YES" attributeType="String"/>
-        <attribute name="email" optional="YES" attributeType="String"/>
-        <attribute name="gender" optional="YES" attributeType="String"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="pid" optional="YES" attributeType="String"/>
+        <attribute name="address" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="email" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="gender" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="name" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="pid" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
     </entity>
     <elements>
-        <element name="Employee" positionX="-36" positionY="13" width="128" height="43"/>
+        <element name="Employee" positionX="-36" positionY="13" width="128" height="105"/>
         <element name="Person" positionX="-315" positionY="10" width="128" height="118"/>
     </elements>
 </model>

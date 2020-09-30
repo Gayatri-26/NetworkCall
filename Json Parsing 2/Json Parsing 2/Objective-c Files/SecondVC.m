@@ -92,7 +92,7 @@
                 
                 [[DatabaseHelper sharedInstance] saveData:arr];
             }
-            _arrPerson = [NSMutableArray arrayWithArray: [[DatabaseHelper sharedInstance] getPersondb]];
+            _arrPerson = [NSMutableArray arrayWithArray:[[DatabaseHelper sharedInstance]getPersondb]];
             
             [self->PersonDataTableView reloadData];
             
@@ -121,7 +121,6 @@
     {
         NSLog(@"pid == %@",[self.arrPerson lastObject]);
         Person *pDetails = [self.arrPerson objectAtIndex:indexPath.row];
-     //   Person *pDetails = _arrPerson[indexPath.row];
          cell.Pid.text = [pDetails pid];
          cell.Pname.text = [pDetails name];
          cell.Pemail.text = [pDetails email];

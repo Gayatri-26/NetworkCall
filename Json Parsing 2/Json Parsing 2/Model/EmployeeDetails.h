@@ -10,10 +10,10 @@
 
 @interface EmployeeDetails : NSObject
 
-@property (nonatomic,strong) NSString *EmpId;
-@property (nonatomic,strong) NSString *Name;
-@property (nonatomic,strong) NSString *Salary;
-@property (nonatomic,strong) NSString *Age;
+@property (nonatomic,strong) NSString *empId;
+@property (nonatomic,strong) NSString *name;
+@property (nonatomic,strong) NSString *salary;
+@property (nonatomic,strong) NSString *age;
 
 +(NSMutableArray < EmployeeDetails *> *)modelArrayFromDict:(NSDictionary *) d;
 

@@ -12,12 +12,17 @@
 #import "AFNetworking.h"
 #import "AFHTTPRequestOperation.h"
 #import <CoreData/CoreData.h>
+#import "Employee+CoreDataClass.h"
+#import "DataBase.h"
+#import "Json_Parsing_2-Swift.h"
+
 
 @interface FirstVC ()
 
-@property (strong,nonatomic) NSMutableArray<EmployeeDetails *> *arrEmployee;
+@property (strong,nonatomic) NSMutableArray<EmployeeDetails *> *arrEmployeeDetails;
+@property (strong,nonatomic) NSMutableArray<Employee *> *arrEmployee;
 @property (nonatomic,strong) NSString *mainstr;
-@property (nonatomic,strong) NSDictionary *EmployeeData;
+@property (nonatomic,strong) AppDelegate *appDelegate;
 
 @end
 
@@ -31,8 +36,8 @@
     [super viewDidLoad];
     [self tableviewData];
     [self afnetworkingcode];
+    self.arrEmployeeDetails = [[NSMutableArray alloc]init];
     self.arrEmployee = [[NSMutableArray alloc]init];
-    
 }
 
 -(void)tableviewData{
@@ -70,11 +75,21 @@
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"Response: %@",responseObject);
         
-        _arrEmployee = [EmployeeDetails modelArrayFromDict:responseObject];
+        _arrEmployeeDetails = [EmployeeDetails modelArrayFromDict:responseObject];
+        
+         dispatch_async(dispatch_get_main_queue(), ^{
+             
+        for (EmployeeDetails *arr in _arrEmployeeDetails){
+            
+            [[DataBase sharedInstance] saveData:arr];
+        }
+        _arrEmployee = [NSMutableArray arrayWithArray:[[DataBase sharedInstance]getEmployeedb]];
         
         [self->EmployeeDataTableView reloadData];
         
-    }
+        });
+        
+     }
         failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
          NSLog(@"Error: %@",error);
@@ -97,12 +112,14 @@
         
         cell = [[EmployeeDetailsCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ECell"];
     }
-    EmployeeDetails *empDetails = _arrEmployee[indexPath.row];
-    cell.LblId.text = [empDetails EmpId];
-    cell.LblName.text = [empDetails Name];
-    cell.LblSalary.text = [empDetails Salary];
-    cell.LblAge.text = [empDetails Age];
-    
+    if ([self.arrEmployee count]>0)
+    {
+    Employee *empDetails = _arrEmployee[indexPath.row];
+    cell.LblId.text = [empDetails empId];
+    cell.LblName.text = [empDetails name];
+    cell.LblSalary.text = [empDetails salary];
+    cell.LblAge.text = [empDetails age];
+    }
     return cell;
 }
 
