@@ -126,7 +126,6 @@
          cell.Pemail.text = [pDetails email];
          cell.Paddress.text = [pDetails address];
          cell.Pgender.text = [pDetails gender];
-        
     }
     return cell;
 }
@@ -136,10 +135,6 @@
     return 230;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    
-}
 
 @end
 
