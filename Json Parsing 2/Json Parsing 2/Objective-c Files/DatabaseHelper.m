@@ -39,17 +39,17 @@
 }
 
 -(NSArray *) getPersondb {
-    
+
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Person"];
    // [self.managedObjectContext executeFetchRequest: request error:nil];
     NSArray *result  = [self.managedObjectContext executeFetchRequest: request error:nil];
     return result;
 }
 
--(void) saveData:(PersonDetail *) object{
-    
-    Person *person = [NSEntityDescription insertNewObjectForEntityForName:@"Person" inManagedObjectContext:[self managedObjectContext]];
-   
+//-(void) saveData:(PersonDetail *) object{
+ //   -(void) saveData:(Person *) object{
+ //   Person *person = [NSEntityDescription insertNewObjectForEntityForName:@"Person" inManagedObjectContext:[self managedObjectContext]];
+
 //     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Person" inManagedObjectContext: [self managedObjectContext]];
 //      NSFetchRequest *request = [[NSFetchRequest alloc] init];
 //   // NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Person"];
@@ -57,21 +57,31 @@
 // //   [request setPredicate:[NSPredicate predicateWithFormat:@"pid == %@", object.pid]];
 ////    [request setFetchLimit:1];
 //
-   NSError *error = nil;
+//   NSError *error = nil;
 //    NSUInteger count = [[self managedObjectContext] countForFetchRequest:request error:&error];
-    
-    person.name = object.name;
-    person.pid = object.pid;
-    person.email = object.email;
-    person.gender = object.gender;
-    person.address = object.address;
-    
-        if ([[self managedObjectContext] save:&error] == NO)
-        {
-        NSAssert(NO, @"Error saving context: %@\n%@", [error localizedDescription], [error userInfo]);
-        }
-    
-}
+
+   // person.pid = object.pid;
+//    person.name = object.name;
+//    person.email = object.email;
+//    person.gender = object.gender;
+//    person.address = object.address;
+//
+//    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfURL:@"https://api.androidhive.info/contacts/"] options:kNilOptions error:&error];
+//
+//    person.pid  = [dict objectForKey:@"id"];
+//    person.name = [dict objectForKey:@"name"];
+//    person.email = [dict objectForKey:@"email"];
+//    person.address = [dict objectForKey:@"address"];
+//    person.gender = [dict objectForKey:@"gender"];
+//
+//
+//
+//        if ([[self managedObjectContext] save:&error] == NO)
+//        {
+//        NSAssert(NO, @"Error saving context: %@\n%@", [error localizedDescription], [error userInfo]);
+//        }
+//
+//}
 
 @end
 

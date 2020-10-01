@@ -34,6 +34,7 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    
     [self tableviewData];
     [self afnetworkingcode];
     self.arrEmployeeDetails = [[NSMutableArray alloc]init];
@@ -64,6 +65,16 @@
 -(void)afnetworkingcode{
     
     //AFNetworking
+    
+    /* 1. create a new view controller = use segmented control
+    on first segment gayatri controller and second mine
+     2 . avoid data dupications
+     3. remove nsobject model class
+    */
+    
+    
+   // [self addChildViewController:]
+    
     static NSString * const BaseURLString = @"http://dummy.restapiexample.com/api/v1/employees";
     
     NSString *string = [NSString stringWithFormat:@"http://dummy.restapiexample.com/api/v1/employees",BaseURLString];
@@ -93,6 +104,8 @@
         failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
          NSLog(@"Error: %@",error);
+         _arrEmployee = [NSMutableArray arrayWithArray:[[DataBase sharedInstance]getEmployeedb]];
+        [self->EmployeeDataTableView reloadData];
      }];
     
     [operation start];

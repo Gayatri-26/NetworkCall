@@ -39,6 +39,7 @@
     return context;
 }
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     [self tableViewData];
     [self afnetworkingdata];
@@ -71,9 +72,8 @@
 -(void)afnetworkingdata{
     
     //AFNetworking
-    static NSString * const BaseURLString = @"https://api.androidhive.info/contacts/";
     
-    NSString *string = [NSString stringWithFormat:@"https://api.androidhive.info/contacts/", BaseURLString];
+    NSString *string = [NSString stringWithFormat:@"https://api.androidhive.info/contacts/"];
     NSURL *url = [NSURL URLWithString:string];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
@@ -101,6 +101,8 @@
     }
     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     NSLog(@"Error: %@",error);
+        
+        _arrPerson = [NSMutableArray arrayWithArray:[[DatabaseHelper sharedInstance]getPersondb]];
         }];
     
     [operation start];

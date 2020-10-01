@@ -21,6 +21,7 @@ NSDictionary *dic1 = [d objectForKey:@"contacts"];
 for (NSDictionary *dict in dic1)
  {
     PersonDetail *PersonDet = [[PersonDetail alloc]init];
+     
     NSString *strid = [dict objectForKey:@"id"];
     PersonDet.pid = strid;
     
