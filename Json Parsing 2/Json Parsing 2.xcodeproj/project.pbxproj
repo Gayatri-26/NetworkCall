@@ -126,6 +126,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0402DC50252ACF9B00240DAB /* CoredataClassFiles */ = {
+			isa = PBXGroup;
+			children = (
+				04774EA02524D51800CCC57F /* Employee+CoreDataClass.h */,
+				04774EA12524D51800CCC57F /* Employee+CoreDataClass.m */,
+				04774EA22524D51800CCC57F /* Employee+CoreDataProperties.h */,
+				04774EA32524D51800CCC57F /* Employee+CoreDataProperties.m */,
+				0478106D251DEB5500B9565E /* Person+CoreDataClass.h */,
+				0478106E251DEB5500B9565E /* Person+CoreDataClass.m */,
+				0478106C251DEB5500B9565E /* Person+CoreDataProperties.h */,
+				0478106F251DEB5500B9565E /* Person+CoreDataProperties.m */,
+			);
+			path = CoredataClassFiles;
+			sourceTree = "<group>";
+		};
 		04359A6923FFB4ED00670AA5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,14 +194,7 @@
 		04650BC223FF8D94002C5A80 /* Json Parsing 2 */ = {
 			isa = PBXGroup;
 			children = (
-				0478106D251DEB5500B9565E /* Person+CoreDataClass.h */,
-				0478106E251DEB5500B9565E /* Person+CoreDataClass.m */,
-				0478106C251DEB5500B9565E /* Person+CoreDataProperties.h */,
-				0478106F251DEB5500B9565E /* Person+CoreDataProperties.m */,
-				04774EA02524D51800CCC57F /* Employee+CoreDataClass.h */,
-				04774EA12524D51800CCC57F /* Employee+CoreDataClass.m */,
-				04774EA22524D51800CCC57F /* Employee+CoreDataProperties.h */,
-				04774EA32524D51800CCC57F /* Employee+CoreDataProperties.m */,
+				0402DC50252ACF9B00240DAB /* CoredataClassFiles */,
 				0497DBBE25062C38002F8BE8 /* AFNetworking */,
 				045E407E250742B1008EE34E /* UIKit+AFNetworking */,
 				04A140CB24F7716500570C52 /* Swifts Files */,
