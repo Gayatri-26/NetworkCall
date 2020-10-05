@@ -10,8 +10,6 @@
 #import "Person+CoreDataClass.h"
 
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface Person (CoreDataProperties)
 
 + (NSFetchRequest<Person *> *)fetchRequest;
@@ -24,4 +22,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-NS_ASSUME_NONNULL_END
+

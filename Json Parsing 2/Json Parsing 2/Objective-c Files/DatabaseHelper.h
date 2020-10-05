@@ -22,8 +22,8 @@
 
 + (id)sharedInstance;
 
--(void) saveData:(PersonDetail *) object;
--(void) save:(Person *) object;
+//-(void) saveData:(PersonDetail *) object;
+-(void) saveData:(Person *) object;
 
 
 -(NSArray *) getPersondb;

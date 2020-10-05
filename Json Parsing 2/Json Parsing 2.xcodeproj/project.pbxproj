@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0402DC53252AD66600240DAB /* ParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0402DC52252AD66600240DAB /* ParentViewController.m */; };
 		04208770251CF9D200D38B2F /* PersonDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 0420876F251CF9D200D38B2F /* PersonDetail.m */; };
 		042619A224FEC10A00AC1C6E /* CountryDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042619A024FEC10A00AC1C6E /* CountryDetailCell.swift */; };
 		0433F70D24FF7C9600BE29D7 /* CoredataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0433F70B24FF7C9600BE29D7 /* CoredataModel.xcdatamodeld */; };
@@ -41,6 +42,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0402DC51252AD66600240DAB /* ParentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParentViewController.h; sourceTree = "<group>"; };
+		0402DC52252AD66600240DAB /* ParentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParentViewController.m; sourceTree = "<group>"; };
 		0420876E251CF9D200D38B2F /* PersonDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonDetail.h; sourceTree = "<group>"; };
 		0420876F251CF9D200D38B2F /* PersonDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonDetail.m; sourceTree = "<group>"; };
 		042619A024FEC10A00AC1C6E /* CountryDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailCell.swift; sourceTree = "<group>"; };
@@ -199,14 +202,14 @@
 				045E407E250742B1008EE34E /* UIKit+AFNetworking */,
 				04A140CB24F7716500570C52 /* Swifts Files */,
 				04359A6923FFB4ED00670AA5 /* Model */,
+				04A140C624F7710100570C52 /* TableViewCell */,
+				04A140BC24F7701C00570C52 /* Objective-c Files */,
+				04650BCA23FF8D94002C5A80 /* Assets.xcassets */,
 				04650BC323FF8D94002C5A80 /* AppDelegate.swift */,
 				04650BC723FF8D94002C5A80 /* Main.storyboard */,
-				04A140BC24F7701C00570C52 /* Objective-c Files */,
-				04A140C624F7710100570C52 /* TableViewCell */,
-				04650BCA23FF8D94002C5A80 /* Assets.xcassets */,
 				04650BCC23FF8D94002C5A80 /* LaunchScreen.storyboard */,
-				04650BCF23FF8D94002C5A80 /* Info.plist */,
 				0433F70B24FF7C9600BE29D7 /* CoredataModel.xcdatamodeld */,
+				04650BCF23FF8D94002C5A80 /* Info.plist */,
 			);
 			path = "Json Parsing 2";
 			sourceTree = "<group>";
@@ -240,6 +243,8 @@
 		04A140BC24F7701C00570C52 /* Objective-c Files */ = {
 			isa = PBXGroup;
 			children = (
+				0402DC51252AD66600240DAB /* ParentViewController.h */,
+				0402DC52252AD66600240DAB /* ParentViewController.m */,
 				045E407D250741FD008EE34E /* FirstVC.h */,
 				04A140BF24F7707900570C52 /* FirstVC.m */,
 				04774EA62524D60A00CCC57F /* DataBase.h */,
@@ -358,6 +363,7 @@
 			files = (
 				04359A6B23FFB54300670AA5 /* JSONModel.swift in Sources */,
 				04A140C024F7707900570C52 /* FirstVC.m in Sources */,
+				0402DC53252AD66600240DAB /* ParentViewController.m in Sources */,
 				0497DBDB25062C38002F8BE8 /* AFURLConnectionOperation.m in Sources */,
 				04C35A4524F792B4002D72D4 /* PersonViewCell.m in Sources */,
 				0497DBDF25062C38002F8BE8 /* AFHTTPRequestOperation.m in Sources */,

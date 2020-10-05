@@ -11,7 +11,8 @@
 
 @implementation Person (CoreDataProperties)
 
-+ (NSFetchRequest<Person *> *)fetchRequest {
++ (NSFetchRequest<Person *> *)fetchRequest
+{
 	return [NSFetchRequest fetchRequestWithEntityName:@"Person"];
 }
 

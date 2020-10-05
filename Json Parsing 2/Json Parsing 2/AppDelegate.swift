@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  Json Parsing 2
-//
-//  Created by Mac on 21/02/20.
-//  Copyright © 2020 Mac. All rights reserved.
-//https://gist.github.com/keicoder/9479571
 
 import UIKit
 import CoreData
@@ -22,10 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       window = UIWindow(frame: UIScreen.main.bounds)
       let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     
-       let FVC = storyboard.instantiateViewController(withIdentifier:"FirstVC")
-      window?.rootViewController = FVC
-//    let VC = storyboard.instantiateViewController(withIdentifier:"NVC")
-//    window?.rootViewController = VC
+        
+    let PVC = storyboard.instantiateViewController(withIdentifier:"Parent")
+    window?.rootViewController = PVC
+  //  let FVC = storyboard.instantiateViewController(withIdentifier:"FirstVC")
+  //  window?.rootViewController = FVC
+  //  let VC = storyboard.instantiateViewController(withIdentifier:"NVC")
+  //  window?.rootViewController = VC
  //   let SVC = storyboard.instantiateViewController(withIdentifier:"SecondVC")
  //   window?.rootViewController = SVC
         

@@ -11,7 +11,8 @@
 
 @implementation Employee (CoreDataProperties)
 
-+ (NSFetchRequest<Employee *> *)fetchRequest {
++ (NSFetchRequest<Employee *> *)fetchRequest
+{
 	return [[NSFetchRequest alloc] initWithEntityName:@"Employee"];
 }
 
