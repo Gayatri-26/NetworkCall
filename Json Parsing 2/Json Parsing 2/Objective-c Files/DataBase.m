@@ -10,10 +10,8 @@
 #import <CoreData/CoreData.h>
 #import "Json_Parsing_2-Swift.h"
 #import "Employee+CoreDataClass.h"
-#import "EmployeeDetails.h"
 
 @implementation DataBase
-
 
 @synthesize appDelegate, persistentContainer;
 
@@ -41,18 +39,16 @@
     return result;
 }
 
--(void) saveData:(EmployeeDetails *) object{
+-(void) saveData:(NSDictionary *) object{
     
     Employee *employee = [NSEntityDescription insertNewObjectForEntityForName:@"Employee" inManagedObjectContext:[self managedObjectContext]];
     
-   
     NSError *error = nil;
     
-    employee.name = object.name;
-    employee.empId = object.empId;
-    employee.age = object.age;
-    employee.salary = object.salary;
-    
+    employee.name = [object objectForKey:@"employee_name"];
+    employee.empId = [object objectForKey:@"id"];
+    employee.age = [object objectForKey:@"employee_age"];
+    employee.salary = [object objectForKey:@"employee_salary"];
     
     if ([[self managedObjectContext] save:&error] == NO)
     {

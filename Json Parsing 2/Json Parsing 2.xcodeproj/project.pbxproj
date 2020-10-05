@@ -35,7 +35,6 @@
 		0497DBE125062C38002F8BE8 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0497DBD025062C38002F8BE8 /* AFSecurityPolicy.m */; };
 		04A140C024F7707900570C52 /* FirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A140BF24F7707900570C52 /* FirstVC.m */; };
 		04A140C924F7713100570C52 /* EmployeeDetailsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A140C824F7713100570C52 /* EmployeeDetailsCell.m */; };
-		04B204FA24F8C5D9004E7482 /* EmployeeDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B204F924F8C5D9004E7482 /* EmployeeDetails.m */; };
 		04B2FBA9250BA165003E4B6D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B2FBA8250BA165003E4B6D /* CoreData.framework */; };
 		04B6C395250F536100AB6AE5 /* DatabaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B6C394250F536100AB6AE5 /* DatabaseHelper.m */; };
 		04C35A4524F792B4002D72D4 /* PersonViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C35A4424F792B4002D72D4 /* PersonViewCell.m */; };
@@ -108,8 +107,6 @@
 		04A140BF24F7707900570C52 /* FirstVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstVC.m; sourceTree = "<group>"; };
 		04A140C724F7713100570C52 /* EmployeeDetailsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmployeeDetailsCell.h; sourceTree = "<group>"; };
 		04A140C824F7713100570C52 /* EmployeeDetailsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmployeeDetailsCell.m; sourceTree = "<group>"; };
-		04B204F824F8C5D9004E7482 /* EmployeeDetails.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmployeeDetails.h; sourceTree = "<group>"; };
-		04B204F924F8C5D9004E7482 /* EmployeeDetails.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmployeeDetails.m; sourceTree = "<group>"; };
 		04B2FBA8250BA165003E4B6D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		04B6C393250F536100AB6AE5 /* DatabaseHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DatabaseHelper.h; sourceTree = "<group>"; };
 		04B6C394250F536100AB6AE5 /* DatabaseHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DatabaseHelper.m; sourceTree = "<group>"; };
@@ -147,8 +144,6 @@
 		04359A6923FFB4ED00670AA5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				04B204F824F8C5D9004E7482 /* EmployeeDetails.h */,
-				04B204F924F8C5D9004E7482 /* EmployeeDetails.m */,
 				0420876E251CF9D200D38B2F /* PersonDetail.h */,
 				0420876F251CF9D200D38B2F /* PersonDetail.m */,
 			);
@@ -369,7 +364,6 @@
 				0497DBDF25062C38002F8BE8 /* AFHTTPRequestOperation.m in Sources */,
 				0497DBDD25062C38002F8BE8 /* AFHTTPRequestOperationManager.m in Sources */,
 				0497DBE125062C38002F8BE8 /* AFSecurityPolicy.m in Sources */,
-				04B204FA24F8C5D9004E7482 /* EmployeeDetails.m in Sources */,
 				04774EA82524D60A00CCC57F /* DataBase.m in Sources */,
 				042619A224FEC10A00AC1C6E /* CountryDetailCell.swift in Sources */,
 				0497DBDC25062C38002F8BE8 /* AFURLSessionManager.m in Sources */,

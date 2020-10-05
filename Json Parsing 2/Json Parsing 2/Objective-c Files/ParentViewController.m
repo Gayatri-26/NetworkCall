@@ -20,12 +20,12 @@
     NSArray *itemArray = [NSArray arrayWithObjects: @"FirstVC", @"SecondVC", nil];
     UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:itemArray];
     segmentedControl.frame = CGRectMake(75, 50, 250, 50);
-    if (@available(iOS 13.0, *)) {
-        segmentedControl.selectedSegmentTintColor = UIColor.greenColor;
-        
-    } else {
-        NSLog(@"got some error");
-        }
+//    if (@available(iOS 13.0, *)) {
+//        segmentedControl.selectedSegmentTintColor = UIColor.greenColor;
+//
+//    } else {
+//        NSLog(@"got some error");
+//        }
     [segmentedControl addTarget:self action:@selector(MySegmentControlAction:) forControlEvents: UIControlEventValueChanged];
     [scroll addSubview:segmentedControl];
     [self.view addSubview:scroll];
@@ -37,8 +37,8 @@
     if(segment.selectedSegmentIndex == 0)
     {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-        FirstVC *fvc = [[FirstVC alloc] init];
-        fvc = (FirstVC *)[storyboard instantiateViewControllerWithIdentifier:@"FirstVC"];
+//        FirstVC *fvc = [[FirstVC alloc] init];
+        FirstVC *fvc = (FirstVC *)[storyboard instantiateViewControllerWithIdentifier:@"FirstVC"];
         [self displayFirstVC: fvc];
     }
     

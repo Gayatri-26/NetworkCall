@@ -8,7 +8,6 @@
 
 #import "FirstVC.h"
 #import "EmployeeDetailsCell.h"
-#import "EmployeeDetails.h"
 #import "AFNetworking.h"
 #import "AFHTTPRequestOperation.h"
 #import <CoreData/CoreData.h>
@@ -19,7 +18,6 @@
 
 @interface FirstVC ()
 
-@property (strong,nonatomic) NSMutableArray<EmployeeDetails *> *arrEmployeeDetails;
 @property (strong,nonatomic) NSMutableArray<Employee *> *arrEmployee;
 @property (nonatomic,strong) NSString *mainstr;
 @property (nonatomic,strong) AppDelegate *appDelegate;
@@ -37,7 +35,6 @@
     
     [self tableviewData];
     [self afnetworkingcode];
-    self.arrEmployeeDetails = [[NSMutableArray alloc]init];
     self.arrEmployee = [[NSMutableArray alloc]init];
 }
 
@@ -63,21 +60,8 @@
 }
 
 -(void)afnetworkingcode{
-    
-    //AFNetworking
-    
-    /* 1. create a new view controller = use segmented control
-    on first segment gayatri controller and second mine
-     2 . avoid data dupications
-     3. remove nsobject model class
-    */
-    
-    
-   // [self addChildViewController:]
-    
-    static NSString * const BaseURLString = @"http://dummy.restapiexample.com/api/v1/employees";
-    
-    NSString *string = [NSString stringWithFormat:@"http://dummy.restapiexample.com/api/v1/employees",BaseURLString];
+
+    NSString *string = [NSString stringWithFormat:@"http://dummy.restapiexample.com/api/v1/employees"];
     NSURL *url = [NSURL URLWithString:string];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
@@ -86,26 +70,28 @@
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"Response: %@",responseObject);
         
-        _arrEmployeeDetails = [EmployeeDetails modelArrayFromDict:responseObject];
         
-         dispatch_async(dispatch_get_main_queue(), ^{
-             
-        for (EmployeeDetails *arr in _arrEmployeeDetails){
+        dispatch_async(dispatch_get_main_queue(), ^{
             
-            [[DataBase sharedInstance] saveData:arr];
-        }
-        _arrEmployee = [NSMutableArray arrayWithArray:[[DataBase sharedInstance]getEmployeedb]];
-        
-        [self->EmployeeDataTableView reloadData];
-        
+            NSArray *responsearr = [responseObject objectForKey:@"data"];
+            
+            for (NSDictionary *arr in responsearr){
+                
+                [[DataBase sharedInstance] saveData:arr];
+                
+            }
+            _arrEmployee = [NSMutableArray arrayWithArray:[[DataBase sharedInstance]getEmployeedb]];
+            
+            [self->EmployeeDataTableView reloadData];
+            
         });
         
-     }
+    }
         failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
          NSLog(@"Error: %@",error);
          _arrEmployee = [NSMutableArray arrayWithArray:[[DataBase sharedInstance]getEmployeedb]];
-        [self->EmployeeDataTableView reloadData];
+         [self->EmployeeDataTableView reloadData];
      }];
     
     [operation start];
@@ -127,11 +113,11 @@
     }
     if ([self.arrEmployee count]>0)
     {
-    Employee *empDetails = _arrEmployee[indexPath.row];
-    cell.LblId.text = [empDetails empId];
-    cell.LblName.text = [empDetails name];
-    cell.LblSalary.text = [empDetails salary];
-    cell.LblAge.text = [empDetails age];
+        Employee *empDetails = _arrEmployee[indexPath.row];
+        cell.LblId.text = [empDetails empId];
+        cell.LblName.text = [empDetails name];
+        cell.LblSalary.text = [empDetails salary];
+        cell.LblAge.text = [empDetails age];
     }
     return cell;
 }

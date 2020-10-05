@@ -14,12 +14,13 @@
 @class EmployeeDetails;
 
 @interface DataBase : NSObject
+
 @property (nonatomic,strong) AppDelegate *appDelegate;
 @property( strong,nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic, readonly) NSPersistentContainer *persistentContainer;
 
 + (id)sharedInstance;
--(void) saveData:(EmployeeDetails *) object;
+-(void) saveData:(NSDictionary *) object;
 -(NSArray *) getEmployeedb;
 
 @end

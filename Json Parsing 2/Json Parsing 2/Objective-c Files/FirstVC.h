@@ -7,9 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "EmployeeDetails.h"
 #import <CoreData/CoreData.h>
-
 
 @interface FirstVC : UIViewController<UITableViewDelegate,UITableViewDataSource>
 

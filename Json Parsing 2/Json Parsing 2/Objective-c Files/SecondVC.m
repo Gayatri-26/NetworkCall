@@ -86,7 +86,7 @@
 
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            
+          
             
             for (PersonDetail *arr in _arrPersonDetail){
                 
