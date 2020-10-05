@@ -20,11 +20,12 @@
     NSArray *itemArray = [NSArray arrayWithObjects: @"FirstVC", @"SecondVC", nil];
     UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:itemArray];
     segmentedControl.frame = CGRectMake(75, 50, 250, 50);
-    if (@available(iOS 13.0, *)) {
-        segmentedControl.selectedSegmentTintColor = UIColor.blueColor;
-    } else {
-        NSLog(@"got some error");
-        }
+//    if (@available(iOS 13.0, *)) {
+//        segmentedControl.selectedSegmentTintColor = UIColor.blueColor;
+        
+//    } else {
+//        NSLog(@"got some error");
+//        }
     [segmentedControl addTarget:self action:@selector(MySegmentControlAction:) forControlEvents: UIControlEventValueChanged];
   //  segmentedControl.selectedSegmentIndex = 1;
     [scroll addSubview:segmentedControl];

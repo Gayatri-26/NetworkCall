@@ -50,10 +50,10 @@
     -(void) saveData:(Person *) object{
     Person *person = [NSEntityDescription insertNewObjectForEntityForName:@"Person" inManagedObjectContext:[self managedObjectContext]];
 
-     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Person" inManagedObjectContext: [self managedObjectContext]];
-      NSFetchRequest *request = [[NSFetchRequest alloc] init];
+//     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Person" inManagedObjectContext: [self managedObjectContext]];
+//      NSFetchRequest *request = [[NSFetchRequest alloc] init];
    // NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Person"];
-    [request setEntity:entity];
+//    [request setEntity:entity];
  //   [request setPredicate:[NSPredicate predicateWithFormat:@"pid == %@", object.pid]];
 //    [request setFetchLimit:1];
 
@@ -66,13 +66,13 @@
     person.gender = object.gender;
     person.address = object.address;
 
-    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfURL:@"https://api.androidhive.info/contacts/"] options:kNilOptions error:&error];
-
-    person.pid  = [dict objectForKey:@"id"];
-    person.name = [dict objectForKey:@"name"];
-    person.email = [dict objectForKey:@"email"];
-    person.address = [dict objectForKey:@"address"];
-    person.gender = [dict objectForKey:@"gender"];
+//    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfURL:@"https://api.androidhive.info/contacts/"] options:kNilOptions error:&error];
+//
+//    person.pid  = [dict objectForKey:@"id"];
+//    person.name = [dict objectForKey:@"name"];
+//    person.email = [dict objectForKey:@"email"];
+//    person.address = [dict objectForKey:@"address"];
+//    person.gender = [dict objectForKey:@"gender"];
 
 
 
