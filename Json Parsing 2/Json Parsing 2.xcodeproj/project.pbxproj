@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0402DC53252AD66600240DAB /* ParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0402DC52252AD66600240DAB /* ParentViewController.m */; };
-		04208770251CF9D200D38B2F /* PersonDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 0420876F251CF9D200D38B2F /* PersonDetail.m */; };
 		042619A224FEC10A00AC1C6E /* CountryDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042619A024FEC10A00AC1C6E /* CountryDetailCell.swift */; };
 		0433F70D24FF7C9600BE29D7 /* CoredataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0433F70B24FF7C9600BE29D7 /* CoredataModel.xcdatamodeld */; };
 		04359A6B23FFB54300670AA5 /* JSONModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04359A6A23FFB54300670AA5 /* JSONModel.swift */; };
@@ -43,8 +42,6 @@
 /* Begin PBXFileReference section */
 		0402DC51252AD66600240DAB /* ParentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParentViewController.h; sourceTree = "<group>"; };
 		0402DC52252AD66600240DAB /* ParentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParentViewController.m; sourceTree = "<group>"; };
-		0420876E251CF9D200D38B2F /* PersonDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonDetail.h; sourceTree = "<group>"; };
-		0420876F251CF9D200D38B2F /* PersonDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonDetail.m; sourceTree = "<group>"; };
 		042619A024FEC10A00AC1C6E /* CountryDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailCell.swift; sourceTree = "<group>"; };
 		0433F70C24FF7C9600BE29D7 /* CoredataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoredataModel.xcdatamodel; sourceTree = "<group>"; };
 		04359A6A23FFB54300670AA5 /* JSONModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONModel.swift; sourceTree = "<group>"; };
@@ -141,15 +138,6 @@
 			path = CoredataClassFiles;
 			sourceTree = "<group>";
 		};
-		04359A6923FFB4ED00670AA5 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				0420876E251CF9D200D38B2F /* PersonDetail.h */,
-				0420876F251CF9D200D38B2F /* PersonDetail.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		045E407E250742B1008EE34E /* UIKit+AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,7 +184,6 @@
 				0497DBBE25062C38002F8BE8 /* AFNetworking */,
 				045E407E250742B1008EE34E /* UIKit+AFNetworking */,
 				04A140CB24F7716500570C52 /* Swifts Files */,
-				04359A6923FFB4ED00670AA5 /* Model */,
 				04A140C624F7710100570C52 /* TableViewCell */,
 				04A140BC24F7701C00570C52 /* Objective-c Files */,
 				04650BCA23FF8D94002C5A80 /* Assets.xcassets */,
@@ -381,7 +368,6 @@
 				0433F70D24FF7C9600BE29D7 /* CoredataModel.xcdatamodeld in Sources */,
 				04650BD823FF9A80002C5A80 /* DetailViewController.swift in Sources */,
 				04B6C395250F536100AB6AE5 /* DatabaseHelper.m in Sources */,
-				04208770251CF9D200D38B2F /* PersonDetail.m in Sources */,
 				0497DBD925062C38002F8BE8 /* AFURLResponseSerialization.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

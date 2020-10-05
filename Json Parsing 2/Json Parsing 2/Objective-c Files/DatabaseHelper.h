@@ -11,8 +11,8 @@
 #import "Json_Parsing_2-Swift.h"
 #import "SecondVC.h"
 
-@class PersonDetail;
 @class Person;
+
 @interface DatabaseHelper : NSObject
 
 
@@ -22,11 +22,9 @@
 
 + (id)sharedInstance;
 
-//-(void) saveData:(PersonDetail *) object;
--(void) saveData:(Person *) object;
-
-
 -(NSArray *) getPersondb;
+
+-(void) saveData:(NSDictionary *) object;
 
 @end
 

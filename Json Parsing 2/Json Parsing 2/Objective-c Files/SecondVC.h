@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PersonDetail.h"
 #import <CoreData/CoreData.h>
 
 @interface SecondVC : UIViewController<UITableViewDelegate, UITableViewDataSource>

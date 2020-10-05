@@ -7,7 +7,6 @@
 
 #import "SecondVC.h"
 #import "PersonViewCell.h"
-#import "PersonDetail.h"
 #import "AFNetworking.h"
 #import "AFHTTPRequestOperation.h"
 #import <CoreData/CoreData.h>
@@ -18,7 +17,6 @@
 @interface SecondVC ()
 
 
-@property (strong,nonatomic) NSMutableArray <PersonDetail *> *arrPersonDetail;
 @property (strong,nonatomic) NSMutableArray <Person *> *arrPerson;
 @property (nonatomic,strong) NSString *mainstr;
 @property (nonatomic,strong) AppDelegate *appDelegate;
@@ -45,7 +43,6 @@
     [self afnetworkingdata];
     
      self.arrPerson = [[NSMutableArray alloc]init];
-    self.arrPersonDetail = [[NSMutableArray alloc]init];
     
 }
 
@@ -82,13 +79,11 @@
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"Response: %@",responseObject);
         
-        _arrPersonDetail = [PersonDetail modelArrayFromDict:responseObject];
-
-        
         dispatch_async(dispatch_get_main_queue(), ^{
           
+            NSArray *responseArr = [responseObject objectForKey:@"contact"];
             
-            for (PersonDetail *arr in _arrPersonDetail){
+            for (NSDictionary *arr in responseArr){
                 
                 [[DatabaseHelper sharedInstance] saveData:arr];
             }
