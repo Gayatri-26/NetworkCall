@@ -37,14 +37,14 @@
     return [[self appDelegate] persistentContainer].viewContext;
 }
 
-    -(NSArray *) getPersondb {
+-(NSArray *) getPersondb {
 
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Person"];
     NSArray *result  = [self.managedObjectContext executeFetchRequest: request error:nil];
     return result;
 }
 
-    -(void) saveData:(NSDictionary *) object{
+-(void) saveData:(NSDictionary *) object{
         
     Person *person = [NSEntityDescription insertNewObjectForEntityForName: @"Person" inManagedObjectContext: [self managedObjectContext]];
 

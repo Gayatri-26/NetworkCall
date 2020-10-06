@@ -81,7 +81,7 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
           
-            NSArray *responseArr = [responseObject objectForKey:@"contact"];
+            NSArray *responseArr = [responseObject objectForKey:@"contacts"];
             
             for (NSDictionary *arr in responseArr){
                 

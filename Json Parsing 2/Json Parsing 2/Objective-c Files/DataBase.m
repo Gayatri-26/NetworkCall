@@ -36,13 +36,23 @@
     
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Employee"];
     NSArray *result  = [self.managedObjectContext executeFetchRequest: request error:nil];
+//     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name = %@",result];
+//    NSArray *filterarr = [result filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"name = %@",request]];
+//    [request setPredicate:predicate];
+//    NSOrderedSet *orderedSet = [NSOrderedSet orderedSetWithArray:result];
+//    NSArray *arrayWithoutDuplicates = [orderedSet array];
+    
     return result;
+    
+//    https://stackoverflow.com/questions/18262003/handling-duplicate-entries-in-core-data
+//   https://stackoverflow.com/questions/1025674/the-best-way-to-remove-duplicate-values-from-nsmutablearray-in-objective-c
 }
 
 -(void) saveData:(NSDictionary *) object{
     
     Employee *employee = [NSEntityDescription insertNewObjectForEntityForName:@"Employee" inManagedObjectContext:[self managedObjectContext]];
-    
+//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name = %@",employee.name];
+
     NSError *error = nil;
     
     employee.name = [object objectForKey:@"employee_name"];
