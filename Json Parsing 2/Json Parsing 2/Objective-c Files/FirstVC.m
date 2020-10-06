@@ -77,8 +77,13 @@
             
             for (NSDictionary *arr in responsearr){
                 
-                [[DataBase sharedInstance] saveData:arr];
+                BOOL isPresent = [[DataBase sharedInstance] isEmpPresentInDB:arr];
                 
+                if (isPresent == NO) {
+                    
+                [[DataBase sharedInstance] saveData:arr];
+
+                }
             }
             _arrEmployee = [NSMutableArray arrayWithArray:[[DataBase sharedInstance]getEmployeedb]];
             

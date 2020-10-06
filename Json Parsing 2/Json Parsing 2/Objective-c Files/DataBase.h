@@ -22,5 +22,6 @@
 + (id)sharedInstance;
 -(void) saveData:(NSDictionary *) object;
 -(NSArray *) getEmployeedb;
+-(BOOL) isEmpPresentInDB: (NSDictionary *) duplicate;
 
 @end

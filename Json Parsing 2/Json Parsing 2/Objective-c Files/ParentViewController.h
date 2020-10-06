@@ -8,6 +8,7 @@
 @interface ParentViewController : UIViewController
 
  - (void) displayFirstVC: (FirstVC *) content;
+@property(nonatomic, strong) UIViewController *parentViewController;
 
 
 

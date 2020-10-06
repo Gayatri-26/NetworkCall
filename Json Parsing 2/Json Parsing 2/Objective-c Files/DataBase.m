@@ -32,6 +32,23 @@
     return [[self appDelegate] persistentContainer].viewContext;
 }
 
+
+
+
+-(BOOL) isEmpPresentInDB: (NSDictionary *) duplicate{
+  
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Employee"];
+    NSString *strid = [duplicate objectForKey:@"id"];
+    request.predicate = [NSPredicate predicateWithFormat:@"empId = %@",strid];
+    NSArray *result  = [self.managedObjectContext executeFetchRequest: request error:nil];
+
+    if(result.count >0){
+        return YES;
+    }else{
+        return NO;
+    }
+    
+  }
 -(NSArray *) getEmployeedb {
     
 //    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Employee" inManagedObjectContext: [self managedObjectContext]];
@@ -52,11 +69,11 @@
 //    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Employee" inManagedObjectContext: [self managedObjectContext]];
 //    [request setEntity:entity];
 
-//   request.predicate = [NSPredicate predicateWithFormat:@"name = %@",result];
+   request.predicate = [NSPredicate predicateWithFormat:@"name = %@",result];
     
-//    NSArray *filterarr = [result filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"name = %@",result]];
+    NSArray *filterarr = [result filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"name = %@",result]];
     
-//    NSOrderedSet *orderedSet = [NSOrderedSet orderedSetWithArray:result];
+    NSOrderedSet *orderedSet = [NSOrderedSet orderedSetWithArray:result];
 //    NSArray *arrayWithoutDuplicates = [orderedSet array];
     
     return result;
