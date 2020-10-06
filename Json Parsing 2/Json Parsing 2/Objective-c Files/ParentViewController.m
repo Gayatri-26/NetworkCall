@@ -16,20 +16,20 @@
     UIScrollView *scroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 400, 435)];
     scroll.contentSize = CGSizeMake(320, 700);
     scroll.showsHorizontalScrollIndicator = YES;
-
+    
     NSArray *itemArray = [NSArray arrayWithObjects: @"FirstVC", @"SecondVC", nil];
     UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:itemArray];
     segmentedControl.frame = CGRectMake(75, 50, 250, 50);
-//    if (@available(iOS 13.0, *)) {
-//        segmentedControl.selectedSegmentTintColor = UIColor.greenColor;
-//
-//    } else {
-//        NSLog(@"got some error");
-//        }
+    //    if (@available(iOS 13.0, *)) {
+    //        segmentedControl.selectedSegmentTintColor = UIColor.greenColor;
+    //
+    //    } else {
+    //        NSLog(@"got some error");
+    //        }
     [segmentedControl addTarget:self action:@selector(MySegmentControlAction:) forControlEvents: UIControlEventValueChanged];
     [scroll addSubview:segmentedControl];
     [self.view addSubview:scroll];
-
+    
 }
 
 - (void)MySegmentControlAction:(UISegmentedControl *)segment
@@ -37,7 +37,7 @@
     if(segment.selectedSegmentIndex == 0)
     {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-//        FirstVC *fvc = [[FirstVC alloc] init];
+        //        FirstVC *fvc = [[FirstVC alloc] init];
         FirstVC *fvc = (FirstVC *)[storyboard instantiateViewControllerWithIdentifier:@"FirstVC"];
         [self displayFirstVC: fvc];
     }
@@ -51,27 +51,27 @@
     }
 }
 
-        - (void) displayFirstVC: (FirstVC *) content;
-        {
-            //add as childViewController
-            [self addChildViewController:content];
-            [content didMoveToParentViewController:self];
-       //     [content.view setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
-            
-           [content.view setFrame:CGRectMake(0, 175, 400, 600)];
-            [self.view addSubview:content.view];
-        }
+- (void) displayFirstVC: (FirstVC *) content;
+{
+    //add as childViewController
+    [self addChildViewController:content];
+    [content didMoveToParentViewController:self];
+    //     [content.view setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+    
+    [content.view setFrame:CGRectMake(0, 175, 400, 600)];
+    [self.view addSubview:content.view];
+}
 
-       - (void) displaySecondVC: (SecondVC *) content;
-       {
-           //add as childViewController
-           [self addChildViewController:content];
-           [content didMoveToParentViewController:self];
-     //      [content.view setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
-           [content.view setFrame:CGRectMake(0, 175 , 400, 600)];
-
-           [self.view addSubview:content.view];
-       }
+- (void) displaySecondVC: (SecondVC *) content;
+{
+    //add as childViewController
+    [self addChildViewController:content];
+    [content didMoveToParentViewController:self];
+    //      [content.view setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+    [content.view setFrame:CGRectMake(0, 175 , 400, 600)];
+    
+    [self.view addSubview:content.view];
+}
 
 
 @end
