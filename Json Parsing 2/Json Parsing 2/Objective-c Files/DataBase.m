@@ -32,9 +32,6 @@
     return [[self appDelegate] persistentContainer].viewContext;
 }
 
-
-
-
 -(BOOL) isEmpPresentInDB: (NSDictionary *) duplicate{
   
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Employee"];
@@ -58,10 +55,8 @@
 //    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
 //    [request setSortDescriptors:sortDescriptors];
 //    NSArray *result  = [self.managedObjectContext executeFetchRequest: request error:nil];
-//
 //    if (!result){
 //    request.predicate = [NSPredicate predicateWithFormat:@"name = %@",result];
-//
 //    }
     
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Employee"];

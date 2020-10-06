@@ -84,11 +84,17 @@
             NSArray *responseArr = [responseObject objectForKey:@"contacts"];
             
             for (NSDictionary *arr in responseArr){
-                
-                [[DatabaseHelper sharedInstance] saveData:arr];
-            }
-            _arrPerson = [NSMutableArray arrayWithArray:[[DatabaseHelper sharedInstance]getPersondb]];
-            
+                         
+                BOOL isPresent = [[DatabaseHelper sharedInstance] isPersonPresentInDB:arr];
+                         
+                         if (isPresent == NO) {
+                             
+                         [[DatabaseHelper sharedInstance] saveData:arr];
+
+                         }
+                     }
+                     _arrPerson = [NSMutableArray arrayWithArray:[[DatabaseHelper sharedInstance]getPersondb]];
+                     
             [self->PersonDataTableView reloadData];
             
         });

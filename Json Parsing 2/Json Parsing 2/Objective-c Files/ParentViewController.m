@@ -7,11 +7,11 @@
 @interface ParentViewController ()
 
 @property(nonatomic, strong) UIView *container;
+@property(nonatomic, strong) UIViewController *currentViewController;
+
 @end
 
 @implementation ParentViewController
-
-@property(nonatomic, strong) UIViewController *parentViewController;
 
 
 - (void)viewDidLoad {

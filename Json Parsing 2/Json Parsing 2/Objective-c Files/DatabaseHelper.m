@@ -37,6 +37,20 @@
     return [[self appDelegate] persistentContainer].viewContext;
 }
 
+-(BOOL) isPersonPresentInDB: (NSDictionary *) duplicate{
+    
+      NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Person"];
+      NSString *strid = [duplicate objectForKey:@"id"];
+      request.predicate = [NSPredicate predicateWithFormat:@"pid = %@",strid];
+      NSArray *result  = [self.managedObjectContext executeFetchRequest: request error:nil];
+    
+      if(result.count >0){
+          return YES;
+      }else{
+          return NO;
+      }
+}
+
 -(NSArray *) getPersondb {
 
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Person"];

@@ -25,6 +25,8 @@
 -(NSArray *) getPersondb;
 
 -(void) saveData:(NSDictionary *) object;
+-(BOOL) isPersonPresentInDB: (NSDictionary *) duplicate;
+    
 
 @end
 
