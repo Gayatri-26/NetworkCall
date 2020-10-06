@@ -36,9 +36,12 @@
     
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Employee"];
     NSArray *result  = [self.managedObjectContext executeFetchRequest: request error:nil];
-//     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name = %@",result];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Employee" inManagedObjectContext: [self managedObjectContext]];
+    [request setEntity:entity];
+
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name = %@",result];
 //    NSArray *filterarr = [result filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"name = %@",request]];
-//    [request setPredicate:predicate];
+    [request setPredicate:predicate];
 //    NSOrderedSet *orderedSet = [NSOrderedSet orderedSetWithArray:result];
 //    NSArray *arrayWithoutDuplicates = [orderedSet array];
     
@@ -51,6 +54,8 @@
 -(void) saveData:(NSDictionary *) object{
     
     Employee *employee = [NSEntityDescription insertNewObjectForEntityForName:@"Employee" inManagedObjectContext:[self managedObjectContext]];
+
+
 //    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name = %@",employee.name];
 
     NSError *error = nil;
