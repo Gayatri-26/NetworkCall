@@ -6,8 +6,8 @@
 
 @interface ParentViewController ()
 
-@property(nonatomic, strong) UIView *container;
-@property(nonatomic, strong) UIViewController *currentViewController;
+@property (weak, nonatomic) UIView *pview;
+@property (weak, nonatomic) UIViewController *currentViewController;;
 
 @end
 
@@ -17,63 +17,46 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIScrollView *scroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 400, 435)];
-    scroll.contentSize = CGSizeMake(320, 700);
-    scroll.showsHorizontalScrollIndicator = YES;
+// self.currentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ComponentA"];
+//    self.currentViewController.view.translatesAutoresizingMaskIntoConstraints = NO;
+//    [self addChildViewController:self.currentViewController];
+//    [self addSubview:self.currentViewController.view toView:self.containerView];
+        UIView *view = [[UIView alloc]init];
     
-    NSArray *itemArray = [NSArray arrayWithObjects: @"FirstVC", @"SecondVC", nil];
-    UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:itemArray];
-    segmentedControl.frame = CGRectMake(75, 50, 250, 50);
-        if (@available(iOS 13.0, *)) {
-            segmentedControl.selectedSegmentTintColor = UIColor.greenColor;
+        UISegmentedControl *segmentedControl = [[UISegmentedControl alloc]init];
+          [segmentedControl insertSegmentWithTitle:@"FirstVC" atIndex:0 animated:NO];
+          [segmentedControl insertSegmentWithTitle:@"SecondVC" atIndex:1 animated:NO];
     
-        } else {
-            NSLog(@"got some error");
-            }
-    [segmentedControl addTarget:self action:@selector(MySegmentControlAction:) forControlEvents: UIControlEventValueChanged];
-    [scroll addSubview:segmentedControl];
-    [self.view addSubview:scroll];
+        segmentedControl.frame = CGRectMake(75, 50, 250, 50);
+            if (@available(iOS 13.0, *)) {
+                segmentedControl.selectedSegmentTintColor = UIColor.greenColor;
+            } else {
+                NSLog(@"got some error");
+                }
+           [segmentedControl addTarget:self action:@selector(segmentAction:) forControlEvents: UIControlEventValueChanged];
     
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    FirstVC *fvc = (FirstVC *)[storyboard instantiateViewControllerWithIdentifier:@"FirstVC"];
+    SecondVC  *svc = (SecondVC *)[storyboard instantiateViewControllerWithIdentifier:@"SecondVC"];
+    [self addChildViewController: fvc];
+    [self addChildViewController: svc];
+    [self.view addSubview:segmentedControl];
+
 }
 
-- (void)MySegmentControlAction:(UISegmentedControl *)segment
+- (void)segmentAction:(UISegmentedControl *)segment
 {
     if(segment.selectedSegmentIndex == 0)
     {
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-        //        FirstVC *fvc = [[FirstVC alloc] init];
-        FirstVC *fvc = (FirstVC *)[storyboard instantiateViewControllerWithIdentifier:@"FirstVC"];
-        [self displayFirstVC: fvc];
+        
     }
-    
-    if(segment.selectedSegmentIndex == 1)
-    {
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-        SecondVC *svc = [[SecondVC alloc] init];
-        svc = (SecondVC *)[storyboard instantiateViewControllerWithIdentifier:@"SecondVC"];
-        [self displaySecondVC: svc];
+    else if(segment.selectedSegmentIndex == 1){
+        
+        
     }
 }
 
-- (void) displayFirstVC: (FirstVC *) content;
-{
-    //add as childViewController
-    [self addChildViewController:content];
-    [content didMoveToParentViewController:self];
-    
-    [content.view setFrame:CGRectMake(0, 175, 400, 600)];
-    [self.view addSubview:content.view];
-}
 
-- (void) displaySecondVC: (SecondVC *) content;
-{
-    //add as childViewController
-    [self addChildViewController:content];
-    [content didMoveToParentViewController:self];
-    [content.view setFrame:CGRectMake(0, 175 , 400, 600)];
-    
-    [self.view addSubview:content.view];
-}
 
 
 @end

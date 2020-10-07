@@ -8,6 +8,7 @@
 @interface ParentViewController : UIViewController
 
 
+- (void)segmentAction:(UISegmentedControl *)segment;
 
 
 @end
