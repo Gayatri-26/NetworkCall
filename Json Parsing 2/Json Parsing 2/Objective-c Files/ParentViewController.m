@@ -17,10 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-// self.currentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ComponentA"];
-//    self.currentViewController.view.translatesAutoresizingMaskIntoConstraints = NO;
-//    [self addChildViewController:self.currentViewController];
-//    [self addSubview:self.currentViewController.view toView:self.containerView];
+
         UIView *view = [[UIView alloc]init];
     
         UISegmentedControl *segmentedControl = [[UISegmentedControl alloc]init];
