@@ -11,7 +11,6 @@
 #import "DogTableViewCell.h"
 #import "DataDownloadThread.h"
 #import "ImageDownloadThread.h"
-#import "DogVC.h"
 
 @interface DogDetailVC ()
 
@@ -32,6 +31,7 @@
     NSURL *url = [NSURL URLWithString:@"http://bitcodetech.in/ws_ios_assignment/ws_dog_info.php"];
     void(^DataDownloadCallBack)(NSData *data, NSError *error) = ^(NSData *dogdata, NSError *error){
         NSLog(@"Data: %@", dogdata);
+        
         if(dogdata != nil){
             
             NSArray *responseArray = [NSJSONSerialization JSONObjectWithData:dogdata options:NSJSONReadingAllowFragments error:nil];
@@ -128,13 +128,7 @@
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    DogVC* DogDetails = [storyboard instantiateViewControllerWithIdentifier:@"DogVC"];
-    [self.navigationController pushViewController:DogDetails animated:YES];
-    
-}
+
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 205;

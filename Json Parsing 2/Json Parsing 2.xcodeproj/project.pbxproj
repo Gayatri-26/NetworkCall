@@ -22,7 +22,6 @@
 		04BDA8E02514DEAC00024271 /* DogTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BDA8DF2514DEAC00024271 /* DogTableViewCell.m */; };
 		04CFF74F25185D1E004F7417 /* DataDownloadThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CFF74E25185D1E004F7417 /* DataDownloadThread.m */; };
 		04CFF75225186104004F7417 /* ImageDownloadThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CFF75125186104004F7417 /* ImageDownloadThread.m */; };
-		04FEC1142521B75C00C65CC8 /* DogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FEC1132521B75C00C65CC8 /* DogVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,8 +48,6 @@
 		04CFF74E25185D1E004F7417 /* DataDownloadThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataDownloadThread.m; sourceTree = "<group>"; };
 		04CFF75025186104004F7417 /* ImageDownloadThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageDownloadThread.h; sourceTree = "<group>"; };
 		04CFF75125186104004F7417 /* ImageDownloadThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageDownloadThread.m; sourceTree = "<group>"; };
-		04FEC1122521B75C00C65CC8 /* DogVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DogVC.h; sourceTree = "<group>"; };
-		04FEC1132521B75C00C65CC8 /* DogVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DogVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,8 +109,6 @@
 				04A140BD24F7707900570C52 /* Json Parsing 2-Bridging-Header.h */,
 				0402D8C32514696D00491B0D /* DogDetailVC.h */,
 				0402D8C42514696D00491B0D /* DogDetailVC.m */,
-				04FEC1122521B75C00C65CC8 /* DogVC.h */,
-				04FEC1132521B75C00C65CC8 /* DogVC.m */,
 				04CFF74D25185D1E004F7417 /* DataDownloadThread.h */,
 				04CFF74E25185D1E004F7417 /* DataDownloadThread.m */,
 				04CFF75025186104004F7417 /* ImageDownloadThread.h */,
@@ -226,7 +221,6 @@
 				04BDA8E02514DEAC00024271 /* DogTableViewCell.m in Sources */,
 				0433F70D24FF7C9600BE29D7 /* CoredataModel.xcdatamodeld in Sources */,
 				04BDA8DD2514DD7100024271 /* DogModel.m in Sources */,
-				04FEC1142521B75C00C65CC8 /* DogVC.m in Sources */,
 				04650BD823FF9A80002C5A80 /* DetailViewController.swift in Sources */,
 				04CFF74F25185D1E004F7417 /* DataDownloadThread.m in Sources */,
 			);
