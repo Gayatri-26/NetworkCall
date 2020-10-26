@@ -45,7 +45,7 @@
                     
                     for(int j=0;j<_arrDog.count;j++){
                         
-                        DogModel *dogimage = [_arrDog objectAtIndex:i];
+                        DogModel *dogimage = [_arrDog objectAtIndex:j];
                         
                         if([dogimage.Breed isEqualToString:dogbreed]){
                             
